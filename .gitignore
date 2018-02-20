@@ -1,0 +1,4 @@
+Temp/*
+*.log
+Library/ShaderCache*
+*.swp

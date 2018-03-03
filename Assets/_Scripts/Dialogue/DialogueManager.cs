@@ -9,7 +9,7 @@ public class DialogueManager : MonoBehaviour {
     public Text DialogueText;
     public Animator animator;
 
-    private Queue<string> sentences; //pile FIIFO (first in first out) plus adaptée que String[]
+    private Queue<string> sentences; //pile FIFO (first in first out) plus adaptée que String[]
 	
 
 

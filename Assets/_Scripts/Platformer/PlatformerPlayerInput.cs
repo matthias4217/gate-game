@@ -14,10 +14,10 @@ public class PlatformerPlayerInput : MonoBehaviour {
 		Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		player.SetDirectionalInput (directionalInput);
 
-		if (Input.GetButtonDown ("Jump")) {
+		if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
 		}
-		if (Input.GetButtonUp ("Jump")) {
+		if (Input.GetKeyUp (KeyCode.Space)) {
 			player.OnJumpInputUp ();
 		}
 	}

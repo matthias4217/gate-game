@@ -4,6 +4,7 @@ using UnityEngine;
 
 [System.Serializable]
 
+// Pas utilisé pour le moment
 public class Dialogue {
 
     public string characterName;	// The name of the character saying this dialogue	

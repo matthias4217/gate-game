@@ -6,17 +6,8 @@ public class CollisionController : MonoBehaviour
 
     public Slider healthBarSlider;  //reference for slider
 
-    void Start()
-    {
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
-    //Check if player enters/stays on the Enemy
+    /* Check if player enters/stays on the Enemy */
     void OnCollisionStay2D(Collision2D other)
     {
         //if player triggers an Enemy and health is greater than 0

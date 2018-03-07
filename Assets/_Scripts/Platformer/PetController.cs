@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class PetController : MonoBehaviour
 {
-
 	public GameObject target;
 	public float speed;
+	public float xOffset = 2.5f;
+	public float yOffset = 1.0f;
 
     void Update()
     {
-        if (this.transform.position.x <= target.transform.position.x)
-        {
-            Vector2 velocity = new Vector2(target.transform.position.x - this.transform.position.x - 2.5f, target.transform.position.y - this.transform.position.y + 1.0f) * speed;
-            GetComponent<Rigidbody2D>().velocity = velocity;
-        }
-        else
-        {
-            Vector2 velocity = new Vector2(target.transform.position.x - this.transform.position.x + 2.5f, target.transform.position.y - this.transform.position.y + 1.0f) * speed;
-            GetComponent<Rigidbody2D>().velocity = velocity;
-        }
+		Vector3 velocity = (this.transform.position + target.transform.position) * speed + yOffset*Vector3.up;
+		velocity += Vector3.right * xOffset * Mathf.Sign (this.transform.position.x - target.transform.position.x);
+		GetComponent<Rigidbody2D>().velocity = velocity;
     }
 }

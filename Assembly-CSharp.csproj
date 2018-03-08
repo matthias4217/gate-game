@@ -54,6 +54,11 @@
      <Compile Include="Assets\_Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\Interactable.cs" />
+     <Compile Include="Assets\_Scripts\ENI\Controller.cs" />
+     <Compile Include="Assets\_Scripts\ENI\DecoyController2D.cs" />
+     <Compile Include="Assets\_Scripts\ENI\DummyController.cs" />
+     <Compile Include="Assets\_Scripts\ENI\RobotController2D.cs" />
+     <Compile Include="Assets\_Scripts\ENI\TriggerController.cs" />
      <Compile Include="Assets\_Scripts\Platformer\CollisionController.cs" />
      <Compile Include="Assets\_Scripts\Platformer\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Platformer\PetController.cs" />
@@ -65,6 +70,12 @@
      <Compile Include="Assets\_Scripts\Platformer\RaycastController.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\PlayerInput.cs" />
+     <Compile Include="Assets\_Scripts\scholarvox_scripts\scr_changercoleurOnMouseOver.cs" />
+     <Compile Include="Assets\_Scripts\scholarvox_scripts\scr_collision_with_player.cs" />
+     <Compile Include="Assets\_Scripts\scholarvox_scripts\scr_move_ennemy_line.cs" />
+     <Compile Include="Assets\_Scripts\scholarvox_scripts\scr_movement_player.cs" />
+     <Compile Include="Assets\_Scripts\scholarvox_scripts\scr_OnMouseOverNonClicable.cs" />
+     <Compile Include="Assets\_Scripts\scholarvox_scripts\scr_sourisdessus.cs" />
      <Compile Include="Assets\GameAnalytics\Plugins\Playmaker\SendBusinessEvent.cs" />
      <Compile Include="Assets\GameAnalytics\Plugins\Playmaker\SendDesignEvent.cs" />
      <Compile Include="Assets\GameAnalytics\Plugins\Playmaker\SendErrorEvent.cs" />

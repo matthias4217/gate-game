@@ -5,7 +5,9 @@ using UnityEngine;
 public class RobotController2D : MonoBehaviour {
 
 	private Rigidbody2D rb;
-	[SerializeField] private float robotSpeed;
+	[SerializeField] private float chaseSpeed;
+	[SerializeField] private float decoySpeed;
+	private float speed;
 	//[SerializeField] private float chargeSpeed;
 
 	//[SerializeField] private float chaseTime;
@@ -14,6 +16,7 @@ public class RobotController2D : MonoBehaviour {
 	private GameObject player;
 	private Vector2 direction = Vector2.zero;
 	private Vector2 move;
+	private bool isActive;
 
 	[SerializeField] private float stopTime;
 	//private bool decoyActive;
@@ -26,37 +29,46 @@ public class RobotController2D : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		target = null;
+		isActive = false;
 		//decoyActive = false;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+		if (isActive == false) {
+			rb.velocity = Vector2.zero;
+			return;
+		}
+
 		if (target == null)
 			return;
 
-		if (cooldown > stopTime /2) {
-			cooldown-= Time.deltaTime ;
+		if (cooldown > stopTime / 2) {
+			cooldown -= Time.deltaTime;
 			rb.velocity = move;
 			return;
 		}
 
 		if (cooldown > 0) {
 			rb.velocity = Vector2.zero;
-			cooldown-= Time.deltaTime ;
+			cooldown -= Time.deltaTime;
 			return;
 		}
 			
 		GameObject decoy = GameObject.FindGameObjectWithTag ("Decoy");
-		if (decoy != null)
+		if (decoy != null) {
 			target = decoy;
-		else
+			speed = decoySpeed;
+		} 
+		else {
 			target = player;
-
+			speed = chaseSpeed;
+		}
 		float x = target.transform.position.x - this.transform.position.x;
 		float y = target.transform.position.y - this.transform.position.y;
 		direction = new Vector2 (x, y);
 		direction.Normalize ();
-		move = direction * robotSpeed;
+		move = direction * speed;
 
 		rb.velocity = move;
 
@@ -97,4 +109,7 @@ public class RobotController2D : MonoBehaviour {
 			cooldown = stopTime;
 	}
 
+	public void ChaseActive(bool boo) {
+		isActive = boo;
+	}
 }

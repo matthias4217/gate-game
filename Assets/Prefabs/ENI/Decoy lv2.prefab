@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchSpeed: 10
   slow: 30
-  lifeSpan: 2
+  lifeSpan: 4
 --- !u!212 &212958043727168274
 SpriteRenderer:
   m_ObjectHideFlags: 1

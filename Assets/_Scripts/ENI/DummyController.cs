@@ -5,7 +5,9 @@ using UnityEngine;
 public class DummyController : MonoBehaviour {
 
 	private Rigidbody2D rb;
-	[SerializeField] private float target_speed = 1f;
+	[SerializeField] private float chaseSpeed = 1f;
+	[SerializeField] private float decoySpeed = 1f;
+	private float speed;
 
 	private GameObject target;
 	private GameObject player;
@@ -24,13 +26,15 @@ public class DummyController : MonoBehaviour {
 		target = player;
 		isActive = true;
 		halfStopTime = stopTime / 2f;
+		speed = chaseSpeed;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (isActive == false)
+		if (isActive == false) {
+			rb.velocity = Vector2.zero;
 			return;
-
+		}
 		if (cooldown > halfStopTime) {
 			cooldown-= Time.deltaTime ;
 			rb.velocity = move;
@@ -45,16 +49,18 @@ public class DummyController : MonoBehaviour {
 
 
 		GameObject decoy = GameObject.FindGameObjectWithTag ("Decoy");
-		if (decoy != null)
+		if (decoy != null) {
 			target = decoy;
-		else
+			speed = decoySpeed;
+		}
+		else{
 			target = player;
-
+			speed = chaseSpeed;}
 		float x = target.transform.position.x - this.transform.position.x;
 		float y = target.transform.position.y - this.transform.position.y;
 		direction = new Vector2 (x, y);
 		direction.Normalize ();
-		move = direction * target_speed;
+		move = direction * speed;
 
 		rb.velocity = move;
 
@@ -68,7 +74,7 @@ public class DummyController : MonoBehaviour {
 		}
 	}
 
-	void SetActive(bool boo) {
+	public void ChaseActive(bool boo) {
 		isActive = boo;
 	}
 

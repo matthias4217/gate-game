@@ -21,6 +21,7 @@ public class Controller : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+		ennemy = GameObject.FindGameObjectWithTag ("Dummy");
     }
 
     void FixedUpdate()
@@ -53,13 +54,38 @@ public class Controller : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.CompareTag ("Target")) {
+			ennemy.SetActive(false);
 			ennemy = GameObject.FindGameObjectWithTag ("Roboto");
 			ennemy.GetComponent<RobotController2D>().TargetAquire (this.gameObject);
+			ennemy.GetComponent<RobotController2D>().ChaseActive (true);
 		}
 		if (other.gameObject.CompareTag ("Collectable")) {
 			other.gameObject.SetActive (false);
 		}
+		if (other.gameObject.CompareTag ("Safe")) {
+			
+			if (ennemy.gameObject.CompareTag ("Dummy"))
+				ennemy.GetComponent<DummyController>().ChaseActive (false);
+			else
+				ennemy.GetComponent<RobotController2D>().ChaseActive (false);
+		}
+		if (other.gameObject.CompareTag ("Dummy End")) {
+			if (ennemy.gameObject.CompareTag ("Dummy"))
+				ennemy.GetComponent<DummyController> ().ChaseActive (false);
+		}
 
 	}
     
+	void OnTriggerExit2D (Collider2D other) {
+		if (other.gameObject.CompareTag ("Safe")) {
+			if (ennemy.gameObject.CompareTag ("Dummy"))
+				ennemy.GetComponent<DummyController> ().ChaseActive (true);
+			else
+				ennemy.GetComponent<RobotController2D> ().ChaseActive (true);
+		}
+		if (other.gameObject.CompareTag ("Dummy End")) {
+			if (ennemy.gameObject.CompareTag ("Dummy"))
+				ennemy.GetComponent<DummyController> ().ChaseActive (true);
+		}
+	}
 }

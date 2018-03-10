@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DecoyController2D : MonoBehaviour {
+public class DecoyController : MonoBehaviour {
 
 	private Rigidbody2D rb;
 
@@ -10,7 +10,7 @@ public class DecoyController2D : MonoBehaviour {
 	[SerializeField] private float slow;
 	[SerializeField] private float lifeSpan;
 
-	private float speed;
+	private float velocity;
 
 	private Vector2 direction;
 	private Vector2 mouse_position = Vector2.zero;
@@ -23,13 +23,13 @@ public class DecoyController2D : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 		player = GameObject.FindGameObjectWithTag ("Player");
 
-		speed = launchSpeed;
 
+		velocity = launchSpeed;
 		mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		direction = mouse_position - (Vector2) player.transform.position;
+		direction = mouse_position - (Vector2)player.transform.position;
 
 		direction.Normalize ();
-		move = direction * speed;
+		move = direction * velocity;
 
 	}
 
@@ -39,11 +39,11 @@ public class DecoyController2D : MonoBehaviour {
 
 		if (lifeSpan < 0)
 			this.gameObject.SetActive (false);
-		if (speed > 0)
-			speed -= launchSpeed / slow;
+		if (velocity > 0)
+			velocity -= launchSpeed / slow;
 		else
-			speed = 0f;
-		move = direction * speed;
+			velocity = 0f;
+		move = direction * velocity;
 
 		lifeSpan -= Time.deltaTime;
 		
@@ -62,6 +62,6 @@ public class DecoyController2D : MonoBehaviour {
 	}
 
 	public void Obstacle() {
-		speed = 0f;
+		velocity = 0f;
 	}
 }

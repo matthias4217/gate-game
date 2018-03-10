@@ -1473,6 +1473,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212142644841182980, guid: 3cb074d39ba3c654ca7deaad116b6ddf,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c0d881b46fcd8084b8dd36ca17f249bb,
+        type: 3}
+    - target: {fileID: 212142644841182980, guid: 3cb074d39ba3c654ca7deaad116b6ddf,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58227125580878128, guid: 3cb074d39ba3c654ca7deaad116b6ddf,
+        type: 2}
+      propertyPath: m_Radius
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3cb074d39ba3c654ca7deaad116b6ddf, type: 2}
   m_IsPrefabParent: 0
@@ -1492,7 +1508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4791e950ae1656245bd4c1c8662ac618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fichier_dialogue: {fileID: 0}
+  distanceTrigger: 2
 --- !u!1 &1723262731
 GameObject:
   m_ObjectHideFlags: 0

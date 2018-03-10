@@ -33,20 +33,12 @@ ehthumbs.db
 # Venant de https://flashg.github.io/GitMerge-for-Unity/ 
 # ======================================================
 [Ll]ibrary\
-<<<<<<< HEAD
-#[Ll]ibrary/
+[Ll]ibrary/
 library\metadata\*
 #/10/10f92337bf55e4b41878a23c32cf4249
-=======
-<<<<<<< HEAD
-=======
 [Ll]ibrary/
 [Ll]ibrary\
 [Ll]ibrary/
->>>>>>> eb7a6cfb0c2f4284852a93849ee9618d78040aea
-=======
->>>>>>> 719ff16541b0aa7df1d749fa1b2ba433e1cdfb46
->>>>>>> b97b287bae145810f4fc21630615bd93a96256a4
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/

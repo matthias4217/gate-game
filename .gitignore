@@ -32,15 +32,16 @@ ehthumbs.db
 
 # Venant de https://flashg.github.io/GitMerge-for-Unity/ 
 # ======================================================
-<<<<<<< HEAD
 [Ll]ibrary\
-=======
->>>>>>> eb7a6cfb0c2f4284852a93849ee9618d78040aea
+#[Ll]ibrary/
+library\metadata\*
+#/10/10f92337bf55e4b41878a23c32cf4249
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+
 
 # Visual Studio 2015 cache directory
 /.vs/

@@ -11993,6 +11993,17 @@ Prefab:
       propertyPath: ennemy
       value: 
       objectReference: {fileID: 1690185657}
+    - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
+        type: 2}
+      propertyPath: decoy
+      value: 
+      objectReference: {fileID: 1283661611624984, guid: 5762bfce75e7498448387c58109b1b0e,
+        type: 2}
+    - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9401812a61e593640956de627381fcbf, type: 2}
   m_IsPrefabParent: 0

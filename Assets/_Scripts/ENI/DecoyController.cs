@@ -6,7 +6,7 @@ public class DecoyController : MonoBehaviour {
 
 	private Rigidbody2D rb;
 
-	[SerializeField] private float launchSpeed;
+	[SerializeField] public float launchSpeed;
 	[SerializeField] private float slow;
 	[SerializeField] private float lifeSpan;
 

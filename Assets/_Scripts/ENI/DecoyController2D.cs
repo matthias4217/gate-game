@@ -11,7 +11,6 @@ public class DecoyController2D : MonoBehaviour {
 	[SerializeField] private float lifeSpan;
 
 	private float speed;
-	private float inv_slow;
 
 	private Vector2 direction;
 	private Vector2 mouse_position = Vector2.zero;
@@ -20,19 +19,20 @@ public class DecoyController2D : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Setting up references
 		rb = GetComponent<Rigidbody2D>();
-		speed = launchSpeed;
-		inv_slow = 1f / slow;
-
 		player = GameObject.FindGameObjectWithTag ("Player");
+
+		speed = launchSpeed;
+
 		mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		direction = mouse_position - new Vector2(player.transform.position.x, player.transform.position.y);
+		direction = mouse_position - (Vector2) player.transform.position;
 
 		direction.Normalize ();
 		move = direction * speed;
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		rb.velocity = move;
@@ -40,7 +40,7 @@ public class DecoyController2D : MonoBehaviour {
 		if (lifeSpan < 0)
 			this.gameObject.SetActive (false);
 		if (speed > 0)
-			speed -= launchSpeed * inv_slow;
+			speed -= launchSpeed / slow;
 		else
 			speed = 0f;
 		move = direction * speed;

@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
-    public float speed;
-    public float frotements;
-    private Rigidbody2D rb;
+    public float moveSpeed;
     private int count;
 
 	[SerializeField] private int decoylvl = 1;
@@ -15,23 +13,24 @@ public class Controller : MonoBehaviour
 	[SerializeField] private GameObject decoySpawnlv1;
 	[SerializeField] private GameObject decoySpawnlv2;
 	private GameObject ennemy;
-	private Vector2 move;
-
+	private Vector2 moveAmount;
+	private Rigidbody2D rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        // Settings up references
+		rb = GetComponent<Rigidbody2D>();
 		ennemy = GameObject.FindGameObjectWithTag ("Dummy");
     }
 
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moverVertical = Input.GetAxisRaw("Vertical");
+		float moveVertical = Input.GetAxisRaw("Vertical");
 
-		move = new Vector2(moveHorizontal,moverVertical);
-		move.Normalize ();
-		rb.velocity = move * speed;
+		moveAmount = new Vector2(moveHorizontal, moveVertical);
+		moveAmount.Normalize ();
+		rb.velocity = moveAmount * moveSpeed;
 
 		if (Input.GetMouseButton(0))
 		{

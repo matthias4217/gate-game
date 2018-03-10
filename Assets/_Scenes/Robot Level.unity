@@ -39117,7 +39117,11 @@ Prefab:
     - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
         type: 2}
       propertyPath: decoySpeed
-      value: 6
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438100418957362, guid: 1ea172eed412e664a8f841df26471907, type: 2}
+      propertyPath: m_Name
+      value: Roboto
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ea172eed412e664a8f841df26471907, type: 2}

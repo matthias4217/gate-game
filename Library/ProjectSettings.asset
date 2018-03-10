@@ -635,7 +635,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
   cloudProjectId: ffcbdf3b-a66a-4313-b92c-75842dde5f85
-  projectName: GATE part1
+  projectName: GATE
   organizationId: raphael_tran
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

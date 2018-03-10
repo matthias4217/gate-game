@@ -6,6 +6,17 @@ TagManager:
   tags:
   - Traversable
   - Enemy
+  - TriggerWall
+  - DestWall
+  - Wall
+  - Collectable
+  - Target
+  - Decoy
+  - Clear
+  - Roboto
+  - Dummy
+  - Safe
+  - Dummy End
   layers:
   - Default
   - TransparentFX

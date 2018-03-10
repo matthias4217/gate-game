@@ -24,6 +24,7 @@ public class RaycastController : MonoBehaviour {
 
 	public virtual void Awake() {
 		collider = GetComponent<BoxCollider2D> ();
+		collider.size = GetComponent<SpriteRenderer> ().sprite.bounds.size;
 	}
 
 	public virtual void Start() {

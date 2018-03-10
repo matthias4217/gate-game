@@ -60,6 +60,7 @@
      <Compile Include="Assets\_Scripts\ENI\RobotController2D.cs" />
      <Compile Include="Assets\_Scripts\ENI\SafeZoneSprite.cs" />
      <Compile Include="Assets\_Scripts\ENI\TriggerController.cs" />
+     <Compile Include="Assets\_Scripts\Introduction\Game_Controller.cs" />
      <Compile Include="Assets\_Scripts\Platformer\CollisionController.cs" />
      <Compile Include="Assets\_Scripts\Platformer\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\Platformer\PetController.cs" />

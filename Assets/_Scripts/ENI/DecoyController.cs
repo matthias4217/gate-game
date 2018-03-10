@@ -13,7 +13,6 @@ public class DecoyController : MonoBehaviour {
 	private float velocity;
 
 	private Vector2 direction;
-	private Vector2 mouse_position = Vector2.zero;
 	private GameObject player;
 	private Vector2 move;
 
@@ -25,7 +24,7 @@ public class DecoyController : MonoBehaviour {
 
 
 		velocity = launchSpeed;
-		mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		Vector2 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		direction = mouse_position - (Vector2)player.transform.position;
 
 		direction.Normalize ();
@@ -51,17 +50,17 @@ public class DecoyController : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.gameObject.CompareTag ("Wall")) {
-			Obstacle ();
+			Stop ();
 		}
 		if (other.gameObject.CompareTag ("DestWall")) {
-			Obstacle ();
+			Stop ();
 		}
 		if (other.gameObject.CompareTag ("TriggerWall")) {
-			Obstacle ();
+			Stop ();
 		}
 	}
 
-	public void Obstacle() {
+	public void Stop() {
 		velocity = 0f;
 	}
 }

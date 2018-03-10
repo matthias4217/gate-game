@@ -22,8 +22,7 @@ GameObject:
   - component: {fileID: 33458904489146412}
   - component: {fileID: 23762998307359914}
   - component: {fileID: 61690560437660718}
-  - component: {fileID: 114698637575444380}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Plateform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,32 +108,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000005}
   m_EdgeRadius: 0
---- !u!114 &114698637575444380
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1932693452174432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c287dc3f527e623419266212b45dd891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  horizontalRayCount: 0
-  verticalRayCount: 0
-  horizontalRaySpacing: 0
-  verticalRaySpacing: 0
-  collider: {fileID: 0}
-  passengerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  localWaypoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: -9, y: 0, z: 0}
-  speed: 4
-  cyclic: 1
-  waitTime: 0
-  easeAmount: 0

@@ -17,6 +17,8 @@ TagManager:
   - Dummy
   - Safe
   - Dummy End
+  - PNJ
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -51,6 +53,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2332962659
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
@@ -59,4 +64,10 @@ TagManager:
     locked: 0
   - name: Character
     uniqueID: 3088950437
+    locked: 0
+  - name: Player
+    uniqueID: 3465110435
+    locked: 0
+  - name: Foreground
+    uniqueID: 1325933443
     locked: 0

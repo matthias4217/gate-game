@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33460293603137436}
   - component: {fileID: 23065399061048570}
   - component: {fileID: 61431782319910010}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: Slope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1866757053412210}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 0d35fd0b7c3f5ec4b9f4fd7ece81a960, type: 2}
+  m_Material: {fileID: 6200000, guid: 62db069c7f40149bcaf6046bb341bea9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

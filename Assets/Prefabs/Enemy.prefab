@@ -104,6 +104,7 @@ MonoBehaviour:
   range: 15
   speed: 0.5
   X: 108.3
+  isDown: 0
 --- !u!212 &212945246828989014
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,7 +139,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8311808379500674f8ba16158a64545f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5bdba339c13766e4db8042ce27c141d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

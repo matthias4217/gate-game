@@ -43,6 +43,11 @@ public class RobotController2D : MonoBehaviour {
 		if (target == null)
 			return;
 
+		if (cooldown > stopTime * 0.9) {
+			rb.velocity = Vector2.zero;
+			cooldown -= Time.deltaTime;
+			return;
+		}
 		if (cooldown > stopTime / 2) {
 			cooldown -= Time.deltaTime;
 			rb.velocity = move;
@@ -96,7 +101,7 @@ public class RobotController2D : MonoBehaviour {
 		if (other.gameObject.CompareTag ("TriggerWall")) {
 			other.gameObject.GetComponent<TriggerController>().DestroyWall();
 		}
-		}
+	}
 
 	public void TargetAquire (GameObject newTarget) {
 		this.target = newTarget;

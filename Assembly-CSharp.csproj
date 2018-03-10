@@ -107,6 +107,7 @@
      <Compile Include="Assets\GameAnalytics\Plugins\Scripts\Wrapper\GA_Wrapper.cs" />
      <None Include="Assets\GameAnalytics\Readme.txt" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\GitMerge-for-Unity\Editor\Resources\Licenses.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/home/mondrak/Unity-2017.3.0f1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

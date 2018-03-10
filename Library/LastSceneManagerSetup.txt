@@ -1,0 +1,8 @@
+sceneSetups:
+<<<<<<< HEAD
+- path: Assets/_Scenes/Robot 0.unity
+=======
+- path: Assets/_Scenes/Europresse.unity
+>>>>>>> 719ff16541b0aa7df1d749fa1b2ba433e1cdfb46
+  isLoaded: 1
+  isActive: 1

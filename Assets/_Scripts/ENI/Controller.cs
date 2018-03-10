@@ -10,8 +10,7 @@ public class Controller : MonoBehaviour
 
 	[SerializeField] private int decoylvl = 1;
 
-	[SerializeField] private GameObject decoySpawnlv1;
-	[SerializeField] private GameObject decoySpawnlv2;
+	[SerializeField] private GameObject decoy;
 	private GameObject ennemy;
 	private Vector2 moveAmount;
 	private Rigidbody2D rb;
@@ -34,20 +33,12 @@ public class Controller : MonoBehaviour
 
 		if (Input.GetMouseButton(0))
 		{
-			// On demande a notre shoottrigger de lancer un projectile.
-			//shooter.ShootProjectile();
-			GameObject decoy = GameObject.FindGameObjectWithTag ("Decoy");
-			if (decoy == null)
-				switch (decoylvl){
-				case 2:
-					Instantiate (decoySpawnlv2, transform.position, transform.rotation);
-					break;
-				default:
-					Instantiate (decoySpawnlv1, transform.position, transform.rotation);
-					break;
+			if (!GameObject.FindGameObjectWithTag ("Decoy")) {		// If there is not already a decoy
+				Instantiate (decoy, transform.position, transform.rotation);
+				decoy.GetComponent<DecoyController> ().launchSpeed = 0;
+				Debug.Log ("Hadouken");
 			}
 		}
-
 
     }
 

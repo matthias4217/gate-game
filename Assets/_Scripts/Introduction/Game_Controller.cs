@@ -12,7 +12,7 @@ public class Game_Controller : MonoBehaviour {
     public void ImBeingPressed(int button_number)
     {
         list_of_execution[button_number] = 1;
-        if (SumArray(list_of_execution) == 3) button.IsInteractable();
+        if (SumArray(list_of_execution) == 3) button.interactable = true;
     }
 
     public int SumArray(int[] toBeSummed)

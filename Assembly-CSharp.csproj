@@ -55,7 +55,7 @@
      <Compile Include="Assets\_Scripts\Dialogue\DialogueManager.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\Interactable.cs" />
      <Compile Include="Assets\_Scripts\ENI\Controller.cs" />
-     <Compile Include="Assets\_Scripts\ENI\DecoyController2D.cs" />
+     <Compile Include="Assets\_Scripts\ENI\DecoyController.cs" />
      <Compile Include="Assets\_Scripts\ENI\DummyController.cs" />
      <Compile Include="Assets\_Scripts\ENI\RobotController2D.cs" />
      <Compile Include="Assets\_Scripts\ENI\SafeZoneSprite.cs" />

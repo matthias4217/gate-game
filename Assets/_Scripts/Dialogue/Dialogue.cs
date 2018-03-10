@@ -12,6 +12,7 @@ public class Dialogue {
 
     public string characterName;	// The name of the character saying this dialogue	
     [TextArea(3, 100)]
-    public string[] sentences;		// 
+    //public Queue<string> sentences;		// 
+    public string[] sentences;
 	
 }

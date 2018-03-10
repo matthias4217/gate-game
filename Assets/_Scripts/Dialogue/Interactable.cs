@@ -9,14 +9,16 @@ using UnityEngine;
 public class Interactable : MonoBehaviour {
 
     //public TextAsset fichier_dialogue;
+    //static Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
+    /*
+     * La liste des phrases qui vont être dites.
+     * Une phrase = une boîte de dialogue.
+     */
+    [TextArea(3, 100)]
+    public Queue<string> sentences;
+    //static Queue<string> sentences = dialogue.sentences;
 
-
-	/* 
-	 * La liste des phrases qui vont être dites.
-	 * Une phrase = une boîte de dialogue.
-	 */
-	[TextArea(3, 100)]
-	public Queue<string> sentences;
+        
 
 
 
@@ -25,7 +27,6 @@ public class Interactable : MonoBehaviour {
 	 */
     public void TriggerDialogue ()
     {
-        // Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
         FindObjectOfType<DialogueManager>().StartDialogue(sentences); 
     }
 }

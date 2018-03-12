@@ -17,12 +17,12 @@ public class CollisionController : MonoBehaviour
         }
     }
 
-    //void OnTriggerEnter2D(Collider2D other) //Pour détruire l'ennemi si contact avec pieds du joueur
-    //{
-    //    if (other.gameObject.tag == "Enemy")
-    //    {
-    //        this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10) * 10, ForceMode2D.Impulse);
-    //        Destroy(other.gameObject);
-    //    }
-    //}
+//    void OnTriggerEnter2D(Collider2D other) //Pour détruire l'ennemi si contact avec pieds du joueur
+//    {
+//        if (other.gameObject.tag == "Enemy")
+//        {
+//            this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 10) * 10, ForceMode2D.Impulse);
+//            Destroy(other.gameObject);
+//        }
+//    }
 }

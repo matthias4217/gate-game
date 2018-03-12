@@ -6,6 +6,8 @@ using System.Collections;
 [RequireComponent (typeof (PlatformerController))]
 public class PlatformerPlayer : MonoBehaviour {
 
+	public float maxHealth;			// The amount of hearts the player starts with
+
 	public float moveSpeed = 6;
 	public float maxJumpHeight = 4;
 	public float minJumpHeight = 1;
@@ -18,6 +20,8 @@ public class PlatformerPlayer : MonoBehaviour {
 	float minJumpVelocity;
 	Vector3 velocity;
 	float velocityXSmoothing;
+
+	int hp;
 
 	PlatformerController controller;
 

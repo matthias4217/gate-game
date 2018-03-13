@@ -421,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   horizontalRayCount: 0
   verticalRayCount: 0
   horizontalRaySpacing: 0
@@ -430,11 +430,10 @@ MonoBehaviour:
   localWaypoints:
   - {x: 0, y: 0, z: 0}
   - {x: 5, y: 0, z: 0}
-  - {x: 5, y: 5, z: 0}
-  speed: 5
-  cyclic: 1
-  waitTime: 0
-  easeAmount: 1
+  speed: 2
+  cyclic: 0
+  waitTime: 1
+  easeAmount: 0
 --- !u!61 &167704404
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6618,11 +6617,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1347686146}
-  verticalOffset: 1
-  lookAheadDstX: 4
-  lookSmoothTimeX: 0.5
-  verticalSmoothTime: 0.1
-  focusAreaSize: {x: 2, y: 6}
+  verticalOffset: 5
+  lookAheadDstX: 6
+  lookSmoothTimeX: 5
+  verticalSmoothTime: 2
+  focusAreaSize: {x: 2, y: 5}
 --- !u!1 &862489147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6970,7 +6969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   horizontalRayCount: 0
   verticalRayCount: 0
   horizontalRaySpacing: 0
@@ -6978,9 +6977,9 @@ MonoBehaviour:
   collider: {fileID: 0}
   localWaypoints:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 3, z: 0}
-  speed: 5
-  cyclic: 1
+  - {x: 0, y: 3.23, z: 0}
+  speed: 2
+  cyclic: 0
   waitTime: 0
   easeAmount: 1
 --- !u!61 &1237272733
@@ -7328,7 +7327,7 @@ MonoBehaviour:
   horizontalRaySpacing: 0
   verticalRaySpacing: 0
   collider: {fileID: 0}
-  maxSlopeAngle: 70
+  maxSlopeAngle: 80
   playerInput: {x: 0, y: 0}
 --- !u!114 &1347686147
 MonoBehaviour:
@@ -7343,11 +7342,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   moveSpeed: 10
-  maxJumpHeight: 5
+  maxJumpHeight: 6
   minJumpHeight: 1
-  timeToJumpApex: 0.35
-  accelerationTimeAirborne: 0
-  accelerationTimeGrounded: 0
+  timeToJumpApex: 0.4
+  accelerationTimeAirborne: 0.2
+  accelerationTimeGrounded: 0.1
 --- !u!61 &1347686148
 BoxCollider2D:
   m_ObjectHideFlags: 0

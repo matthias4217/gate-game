@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyControllerOld : MonoBehaviour
 {
 
-    public GameObject Enemy;
-    public GameObject Player;
+    public GameObject enemy;
+    public GameObject player;
     public float range;
     public float speed;
     private float Vitesse = 0.10f; // on choisit la vitesse de déplacement
@@ -14,20 +14,20 @@ public class EnemyControllerOld : MonoBehaviour
     private int direction = 1; // nous sert a changer de direction
     public bool isDown = false;
 
-void Start()
+	void Start()
     {
-        Enemy = GameObject.FindWithTag("Enemy");
-        Player = GameObject.FindWithTag("Player");
+        enemy = GameObject.FindWithTag("Enemy");
+        player = GameObject.FindWithTag("Player");
         
     }
 
     void Update()
     {
         RigidbodyConstraints2D constraints = this.GetComponent<Rigidbody2D>().constraints;
-        float distance = Mathf.Abs(Player.transform.position.x - X);
+        float distance = Mathf.Abs(player.transform.position.x - X);
         if (distance <= range && constraints != RigidbodyConstraints2D.FreezePositionY)
         {
-            Vector2 velocity = new Vector2((transform.position.x - Player.transform.position.x) * speed, (transform.position.y - Player.transform.position.y) * speed);
+            Vector2 velocity = new Vector2((transform.position.x - player.transform.position.x) * speed, (transform.position.y - player.transform.position.y) * speed);
             GetComponent<Rigidbody2D>().velocity = -velocity;
         }
         if (distance > range && constraints != RigidbodyConstraints2D.FreezePositionY)

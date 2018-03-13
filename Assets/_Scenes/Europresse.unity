@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 167704402}
   - component: {fileID: 167704401}
   - component: {fileID: 167704404}
+  - component: {fileID: 167704405}
   - component: {fileID: 167704403}
   m_Layer: 0
   m_Name: Enemy
@@ -402,7 +403,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167704400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.539045, y: -0.45736617, z: 0}
+  m_LocalPosition: {x: 23.57, y: -1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -416,23 +417,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 167704400}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184e6c76731dfc540811f941a2eb10dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 38aea312fe0b23c4e9560b1054346fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  horizontalRayCount: 0
-  verticalRayCount: 0
-  horizontalRaySpacing: 0
-  verticalRaySpacing: 0
-  collider: {fileID: 0}
-  localWaypoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: 5, y: 0, z: 0}
-  speed: 2
+  localWaypoints: []
+  moveSpeed: 3
   cyclic: 0
-  waitTime: 1
+  waitTime: 0
   easeAmount: 0
 --- !u!61 &167704404
 BoxCollider2D:
@@ -459,6 +450,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &167704405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167704400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04479b7be467200448a87a8c37e32592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &174840171
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,8 +598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ddff061d93f6442b83466199d46bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1347686142}
-  speed: 2
+  target: {fileID: 0}
+  speed: 0
   offset: {x: 2.5, y: 1}
   xOffset: 2.5
   yOffset: 1
@@ -696,7 +698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &279666280
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1593,20 +1595,6 @@ CompositeCollider2D:
         Y: 30000000
       - X: 169531248
         Y: 30000000
-    - - X: 130000000
-        Y: 625000
-      - X: 130000000
-        Y: 29687500
-      - X: 129843752
-        Y: 30000000
-      - X: 100000000
-        Y: 30000000
-      - X: 100000000
-        Y: 1562500
-      - X: 102343752
-        Y: 0
-      - X: 129531248
-        Y: 0
     - - X: 590000000
         Y: 20000000
       - X: 630000000
@@ -1623,6 +1611,20 @@ CompositeCollider2D:
         Y: 10000000
       - X: 590000000
         Y: 10000000
+    - - X: 130000000
+        Y: 625000
+      - X: 130000000
+        Y: 29687500
+      - X: 129843752
+        Y: 30000000
+      - X: 100000000
+        Y: 30000000
+      - X: 100000000
+        Y: 1562500
+      - X: 102343752
+        Y: 0
+      - X: 129531248
+        Y: 0
     - - X: 80000000
         Y: -19375000
       - X: 80000000
@@ -1682,13 +1684,6 @@ CompositeCollider2D:
       - {x: 14, y: 3.15625}
       - {x: 14.234375, y: 3}
       - {x: 16.953125, y: 3}
-    - - {x: 13, y: 0.0625}
-      - {x: 13, y: 2.96875}
-      - {x: 12.984375, y: 3}
-      - {x: 10, y: 3}
-      - {x: 10, y: 0.15625}
-      - {x: 10.234375, y: 0}
-      - {x: 12.953125, y: 0}
     - - {x: 59, y: 2}
       - {x: 63, y: 2}
       - {x: 63, y: 3}
@@ -1697,6 +1692,13 @@ CompositeCollider2D:
       - {x: 56, y: 2}
       - {x: 56, y: 1}
       - {x: 59, y: 1}
+    - - {x: 13, y: 0.0625}
+      - {x: 13, y: 2.96875}
+      - {x: 12.984375, y: 3}
+      - {x: 10, y: 3}
+      - {x: 10, y: 0.15625}
+      - {x: 10.234375, y: 0}
+      - {x: 12.953125, y: 0}
     - - {x: 8, y: -1.9375}
       - {x: 8, y: 0.96875}
       - {x: 7.9843755, y: 1}
@@ -6617,11 +6619,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1347686146}
-  verticalOffset: 5
-  lookAheadDstX: 6
-  lookSmoothTimeX: 5
-  verticalSmoothTime: 2
-  focusAreaSize: {x: 2, y: 5}
+  verticalOffset: 1
+  lookAheadDstX: 4
+  lookSmoothTimeX: 0.5
+  verticalSmoothTime: 0.1
+  focusAreaSize: {x: 3, y: 5}
 --- !u!1 &862489147
 GameObject:
   m_ObjectHideFlags: 0
@@ -6844,7 +6846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1206626698
 Transform:
   m_ObjectHideFlags: 0
@@ -6864,12 +6866,12 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1206626697}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ea253b5ee3293c94c8b0517b193ed11c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6948,6 +6950,7 @@ GameObject:
   - component: {fileID: 1237272735}
   - component: {fileID: 1237272734}
   - component: {fileID: 1237272733}
+  - component: {fileID: 1237272736}
   - component: {fileID: 1237272732}
   m_Layer: 0
   m_Name: Enemy (1)
@@ -6964,24 +6967,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237272731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 184e6c76731dfc540811f941a2eb10dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 38aea312fe0b23c4e9560b1054346fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  horizontalRayCount: 0
-  verticalRayCount: 0
-  horizontalRaySpacing: 0
-  verticalRaySpacing: 0
-  collider: {fileID: 0}
-  localWaypoints:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 3.23, z: 0}
-  speed: 2
+  localWaypoints: []
+  moveSpeed: 3
   cyclic: 0
   waitTime: 0
-  easeAmount: 1
+  easeAmount: 0
 --- !u!61 &1237272733
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7064,6 +7057,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1237272736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1237272731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04479b7be467200448a87a8c37e32592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1286460547
 GameObject:
   m_ObjectHideFlags: 0
@@ -7290,8 +7294,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347686142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.68, y: -1.42, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16.94, y: 0.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7337,16 +7341,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1347686142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fd847104d095bd49ac93851694792ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 03d9590d26c88424c936e7ad67746c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
+  maxHealth: 3
   moveSpeed: 10
   maxJumpHeight: 6
   minJumpHeight: 1
-  timeToJumpApex: 0.4
-  accelerationTimeAirborne: 0.2
-  accelerationTimeGrounded: 0.1
+  timeToJumpApex: 0.35
+  accelerationTimeAirborne: 0
+  accelerationTimeGrounded: 0
 --- !u!61 &1347686148
 BoxCollider2D:
   m_ObjectHideFlags: 0

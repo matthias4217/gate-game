@@ -7,7 +7,7 @@ public class RaycastController : MonoBehaviour {
 	public LayerMask collisionMask;
 
 	public const float skinWidth = .015f;
-	const float dstBetweenRays = .25f;
+	const float dstBetweenRays = .3f;
 	[HideInInspector]
 	public int horizontalRayCount;
 	[HideInInspector]
@@ -24,7 +24,7 @@ public class RaycastController : MonoBehaviour {
 
 	public virtual void Awake() {
 		collider = GetComponent<BoxCollider2D> ();
-		collider.size = GetComponent<SpriteRenderer> ().sprite.bounds.size;
+		collider.size = GetComponent<SpriteRenderer> ().sprite.bounds.size;		// Adjusting the collider to the size of the sprite
 	}
 
 	public virtual void Start() {

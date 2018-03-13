@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// @TODO: make traversable platform more logical (currently, they are traversable but have side walls)
-
 public class PlatformerController : RaycastController {
 
 	public float maxSlopeAngle = 80;		// The maximum slope angle that can be climbed or descended (obviously in degree)

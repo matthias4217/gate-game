@@ -1,27 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// @TODO: Wall slide not activated when not moving toward the wall (preferably enable design choice)
-
 [RequireComponent (typeof (PlatformerController))]
 public class PlatformerPlayer : MonoBehaviour {
 
-	public float maxHealth;			// The amount of hearts the player starts with
+	public int maxHealth = 3;			// The amount of hearts the player starts with
 
-	public float moveSpeed = 6;
-	public float maxJumpHeight = 4;
+	public float moveSpeed = 10;
+	public float maxJumpHeight = 6;
 	public float minJumpHeight = 1;
-	public float timeToJumpApex = .4f;
-	public float accelerationTimeAirborne = .2f;	// Amount of inertia while airborne (set to 0 for no inertia)
-	public float accelerationTimeGrounded = .1f;	// Amount of inertia while grounded (set to 0 for no inertia)
+	public float timeToJumpApex = .35f;
+	public float accelerationTimeAirborne = 0f;	// Amount of inertia while airborne (set to 0 for no inertia)
+	public float accelerationTimeGrounded = 0f;	// Amount of inertia while grounded (set to 0 for no inertia)
+
+	int currentHealth;
 
 	float gravity;
 	float maxJumpVelocity;
 	float minJumpVelocity;
 	Vector3 velocity;
 	float velocityXSmoothing;
-
-	int hp;
 
 	PlatformerController controller;
 
@@ -30,25 +28,38 @@ public class PlatformerPlayer : MonoBehaviour {
 	void Start() {
 		controller = GetComponent<PlatformerController> ();
 
-		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex,2);
+		currentHealth = maxHealth;
+
+		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex,2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 	}
 
 	void Update() {
+		if (currentHealth <= 0) {	
+			Explode ();
+			gameObject.SetActive (false);
+		}
 		CalculateVelocity ();
 
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.above || controller.collisions.below) {
 			if (controller.collisions.slidingDownMaxSlope) {
-				velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;		// modulation of the vertical acceleration according to the slope
+				velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;		// Modulation of the vertical acceleration according to the slope
 			} else {
 				velocity.y = 0;		// To avoid "accumulating" gravity
 			}
 		}
 	}
 
+
+	void CalculateVelocity() {
+		float targetVelocityX = directionalInput.x * moveSpeed;
+		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
+		velocity.y += gravity * Time.deltaTime;
+	}
+		
 	public void SetDirectionalInput (Vector2 input) {
 		directionalInput = input;
 	}
@@ -72,9 +83,10 @@ public class PlatformerPlayer : MonoBehaviour {
 		}
 	}
 
-	void CalculateVelocity() {
-		float targetVelocityX = directionalInput.x * moveSpeed;
-		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
-		velocity.y += gravity * Time.deltaTime;
+	public void Explode() {
+
 	}
+
+
+
 }

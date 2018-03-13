@@ -25,6 +25,12 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	Vector2 directionalInput;
 
+	void OnCollisionEnter(Collision other) {
+		Debug.Log ("Hadoken 5");
+	}
+
+
+
 	void Start() {
 		controller = GetComponent<PlatformerController> ();
 
@@ -45,11 +51,7 @@ public class PlatformerPlayer : MonoBehaviour {
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.above || controller.collisions.below) {
-			if (controller.collisions.slidingDownMaxSlope) {
-				velocity.y += controller.collisions.slopeNormal.y * -gravity * Time.deltaTime;		// Modulation of the vertical acceleration according to the slope
-			} else {
-				velocity.y = 0;		// To avoid "accumulating" gravity
-			}
+			velocity.y = 0;		// To avoid "accumulating" gravity
 		}
 	}
 
@@ -66,14 +68,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	public void OnJumpInputDown() {
 		if (controller.collisions.below) {
-			if (controller.collisions.slidingDownMaxSlope) {
-				if (directionalInput.x != -Mathf.Sign (controller.collisions.slopeNormal.x)) {		// If not jumping AGAINST max slope
-					velocity.y = maxJumpVelocity * controller.collisions.slopeNormal.y;
-					velocity.x = maxJumpVelocity * controller.collisions.slopeNormal.x;
-				}
-			} else {
-				velocity.y = maxJumpVelocity;
-			}
+			velocity.y = maxJumpVelocity;
 		}
 	}
 

@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class PlatformerController : RaycastController {
-
-	public float maxSlopeAngle = 80;		// The maximum slope angle that can be climbed or descended (obviously in degree)
+	
+	public float maxSlopeAngle = 80f;		// degree
 
 	public CollisionInfo collisions;
 	[HideInInspector]
@@ -175,47 +175,28 @@ public class PlatformerController : RaycastController {
 	void DescendSlope(ref Vector2 moveAmount) {
 		RaycastHit2D maxSlopeHitLeft = Physics2D.Raycast (raycastOrigins.bottomLeft, Vector2.down, Mathf.Abs(moveAmount.y) + skinWidth, collisionMask);
 		RaycastHit2D maxSlopeHitRight = Physics2D.Raycast (raycastOrigins.bottomRight, Vector2.down, Mathf.Abs(moveAmount.y) + skinWidth, collisionMask);
-		if (maxSlopeHitLeft ^ maxSlopeHitRight) {		// xor
-			SlideDownMaxSlope (maxSlopeHitLeft, ref moveAmount);
-			SlideDownMaxSlope (maxSlopeHitRight, ref moveAmount);
-		}
 
-		if (!collisions.slidingDownMaxSlope) {
-			float directionX = Mathf.Sign(moveAmount.x);
-			Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomRight : raycastOrigins.bottomLeft;
-			RaycastHit2D hit = Physics2D.Raycast (rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
 
-			if (hit) {
-				float slopeAngle = Vector2.Angle (hit.normal, Vector2.up);
-				if (slopeAngle != 0 && slopeAngle <= maxSlopeAngle) {
-					if (Mathf.Sign(hit.normal.x) == directionX) {
-						if (hit.distance - skinWidth <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(moveAmount.x)) {
-							float moveDistance = Mathf.Abs(moveAmount.x);
-							float descendMoveAmountY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
-							moveAmount.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(moveAmount.x);
-							moveAmount.y -= descendMoveAmountY;
-
-							collisions.slopeAngle = slopeAngle;
-							collisions.descendingSlope = true;
-							collisions.below = true;
-							collisions.slopeNormal = hit.normal;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	void SlideDownMaxSlope(RaycastHit2D hit, ref Vector2 moveAmount) {
+		float directionX = Mathf.Sign(moveAmount.x);
+		Vector2 rayOrigin = (directionX == -1) ? raycastOrigins.bottomRight : raycastOrigins.bottomLeft;
+		RaycastHit2D hit = Physics2D.Raycast (rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
 
 		if (hit) {
 			float slopeAngle = Vector2.Angle (hit.normal, Vector2.up);
-			if (slopeAngle > maxSlopeAngle) {
-				moveAmount.x = Mathf.Sign(hit.normal.x) * (Mathf.Abs(moveAmount.y) - hit.distance) / Mathf.Tan(slopeAngle * Mathf.Deg2Rad);
+			if (slopeAngle != 0 && slopeAngle <= maxSlopeAngle) {
+				if (Mathf.Sign(hit.normal.x) == directionX) {
+					if (hit.distance - skinWidth <= Mathf.Tan(slopeAngle * Mathf.Deg2Rad) * Mathf.Abs(moveAmount.x)) {
+						float moveDistance = Mathf.Abs(moveAmount.x);
+						float descendMoveAmountY = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveDistance;
+						moveAmount.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveDistance * Mathf.Sign(moveAmount.x);
+						moveAmount.y -= descendMoveAmountY;
 
-				collisions.slopeAngle = slopeAngle;
-				collisions.slidingDownMaxSlope = true;
-				collisions.slopeNormal = hit.normal;
+						collisions.slopeAngle = slopeAngle;
+						collisions.descendingSlope = true;
+						collisions.below = true;
+						collisions.slopeNormal = hit.normal;
+					}
+				}
 			}
 		}
 
@@ -232,7 +213,6 @@ public class PlatformerController : RaycastController {
 
 		public bool climbingSlope;
 		public bool descendingSlope;
-		public bool slidingDownMaxSlope;
 
 		public float slopeAngle, slopeAngleOld;
 		public Vector2 slopeNormal;
@@ -245,7 +225,6 @@ public class PlatformerController : RaycastController {
 			left = right = false;
 			climbingSlope = false;
 			descendingSlope = false;
-			slidingDownMaxSlope = false;
 			slopeNormal = Vector2.zero;
 
 			slopeAngleOld = slopeAngle;

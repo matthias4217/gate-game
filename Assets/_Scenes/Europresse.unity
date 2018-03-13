@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 167704404}
   - component: {fileID: 167704405}
   - component: {fileID: 167704403}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167704400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.57, y: -1.46, z: 0}
+  m_LocalPosition: {x: 23.84, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -420,7 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aea312fe0b23c4e9560b1054346fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localWaypoints: []
+  localWaypoints:
+  - {x: 0, y: 0, z: 0}
   moveSpeed: 3
   cyclic: 0
   waitTime: 0
@@ -434,7 +435,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -598,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95ddff061d93f6442b83466199d46bac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1347686142}
   speed: 0
   offset: {x: 2.5, y: 1}
   xOffset: 2.5
@@ -6970,7 +6971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38aea312fe0b23c4e9560b1054346fe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localWaypoints: []
+  localWaypoints:
+  - {x: 0, y: 0, z: 0}
   moveSpeed: 3
   cyclic: 0
   waitTime: 0

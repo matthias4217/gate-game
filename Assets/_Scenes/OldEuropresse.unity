@@ -335,7 +335,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 38811014}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ea253b5ee3293c94c8b0517b193ed11c, type: 3}
@@ -1954,7 +1954,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1974,8 +1974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae0cd3550dc15b42aefc794e1fdedd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 634899018}
-  Player: {fileID: 1023277671}
+  enemy: {fileID: 0}
+  player: {fileID: 0}
   range: 15
   speed: 0.5
   X: 830.2
@@ -3483,12 +3483,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd847104d095bd49ac93851694792ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  maxJumpHeight: 6
-  minJumpHeight: 1
-  timeToJumpApex: 0.4
-  accelerationTimeAirborne: 0
-  accelerationTimeGrounded: 0
 --- !u!1001 &1029139610
 Prefab:
   m_ObjectHideFlags: 0
@@ -4905,6 +4899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1023277671}
   speed: 2
+  offset: {x: 2.5, y: 1}
   xOffset: 2.5
   yOffset: 1
 --- !u!212 &1815066598

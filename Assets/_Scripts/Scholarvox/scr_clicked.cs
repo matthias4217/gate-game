@@ -19,4 +19,19 @@ public class scr_clicked : MonoBehaviour {
 	{
 		Debug.Log ("hadouken3");
 	}
+
+	public void whenClicked4()
+	{
+		Debug.Log ("hadouken4");
+	}
+
+	public void whenClickedClose()
+	{
+		Debug.Log ("hadoukenClose");
+	}
+
+	public void whenClickedValidate()
+	{
+		Debug.Log ("hadoukenValidate");
+	}
 }

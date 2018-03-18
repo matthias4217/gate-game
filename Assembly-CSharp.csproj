@@ -72,6 +72,7 @@
      <Compile Include="Assets\_Scripts\Europresse\PlatformerPlayer.cs" />
      <Compile Include="Assets\_Scripts\Europresse\PlatformerPlayerInput.cs" />
      <Compile Include="Assets\_Scripts\Europresse\RaycastController.cs" />
+     <Compile Include="Assets\_Scripts\Hub\Controller_Hub.cs" />
      <Compile Include="Assets\_Scripts\Introduction\Game_Controller.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\PlayerInput.cs" />

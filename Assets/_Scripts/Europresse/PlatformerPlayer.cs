@@ -90,10 +90,13 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
+            if (other.tag == "Enemy")
+            {
 		Debug.Log ("hadoken 6");
 		currentHealth--;
 		hitThisFrame = true;
 		isHit = true;
+            }
 	}
 
 	public void Explode() {

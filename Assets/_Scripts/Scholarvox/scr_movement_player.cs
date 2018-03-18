@@ -17,7 +17,7 @@ public class scr_movement_player : MonoBehaviour
     public float x0 = 0;
     public float y0 = 0;
     bool collisionsActives = true;
-    public LinkedList<Vector3> visited = new LinkedList<Vector3>();
+    //public LinkedList<Vector3> visited = new LinkedList<Vector3>();
     public GameObject panneauRewind;
     public GameObject bouton;
     public GameObject collectible;
@@ -32,7 +32,7 @@ public class scr_movement_player : MonoBehaviour
         {
             x0 = this.transform.position.x;
             y0 = this.transform.position.y;
-            if (Input.GetMouseButtonDown(1) || collisionEnemy)		// If clic droit ou boule de feu hit
+            /*if (Input.GetMouseButtonDown(1) || collisionEnemy)		// If clic droit ou boule de feu hit
             {
                 if (visited.Count != 0)
                 {
@@ -48,6 +48,7 @@ public class scr_movement_player : MonoBehaviour
                     collisionEnemy = false;
                 }
             }
+            */
         }
         if (is_moving)
         {

@@ -50,7 +50,7 @@ public class scr_sourisdessus : MonoBehaviour
                 joueur.GetComponent<scr_movement_player>().deltaX = this.transform.position.x - joueur.transform.position.x;
                 joueur.GetComponent<scr_movement_player>().destination = this.transform.position;
                 joueur.GetComponent<scr_movement_player>().carresActives = false;
-                joueur.GetComponent<scr_movement_player>().visited.AddLast(joueur.GetComponent<scr_movement_player>().transform.position);
+//                joueur.GetComponent<scr_movement_player>().visited.AddLast(joueur.GetComponent<scr_movement_player>().transform.position);
                 joueur.GetComponent<scr_movement_player>().is_moving = true;
             }
         joueur.GetComponent<scr_movement_player>().on_mouse_over = false;

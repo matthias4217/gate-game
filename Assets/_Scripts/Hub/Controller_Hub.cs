@@ -29,13 +29,15 @@ public class Controller_Hub : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D (Collider2D other)
     {
+        Debug.Log("prout");
         string tag = other.gameObject.tag;
+        Debug.Log(tag);
         switch (tag)
             {
-            case "scholavrox":
-                SceneManager.LoadScene("Scholarvox");
+            case "Scholarvox":
+                SceneManager.LoadScene(0);
                 break;
             case "ENI":
                 SceneManager.LoadScene("ENI");

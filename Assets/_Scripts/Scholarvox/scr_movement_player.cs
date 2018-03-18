@@ -9,11 +9,11 @@ public class scr_movement_player : MonoBehaviour
     public bool on_mouse_over = false;
     public bool is_moving = false;
     public float deltaX;
-    [SerializeField] public float JUMP_DURATION = 0.4f;
+	[SerializeField] public float JUMP_DURATION = 0.4f;
     [SerializeField] float A_hor = -1.3f;
     [SerializeField] float A_ver = -6f;
     public Vector3 destination;
-    public bool carresActives = true;
+	public bool carresActives = true;
     public float x0 = 0;
     public float y0 = 0;
     bool collisionsActives = true;
@@ -32,7 +32,7 @@ public class scr_movement_player : MonoBehaviour
         {
             x0 = this.transform.position.x;
             y0 = this.transform.position.y;
-            if (Input.GetMouseButtonDown(1) || collisionEnemy)
+            if (Input.GetMouseButtonDown(1) || collisionEnemy)		// If clic droit ou boule de feu hit
             {
                 if (visited.Count != 0)
                 {
@@ -77,7 +77,7 @@ public class scr_movement_player : MonoBehaviour
         float yy = (A_choisi * (this.transform.position.x + dx) + b) * (this.transform.position.x + dx) + c;
         this.transform.position = new Vector3(this.transform.position.x + dx, yy, this.transform.position.z);
 
-        //Condition d'arret dégueulasse de Raphael
+        //Condition d'arret dégueulasse de Raphaël
         if (Mathf.Abs(destination.x - this.transform.position.x) < 0.05)
         {
             this.transform.position = new Vector3(destination.x, destination.y, this.transform.position.z);
@@ -86,7 +86,11 @@ public class scr_movement_player : MonoBehaviour
             x0 = this.transform.position.x;
             y0 = this.transform.position.y;
             carresActives = true;
-            if (panneauRewind.active) panneauRewind.SetActive(false);
+			if (panneauRewind.active) {
+				panneauRewind.SetActive (false);
+			}
+
+
         }
     }
 }

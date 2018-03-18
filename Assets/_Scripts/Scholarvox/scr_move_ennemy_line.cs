@@ -5,7 +5,6 @@ using UnityEngine;
 public class scr_move_ennemy_line : MonoBehaviour
 
 {
-    public GameObject joueur;
     public LinkedList<Vector3> visited;
     public Vector3 destination;
     public float x0;
@@ -17,23 +16,26 @@ public class scr_move_ennemy_line : MonoBehaviour
     public GameObject instantiatedObject;
     private bool rightToBorn = true;
 
+	private scr_movement_player joueur;
+
     // Use this for initialization
     void Start ()
     {
-        joueur = GameObject.Find("obj_player");
+		joueur = GameObject.Find("obj_player").GetComponent<scr_movement_player>();
         initialVector3Pos = this.transform.position;
         initialQuaternionRot = this.transform.rotation;
         x0 = transform.position.x;
         visited = new LinkedList<Vector3>();
         is_moving = false;
+
     }
 	
 
 	// Update is called once per frame
-	void Update ()
+	void LateUpdate ()
     {
         if (transform.position.x <= initialVector3Pos.x + numberBeforeBirth) rightToBorn = true;
-        if (transform.position.x > initialVector3Pos.x + numberBeforeBirth && rightToBorn && !joueur.GetComponent<scr_movement_player>().is_moving)
+        if (transform.position.x > initialVector3Pos.x + numberBeforeBirth && rightToBorn && !joueur.is_moving)
         {
             Instantiate(instantiatedObject, initialVector3Pos, initialQuaternionRot);
             rightToBorn = false;
@@ -41,7 +43,7 @@ public class scr_move_ennemy_line : MonoBehaviour
         if (transform.position.x > initialVector3Pos.x + numberBeforeDeath) Destroy(gameObject);
         
         else
-            if ((Input.GetMouseButtonDown(1) && joueur.GetComponent<scr_movement_player>().visited.Count !=0) || joueur.GetComponent<scr_movement_player>().collisionEnemy)
+            if ((Input.GetMouseButtonDown(1) && joueur.visited.Count !=0) || joueur.collisionEnemy)
         {
             if (visited.Count != 0)
             {
@@ -50,7 +52,7 @@ public class scr_move_ennemy_line : MonoBehaviour
             }
             else Destroy(gameObject);
         }
-        else if (Input.GetMouseButtonDown(0) && !is_moving && joueur.GetComponent<scr_movement_player>().is_moving)
+        else if (Input.GetMouseButtonDown(0) && !is_moving && joueur.is_moving)
         {
             visited.AddLast(transform.position);
             destination = new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z);
@@ -61,13 +63,13 @@ public class scr_move_ennemy_line : MonoBehaviour
 
     void seDeplacer(Vector3 destination)
     {
-        if (joueur.GetComponent<scr_movement_player>().is_moving)
+        if (joueur.is_moving)
         {
             this.is_moving = true;
         }
         if(is_moving)
         {
-            float dx = 1 * Mathf.Sign(destination.x - x0) / (60.0f * joueur.GetComponent<scr_movement_player>().JUMP_DURATION);
+            float dx = 1 * Mathf.Sign(destination.x - x0) / (60.0f * joueur.JUMP_DURATION);
             this.transform.position += new Vector3(dx, 0, 0);
             if (Mathf.Abs(destination.x - this.transform.position.x) < 0.1)
             {

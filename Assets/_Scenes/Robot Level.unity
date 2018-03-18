@@ -12004,6 +12004,18 @@ Prefab:
       propertyPath: moveSpeed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
+        type: 2}
+      propertyPath: decoylvl1
+      value: 
+      objectReference: {fileID: 1613529587257038, guid: 77d3b4ae6c9382240aa7aae1cb815731,
+        type: 2}
+    - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
+        type: 2}
+      propertyPath: decoylvl2
+      value: 
+      objectReference: {fileID: 1283661611624984, guid: 5762bfce75e7498448387c58109b1b0e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9401812a61e593640956de627381fcbf, type: 2}
   m_IsPrefabParent: 0
@@ -39083,41 +39095,6 @@ Prefab:
     - target: {fileID: 4577483035516108, guid: 1ea172eed412e664a8f841df26471907, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 61197417188107518, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 61197417188107518, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: target_speed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: targetSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: robotSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: chaseSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
-        type: 2}
-      propertyPath: decoySpeed
-      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1438100418957362, guid: 1ea172eed412e664a8f841df26471907, type: 2}
       propertyPath: m_Name

@@ -8,22 +8,26 @@ using UnityEngine;
  */
 public class Interactable : MonoBehaviour {
 
-    //public float distanceTrigger;
-    //public TextAsset fichier_dialogue;
-    //static Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
+    public TextAsset fichier_dialogue;
     /*
-     * La liste des phrases qui vont être dites.
      * Une phrase = une boîte de dialogue.
      */
+    //[Tooltip("La liste des phrases qui vont être dites.")]
+    //[TextArea(3, 100)]
+    //public Queue<string> sentences;
     [TextArea(3, 100)]
-    public Queue<string> sentences;
-    //static Queue<string> sentences = dialogue.sentences;
+    private Queue<string> sentences;
 
-        
-
-    void OnCollisionEnter2D (Collision2D col)
+    void Start()
     {
-        //Debug.Log("Yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah");
+        Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
+        sentences = new Queue<string>(dialogue.sentences);
+    }
+
+    void OnTriggerEnter2D (Collider2D col)
+    // Il faut que l'objet interactable ait un rigidbody et un Collision2D
+    {
+        Debug.Log("Wsh wsh les individus");
         if(col.gameObject.tag == "Player")
         {
             TriggerDialogue();
@@ -67,6 +71,7 @@ public class Interactable : MonoBehaviour {
     {
         //Debug.Log("Hadouken !");
         /*
+         * On lance un bouton, style bulle de texte avec "parlez-moi"
          *
          *
          *

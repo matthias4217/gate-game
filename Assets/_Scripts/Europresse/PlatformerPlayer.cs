@@ -10,10 +10,15 @@ public class PlatformerPlayer : MonoBehaviour {
 	public float maxJumpHeight = 6;
 	public float minJumpHeight = 1;
 	public float timeToJumpApex = .35f;
+<<<<<<< HEAD
 	[Tooltip("Amount of inertia while airborne (set to 0 for no inertia)")]
 	public float accelerationTimeAirborne = 0f;
 	[Tooltip("Amount of inertia while grounded (set to 0 for no inertia)")]
 	public float accelerationTimeGrounded = 0f;
+=======
+	public float accelerationTimeAirborne = 0f;	// Amount of inertia while airborne (set to 0 for no inertia)
+	public float accelerationTimeGrounded = 0f;	// Amount of inertia while grounded (set to 0 for no inertia)
+>>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
 
 	int currentHealth;
 
@@ -27,6 +32,13 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	Vector2 directionalInput;
 
+<<<<<<< HEAD
+=======
+	void OnCollisionEnter(Collision other) {
+		Debug.Log ("Hadoken 5");
+	}
+
+>>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
 
 
 	void Start() {

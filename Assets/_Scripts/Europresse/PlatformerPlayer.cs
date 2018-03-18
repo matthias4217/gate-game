@@ -25,8 +25,8 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	Vector2 directionalInput;
 
-	void OnCollisionEnter(Collision other) {
-		Debug.Log ("Hadoken 5");
+	void OnTriggerEnter2D(Collider2D other) {
+        Destroy(other.gameObject);
 	}
 
 

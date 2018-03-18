@@ -22,13 +22,17 @@ public class scr_collision_with_player : MonoBehaviour
         if (AlreadyTriggered && tag == "trigger") triggeredColor.GetComponent<Renderer>().material.color = Color.green;
         else if (tag == "trigger") triggeredColor.GetComponent<Renderer>().material.color = Color.white;
     }
+
+
+
     private void OnTriggerEnter(Collider collision)
     {
         if(this.tag == "enemy" && !GetComponent<scr_move_ennemy_line>().is_moving)
         {
             if (collision.tag == "Player")
             {
-                collision.GetComponent<scr_movement_player>().collisionEnemy = true;
+				Application.LoadLevel (Application.loadedLevel);
+				collision.GetComponent<scr_movement_player>().collisionEnemy = true;
             }
         }
         if (this.tag == "trigger")

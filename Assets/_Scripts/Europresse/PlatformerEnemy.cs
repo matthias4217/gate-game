@@ -17,6 +17,9 @@ public class PlatformerEnemy : MonoBehaviour {
 		controller.Move (moveAmount);
 	}
 
+	void OnTriggerEnter(Collider other) {
+		Debug.Log ("Hadoken");
+	}
 
 
 }

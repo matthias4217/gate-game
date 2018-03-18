@@ -4,21 +4,21 @@ using System.Collections;
 [RequireComponent (typeof (PlatformerPlayer))]
 public class PlatformerPlayerInput : MonoBehaviour {
 
-	PlatformerPlayer player;
+	PlatformerPlayer playerController;
 
 	void Start () {
-		player = GetComponent<PlatformerPlayer> ();
+		playerController = GetComponent<PlatformerPlayer> ();
 	}
 
 	void Update () {
 		Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-		player.SetDirectionalInput (directionalInput);
+		playerController.SetDirectionalInput (directionalInput);
 
-		if (Input.GetButtonDown("Jump")) {
-			player.OnJumpInputDown ();
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			playerController.OnJumpInputDown ();
 		}
-		if (Input.GetButtonUp ("Jump")) {
-			player.OnJumpInputUp ();
+		if (Input.GetKeyUp (KeyCode.Space)) {
+			playerController.OnJumpInputUp ();
 		}
 	}
 }

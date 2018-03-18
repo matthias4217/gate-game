@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Controller_Hub : MonoBehaviour
 {
@@ -27,5 +28,30 @@ public class Controller_Hub : MonoBehaviour
 
 
     }
-    
-}
+
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        Debug.Log("prout");
+        string tag = other.gameObject.tag;
+        Debug.Log(tag);
+        switch (tag)
+            {
+            case "Scholarvox":
+                SceneManager.LoadScene(0);
+                break;
+            case "ENI":
+                SceneManager.LoadScene("ENI");
+                break;
+            case "Europresse":
+                SceneManager.LoadScene("Europresse");
+                break;
+            case "Statista":
+                SceneManager.LoadScene("Statista");
+                break;
+            default:
+                break;
+            }           
+        }
+    }
+
+

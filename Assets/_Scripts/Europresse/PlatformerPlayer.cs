@@ -10,8 +10,10 @@ public class PlatformerPlayer : MonoBehaviour {
 	public float maxJumpHeight = 6;
 	public float minJumpHeight = 1;
 	public float timeToJumpApex = .35f;
-	public float accelerationTimeAirborne = 0f;	// Amount of inertia while airborne (set to 0 for no inertia)
-	public float accelerationTimeGrounded = 0f;	// Amount of inertia while grounded (set to 0 for no inertia)
+	[Tooltip("Amount of inertia while airborne (set to 0 for no inertia)")]
+	public float accelerationTimeAirborne = 0f;
+	[Tooltip("Amount of inertia while grounded (set to 0 for no inertia)")]
+	public float accelerationTimeGrounded = 0f;
 
 	int currentHealth;
 
@@ -24,10 +26,6 @@ public class PlatformerPlayer : MonoBehaviour {
 	PlatformerController controller;
 
 	Vector2 directionalInput;
-
-	void OnCollisionEnter(Collision other) {
-		Debug.Log ("Hadoken 5");
-	}
 
 
 

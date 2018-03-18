@@ -338,6 +338,11 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2115083886}
+    - target: {fileID: 114731683552635720, guid: 8d02f043c6424694891c4c9878f6bd24,
+        type: 2}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d02f043c6424694891c4c9878f6bd24, type: 2}
   m_IsPrefabParent: 0
@@ -455,7 +460,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.4931526
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

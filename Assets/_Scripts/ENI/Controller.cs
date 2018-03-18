@@ -10,7 +10,8 @@ public class Controller : MonoBehaviour
 
 	[SerializeField] private int decoylvl = 1;
 
-	[SerializeField] private GameObject decoy;
+	[SerializeField] private GameObject decoylvl1;
+	[SerializeField] private GameObject decoylvl2;
 	private GameObject enemy;
 	private Vector2 moveAmount;
 	private Rigidbody2D rb;
@@ -32,11 +33,13 @@ public class Controller : MonoBehaviour
 		rb.velocity = moveAmount * moveSpeed;
 
 		if (Input.GetMouseButton(0))
-		{
-			if (!GameObject.FindGameObjectWithTag ("Decoy")) {		// If there is not already a decoy
-				Instantiate (decoy, transform.position, transform.rotation);
-				decoy.GetComponent<DecoyController> ().launchSpeed = 0;
-			}
+		{// If there is not already a decoy
+			if (!GameObject.FindGameObjectWithTag ("Decoy")) {
+				if (decoylvl == 1)
+					Instantiate (decoylvl1, transform.position, transform.rotation);
+				if (decoylvl == 2)
+					Instantiate (decoylvl2, transform.position, transform.rotation);
+							}
 		}
 
     }
@@ -47,6 +50,7 @@ public class Controller : MonoBehaviour
 			enemy = GameObject.FindGameObjectWithTag ("Roboto");
 			enemy.GetComponent<RobotController2D>().TargetAquire (this.gameObject);
 			enemy.GetComponent<RobotController2D>().ChaseActive (true);
+			other.gameObject.SetActive (false);
 		}
 		if (other.gameObject.CompareTag ("Collectable")) {
 			other.gameObject.SetActive (false);
@@ -59,12 +63,13 @@ public class Controller : MonoBehaviour
 				enemy.GetComponent<RobotController2D>().ChaseActive (false);
 		}
 		if (other.gameObject.CompareTag ("Dummy End")) {
-			if (enemy.gameObject.CompareTag ("Dummy"))
+			if (enemy.gameObject.CompareTag ("Dummy")) {
 				enemy.GetComponent<DummyController> ().ChaseActive (false);
-		}
+				}
 
+		}
 	}
-    
+
 	void OnTriggerExit2D (Collider2D other) {
 		if (other.gameObject.CompareTag ("Safe")) {
 			if (enemy.gameObject.CompareTag ("Dummy"))

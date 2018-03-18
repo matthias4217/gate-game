@@ -5,7 +5,7 @@ using UnityEngine;
 public class scr_move_ennemy_line : MonoBehaviour
 
 {
-    public LinkedList<Vector3> visited;
+    //public LinkedList<Vector3> visited;
     public Vector3 destination;
     public float x0;
     public bool is_moving;
@@ -25,7 +25,7 @@ public class scr_move_ennemy_line : MonoBehaviour
         initialVector3Pos = this.transform.position;
         initialQuaternionRot = this.transform.rotation;
         x0 = transform.position.x;
-        visited = new LinkedList<Vector3>();
+        //visited = new LinkedList<Vector3>();
         is_moving = false;
 
     }
@@ -42,7 +42,7 @@ public class scr_move_ennemy_line : MonoBehaviour
         }
         if (transform.position.x > initialVector3Pos.x + numberBeforeDeath) Destroy(gameObject);
         
-        else
+        /*else
             if ((Input.GetMouseButtonDown(1) && joueur.visited.Count !=0) || joueur.collisionEnemy)
         {
             if (visited.Count != 0)
@@ -52,9 +52,10 @@ public class scr_move_ennemy_line : MonoBehaviour
             }
             else Destroy(gameObject);
         }
+        */
         else if (Input.GetMouseButtonDown(0) && !is_moving && joueur.is_moving)
         {
-            visited.AddLast(transform.position);
+            //visited.AddLast(transform.position);
             destination = new Vector3(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z);
         }
         seDeplacer(destination);

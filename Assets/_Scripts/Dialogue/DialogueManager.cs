@@ -9,15 +9,15 @@ public class DialogueManager : MonoBehaviour {
     public Text DialogueText;
     public Animator animator;	
 
-	public void StartDialogue (Queue<string> sentences)
+    public void StartDialogue (Queue<string> sentences)
     {
         animator.SetBool("IsOpen", true);
-    	//NameText.text = dialogue.characterName;
+        //NameText.text = dialogue.characterName;
         sentences.Clear();
         DisplayNextSentence(sentences);
     }
 
-	public void DisplayNextSentence (Queue<string> sentences)
+    public void DisplayNextSentence (Queue<string> sentences)
     {
         if (sentences.Count == 0)
         {

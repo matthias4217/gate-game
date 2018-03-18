@@ -18,6 +18,9 @@ public class PlatformerPlayer : MonoBehaviour {
 =======
 	public float accelerationTimeAirborne = 0f;	// Amount of inertia while airborne (set to 0 for no inertia)
 	public float accelerationTimeGrounded = 0f;	// Amount of inertia while grounded (set to 0 for no inertia)
+<<<<<<< HEAD
+>>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
+=======
 >>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
 
 	int currentHealth;
@@ -33,11 +36,17 @@ public class PlatformerPlayer : MonoBehaviour {
 	Vector2 directionalInput;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
 	void OnCollisionEnter(Collision other) {
 		Debug.Log ("Hadoken 5");
 	}
 
+<<<<<<< HEAD
+>>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
+=======
 >>>>>>> parent of 7094998... début d'implémentation d'une barre de vie
 
 

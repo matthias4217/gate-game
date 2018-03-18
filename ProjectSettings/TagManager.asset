@@ -19,6 +19,10 @@ TagManager:
   - Dummy End
   - PNJ
   - Floor
+  - Statista
+  - ENI
+  - Scholarvox
+  - Europresse
   layers:
   - Default
   - TransparentFX

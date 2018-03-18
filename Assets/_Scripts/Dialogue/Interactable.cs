@@ -8,7 +8,7 @@ using UnityEngine;
  */
 public class Interactable : MonoBehaviour {
 
-    public float distanceTrigger;
+    //public float distanceTrigger;
     //public TextAsset fichier_dialogue;
     //static Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
     /*
@@ -21,9 +21,9 @@ public class Interactable : MonoBehaviour {
 
         
 
-    void OnCollisionEnter (Collision col)
+    void OnCollisionEnter2D (Collision2D col)
     {
-        Debug.Log("Yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah");
+        //Debug.Log("Yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah");
         if(col.gameObject.tag == "Player")
         {
             TriggerDialogue();
@@ -65,7 +65,14 @@ public class Interactable : MonoBehaviour {
 
     public void TriggerDialogue ()
     {
-        Debug.Log("Hadouken !");
+        //Debug.Log("Hadouken !");
+        /*
+         *
+         *
+         *
+         *
+         *
+         */
         FindObjectOfType<DialogueManager>().StartDialogue(sentences); 
     }
 }

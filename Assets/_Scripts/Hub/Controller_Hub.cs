@@ -26,13 +26,8 @@ public class Controller_Hub : MonoBehaviour
 		rb.velocity = moveAmount * moveSpeed;
 
     }
-
-<<<<<<< HEAD
-    void OnTriggerEnter2D(Collider2D other)
-=======
-    void OnTriggerEnter2D (Collider2D other)
->>>>>>> f79887384a81c74e33fd84abbdc0ea368f6d2c68
-    {
+		
+	void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("prout");
         string tag = other.gameObject.tag;
         Debug.Log(tag);

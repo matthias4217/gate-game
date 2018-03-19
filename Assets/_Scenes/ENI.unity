@@ -12016,6 +12016,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1283661611624984, guid: 5762bfce75e7498448387c58109b1b0e,
         type: 2}
+    - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
+        type: 2}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9401812a61e593640956de627381fcbf, type: 2}
   m_IsPrefabParent: 0
@@ -39210,6 +39215,11 @@ Prefab:
         type: 2}
       propertyPath: decoySpeed
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
+        type: 2}
+      propertyPath: damageContact
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ea172eed412e664a8f841df26471907, type: 2}

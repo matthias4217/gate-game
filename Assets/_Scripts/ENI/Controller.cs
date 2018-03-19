@@ -16,6 +16,8 @@ public class Controller : MonoBehaviour
 	private Vector2 moveAmount;
 	private Rigidbody2D rb;
 
+	[SerializeField] private int health;
+
     void Start()
     {
         // Settings up references
@@ -82,4 +84,13 @@ public class Controller : MonoBehaviour
 				enemy.GetComponent<DummyController> ().ChaseActive (true);
 		}
 	}
+
+	public void Damage (int damage)
+	{
+		health -= damage;
+		if (health <= 0) {
+			this.gameObject.SetActive (false);
+		}
+	}
+
 }

@@ -17,6 +17,7 @@ public class PlatformerPlayer : MonoBehaviour {
 	public float knockbackY;
 
 	int currentHealth;
+	Vector3 lastCheckpoint;
 
 	float gravity;
 	float maxJumpVelocity;
@@ -89,14 +90,21 @@ public class PlatformerPlayer : MonoBehaviour {
 		}
 	}
 
+	public void SetCheckpoint (Vector3 checkpointPosition) {
+		lastCheckpoint = checkpointPosition;
+
+
+	}
+
+
+
+
 	void OnTriggerEnter2D(Collider2D other) {
-            if (other.tag == "Enemy")
-            {
-		Debug.Log ("hadoken 6");
-		currentHealth--;
-		hitThisFrame = true;
-		isHit = true;
-            }
+		if (other.CompareTag("Enemy")) {
+			currentHealth--;
+			hitThisFrame = true;
+			isHit = true;
+		}
 	}
 
 	public void Explode() {

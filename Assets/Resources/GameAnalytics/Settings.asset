@@ -38,11 +38,11 @@ MonoBehaviour:
   FirstName: 
   LastName: 
   StudioName: 
-  GameName: 
+  GameName: GATE part1
   PasswordConfirm: 
   EmailOptIn: 1
   EmailGA: 
-  IntroScreen: 1
+  IntroScreen: 0
   InfoLogEditor: 1
   InfoLogBuild: 1
   VerboseLogBuild: 0

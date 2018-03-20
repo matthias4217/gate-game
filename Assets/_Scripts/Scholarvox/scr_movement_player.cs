@@ -16,13 +16,12 @@ public class scr_movement_player : MonoBehaviour
 	public bool carresActives = true;
     public float x0 = 0;
     public float y0 = 0;
-    bool collisionsActives = true;
+    bool collisionsActives = false;
     //public LinkedList<Vector3> visited = new LinkedList<Vector3>();
     public GameObject panneauRewind;
     public GameObject bouton;
     public GameObject collectible;
     public bool collisionEnemy = false;
-    public bool canPlay = true;
 
 
     void Update ()

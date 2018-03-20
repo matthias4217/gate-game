@@ -4,14 +4,17 @@ using System.Collections;
 [RequireComponent (typeof (PlatformerController))]
 public class PlatformerPlayer : MonoBehaviour {
 
-	public int maxHealth = 300;			// The amount of hearts the player starts with
+	[Tooltip("The amount of hearts the player starts with")]
+	public int maxHealth = 3;
 
 	public float moveSpeed = 10;
 	public float maxJumpHeight = 6;
 	public float minJumpHeight = 1;
 	public float timeToJumpApex = .35f;
-	public float accelerationTimeAirborne = 0f;	// Amount of inertia while airborne (set to 0 for no inertia)
-	public float accelerationTimeGrounded = 0f;	// Amount of inertia while grounded (set to 0 for no inertia)
+	[Tooltip("Amount of inertia while airborne (set to 0 for no inertia)")]
+	public float accelerationTimeAirborne = 0f;
+	[Tooltip("Amount of inertia while grounded (set to 0 for no inertia)")]
+	public float accelerationTimeGrounded = 0f;
 
 	public float knockbackX;
 	public float knockbackY;
@@ -42,15 +45,21 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 	void Update() {
-		if (currentHealth <= 0) {	
-			Explode ();
-			gameObject.SetActive (false);
-		}
-
+		
 		if (hitThisFrame) {
 			velocity.x = -controller.collisions.faceDir * knockbackX;
 			velocity.y = knockbackY;
 			hitThisFrame = false;
+		}
+
+		if (currentHealth <= 0) {		// If the player is dead
+
+			// @@@ Que se passe-t-il quand le joueur meurt
+
+			Explode ();
+			gameObject.transform.position = lastCheckpoint;
+			currentHealth = maxHealth;
+			velocity = Vector3.zero;
 		}
 
 		CalculateVelocity ();

@@ -19,6 +19,7 @@ public class RobotController2D : MonoBehaviour {
 	private bool isActive;
 
 	[SerializeField] private float stopTime;
+	[SerializeField] private int damageContact;
 	//private bool decoyActive;
 
 	private float cooldown = 0;
@@ -43,11 +44,7 @@ public class RobotController2D : MonoBehaviour {
 		if (target == null)
 			return;
 
-		if (cooldown > stopTime * 0.9) {
-			rb.velocity = Vector2.zero;
-			cooldown -= Time.deltaTime;
-			return;
-		}
+
 		if (cooldown > stopTime / 2) {
 			cooldown -= Time.deltaTime;
 			rb.velocity = move;
@@ -100,6 +97,12 @@ public class RobotController2D : MonoBehaviour {
 		}
 		if (other.gameObject.CompareTag ("TriggerWall")) {
 			other.gameObject.GetComponent<TriggerController>().DestroyWall();
+		}
+		if (other.gameObject.CompareTag ("Player")) {
+			if (cooldown <= 0) {
+				other.gameObject.GetComponent<Controller> ().Damage (damageContact);
+				cooldown = stopTime / 2f;
+			}
 		}
 	}
 

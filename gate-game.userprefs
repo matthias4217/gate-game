@@ -1,41 +1,24 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
 <<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GameAnalytics\Editor\GA_AssetPostprocessor.cs">
 =======
 <<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerController.cs">
-=======
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ENI\DummyController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ENI\RobotController2D.cs">
     <Files>
-      <File FileName="Assets\_Scripts\ENI\RobotController2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\DummyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\Controller.cs" Line="40" Column="22" />
-      <File FileName="Assets\_Scripts\ENI\DecoyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\RobotMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ENI\RobotController2D.cs" Line="104" Column="30" />
 =======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs">
->>>>>>> 5872e1f6612b5a1c4b3f07655d4972e89f6d1abf
->>>>>>> 8cc8f48252849c0521fcb21f9251c969aca06b85
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ResearchController.cs">
+>>>>>>> 73d9bbeb1e9b80d5ce0b814561d85a65250c8446
     <Files>
-      <File FileName="Assets\_Scripts\Scholarvox\scr_OnMouseOverNonClicable.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_changercoleurOnMouseOver.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_move_ennemy_line.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_sourisdessus.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ENI\Controller.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ResearchController.cs" Line="1" Column="1" />
 <<<<<<< HEAD
-      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="97" Column="3" />
+      <File FileName="Assets\GameAnalytics\Editor\GA_AssetPostprocessor.cs" Line="1" Column="1" />
 =======
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
-=======
->>>>>>> ec2c64d24ff9469b6be9d2396d6042c72657ee4d
->>>>>>> 5872e1f6612b5a1c4b3f07655d4972e89f6d1abf
->>>>>>> 8cc8f48252849c0521fcb21f9251c969aca06b85
+>>>>>>> b4f720289b4b12f45f41ac9e534ccb25b835e1b1
+>>>>>>> 73d9bbeb1e9b80d5ce0b814561d85a65250c8446
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

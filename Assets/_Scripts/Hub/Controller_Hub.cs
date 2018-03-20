@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Controller_Hub : MonoBehaviour
 {
-    public float speed;
-    public float frotements;
+    public float moveSpeed;
     private Rigidbody2D rb;
     private int count;
 
@@ -19,18 +18,16 @@ public class Controller_Hub : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moverVertical = Input.GetAxisRaw("Vertical");
+		float moveHorizontal = Input.GetAxisRaw("Horizontal");
+		float moveVertical = Input.GetAxisRaw("Vertical");
 
-		if (Mathf.Abs(moveHorizontal) + Mathf.Abs(moverVertical) == 2)
-			rb.velocity = new Vector2(moveHorizontal * speed / Mathf.Sqrt(2),moverVertical * speed / Mathf.Sqrt(2));
-		else rb.velocity = new Vector2(moveHorizontal * speed ,moverVertical * speed);
-
+		Vector3 moveAmount = new Vector3(moveHorizontal, moveVertical, 0);
+		moveAmount.Normalize ();
+		rb.velocity = moveAmount * moveSpeed;
 
     }
-
-    void OnTriggerEnter2D (Collider2D other)
-    {
+		
+	void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("prout");
         string tag = other.gameObject.tag;
         Debug.Log(tag);

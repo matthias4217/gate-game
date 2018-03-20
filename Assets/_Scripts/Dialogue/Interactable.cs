@@ -11,7 +11,8 @@ public class Interactable : MonoBehaviour {
     public TextAsset fichier_dialogue;
     [TextArea(3, 100)]
     private Queue<string> sentences;
-
+    [Tooltip("Bouton lançant le dialogue")]
+    public GameObject dialogueLaunchButton;
     void Start()
     {
         Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
@@ -24,26 +25,37 @@ public class Interactable : MonoBehaviour {
         Debug.Log("Wsh wsh les individus");
         if(col.gameObject.tag == "Player")
         {
-            TriggerDialogue();
+            dialogueLaunchButton.SetActive(true); 
+            //TriggerDialogue();
+        }
+    }
+
+    void OnTriggerExit2D (Collider2D col)
+    {
+        // On a bien les Debug.Log qui s'affichent,
+        // Mais le bouton ne disparaît pas
+        // Et le trigger ne se remet pas ?!?!
+        Debug.Log("Hop, on quitte la zone d'interaction");
+        if (col.gameObject.tag == "Player");
+        {
+            Debug.Log("On est dans le if !!!");
+            dialogueLaunchButton.SetActive(false);
         }
     }
 
 
-	/*
-	 * Appelle la fonction StartDialogue du DialogueManager avec l'attribut sentences
-	 */
+    /*
+     * Appelle la fonction StartDialogue du DialogueManager avec l'attribut sentences
+     */
 
     public void TriggerDialogue ()
     {
-        //Debug.Log("Hadouken !");
         /*
          * On lance un bouton, style bulle de texte avec "parlez-moi"
-         *
-         *
-         *
-         *
-         *
          */
-        FindObjectOfType<DialogueManager>().StartDialogue(sentences); 
+
+        // Maintenant, c'est le bouton qui gère le lancement du dialogue ?
+        // Mais comment lui donner les phrases en paramètres ?
+//        FindObjectOfType<DialogueManager>().StartDialogue(sentences); 
     }
 }

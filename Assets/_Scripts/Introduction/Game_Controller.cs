@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 public class Game_Controller : MonoBehaviour {
 
@@ -23,5 +23,9 @@ public class Game_Controller : MonoBehaviour {
             sum += item;
         }
         return sum;
+    }
+    public void ChangeLevel()
+    {
+        SceneManager.LoadScene("Hub");
     }
 }

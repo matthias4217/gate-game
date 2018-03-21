@@ -34,14 +34,10 @@ public class scr_OnMouseOverNonClicable : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if (!joueur.GetComponent<scr_movement_player>().canPlay) joueur.GetComponent<scr_movement_player>().canPlay = true;
-                else
-                {
-                    Instantiate(darkPanel);
-                    Instantiate(sprite);
-                    Instantiate(bouton);
-                    joueur.GetComponent<scr_movement_player>().canPlay = false;
-                }
+                
+                Instantiate(darkPanel);
+                Instantiate(sprite);
+                Instantiate(bouton); 
             }
         }
     }

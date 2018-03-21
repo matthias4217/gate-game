@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour {
     private Queue<string> sentences;
     [Tooltip("Bouton lançant le dialogue")]
     public GameObject dialogueLaunchButton;
+
     void Start()
     {
         Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);

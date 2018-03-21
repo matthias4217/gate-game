@@ -40,7 +40,7 @@ public class PlatformerPlatformController : RaycastController {
 		Vector3 moveAmount = CalculatePlatformMovement();
 
 		CalculatePassengerMovement(moveAmount);
-		print (moveAmount);
+		//print (moveAmount);
 
 		MovePassengers (true);
 		transform.Translate (moveAmount);

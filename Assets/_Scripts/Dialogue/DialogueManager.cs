@@ -9,12 +9,22 @@ public class DialogueManager : MonoBehaviour {
     public Text DialogueText;
     public Animator animator;	
 
-    public void StartDialogue (Queue<string> sentences)
+    public void Truc () {
+        Debug.Log("çamarche");
+    }
+    public void StartDialogue () //Queue<string> sentences)
     {
+        //TODO
+        /*
+         * On va récupérer les sentences en trouvant l'objet ayant un script
+         * Interactable le plus proche
+         *
+         */
+        Queue<string> sentences;
         animator.SetBool("IsOpen", true);
         //NameText.text = dialogue.characterName;
-        sentences.Clear();
-        DisplayNextSentence(sentences);
+        //sentences.Clear();
+        //DisplayNextSentence(sentences);
     }
 
     public void DisplayNextSentence (Queue<string> sentences)

@@ -8,11 +8,12 @@ using UnityEngine.UI;
 
 
 public class ResearchController : MonoBehaviour {
-	private string reponse; //La bonne réponse de référence
-	private string guess; //Le choix du joueur
+
+	[Tooltip("La bonne réponse de référence")]
+	public string reponse;
 
 	[SerializeField] //Pour accéder à l'objet plus facilement qu'avec GetGameComponent etc
-	private InputField input;
+	private InputField inputField;
 
 	[SerializeField]
 	private Text text;
@@ -20,29 +21,33 @@ public class ResearchController : MonoBehaviour {
 	[SerializeField]
 	private GameObject player;
 
+	private string guess; //Le choix du joueur
+
+
+
 	 void Awake() {
-	//	input.SetActive(false);
-		reponse = "kebab";
-		text.text = "Où sont allées les abeilles de la revue .... ?";
+		//inputField.gameObject.SetActive(false);
+		//text.text = "Où sont allées les abeilles de la revue .... ?";
 	}
 
 
 	void OnTriggerEnter(Collider obj) {
 		if (obj.tag == "Player") {
-	//		input.SetActive(true);
+			inputField.gameObject.SetActive(true);
 		}
 	}
 
 	void OnTriggerExit(Collider obj){
 		if (obj.tag == "Player") {
-	//		input.SetActive(false);
+			inputField.gameObject.SetActive(false);
 		}
 	}
 
 	public void Input (string guess) {
-		input.text = "";
+		inputField.text = "";
 		CompareReponse (guess);
 	}
+
 	void CompareReponse(string guess) {
 		if (guess.Equals(reponse)) {
 			text.text = "Vous avez répondu juste. Vous pouvez passer maintenant pauvre fou!";

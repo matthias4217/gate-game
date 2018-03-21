@@ -10,7 +10,7 @@ public class PlatformerEnemyController : MonoBehaviour {
 	public float moveSpeed = 3;		// The speed of the enemy
 	public bool cyclic;			// Is the movement cyclic or does the platform goes back and forth
 	public float waitTime;		// Time waited at a waypoint
-	[Range(0,3)]
+	[Range(0, 3)]
 	public float easeAmount;
 
 	int fromWaypointIndex;

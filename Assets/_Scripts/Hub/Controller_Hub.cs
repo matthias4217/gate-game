@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class Controller_Hub : MonoBehaviour
 {
     public float moveSpeed;
-    private Rigidbody2D rb;
-    private int count;
+    
+	private int count;
+
+	private Rigidbody2D rb;
+
 
 
     void Start()
@@ -26,7 +29,7 @@ public class Controller_Hub : MonoBehaviour
 		rb.velocity = moveAmount * moveSpeed;
 
     }
-		
+
 	void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("prout");
         string tag = other.gameObject.tag;

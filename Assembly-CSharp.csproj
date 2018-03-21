@@ -184,11 +184,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Advertisements">
-<<<<<<< HEAD
  <HintPath>C:/Users/La Ludotheque/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
-=======
- <HintPath>C:/Users/Raphaël/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
->>>>>>> 7db8a7519ea39993d20ae0cfa2b89a905c31fbb3
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/La Ludotheque/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
@@ -206,11 +202,7 @@
  <HintPath>C:/Users/La Ludotheque/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
-<<<<<<< HEAD
  <HintPath>C:/Users/La Ludotheque/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
-=======
- <HintPath>C:/Users/Raphaël/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
->>>>>>> 7db8a7519ea39993d20ae0cfa2b89a905c31fbb3
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

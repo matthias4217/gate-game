@@ -12,6 +12,8 @@ public class scr_validerChoix : MonoBehaviour
 	public Dropdown choix1;
 	public Dropdown choix2;
 	public Dropdown choix3;
+	public GameObject panneauRecherche;
+	public GameObject livre0;
 
 	public void whenClickedValidate()
 	{
@@ -19,6 +21,8 @@ public class scr_validerChoix : MonoBehaviour
 		if (choix1.value == val1 && choix2.value == val2 && choix3.value == val3)
 		{
 			Debug.Log ("shoryuken");
+			panneauRecherche.SetActive (false);
+			livre0.SetActive (true);
 		}
 	}
 }

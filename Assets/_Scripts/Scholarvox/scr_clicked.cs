@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class scr_clicked : MonoBehaviour 
 {
-	public int numeroChoix;
-
+	public GameObject livre0;
 	public GameObject panelInfos;
 	public GameObject livre1;
 	public GameObject livre2;
 	public GameObject livre3;
 	public GameObject livre4;
+	public GameObject livre5;
 	public GameObject recherche;
 	public GameObject joueur;
 	public Dropdown GUIBouton;
@@ -46,6 +46,7 @@ public class scr_clicked : MonoBehaviour
 
 	public void whenClickedClose()
 	{
+		livre0.SetActive (false);
 		livre1.SetActive (false);
 		livre2.SetActive (false);
 		livre3.SetActive (false);
@@ -53,13 +54,5 @@ public class scr_clicked : MonoBehaviour
 		recherche.SetActive (false);
 		panelInfos.SetActive (false);
 		joueur.GetComponent<scr_movement_player> ().carresActives = true;
-	}
-
-	public void whenClickedChoix()
-	{
-		if (GUIBouton.value == 0) numeroChoix = 1;
-		if (GUIBouton.value == 1) numeroChoix = 2;
-		if (GUIBouton.value == 2) numeroChoix = 3;
-		if (GUIBouton.value == 3) numeroChoix = 4;
 	}
 }

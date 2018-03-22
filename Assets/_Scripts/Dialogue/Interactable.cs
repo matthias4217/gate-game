@@ -16,18 +16,21 @@ public class Interactable : MonoBehaviour {
         public GameObject dialogueLaunchButton;
     public Animator animator;
     private Text DialogueText;
+    private Dialogue dialogue;
 
     void Start()
+    /*
+     * On initialise les objets
+     */
     {
-        Dialogue dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
-        sentences = new Queue<string>(dialogue.sentences);
+        dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
         string DialogueText = "";
     }
 
     void OnTriggerEnter2D (Collider2D col)
         // Il faut que l'objet interactable ait un rigidbody et un Collision2D
     {
-        Debug.Log("Wsh wsh les individus");
+        //Debug.Log("Wsh wsh les individus");
         if(col.gameObject.tag == "Player")
         {
             dialogueLaunchButton.SetActive(true); 
@@ -39,7 +42,7 @@ public class Interactable : MonoBehaviour {
          * C'est un bug de Unity 2017.3.0f1, qui n'impacte pas le jeu final.
          */
     {
-        Debug.Log("Hop, on quitte la zone d'interaction");
+        //Debug.Log("Hop, on quitte la zone d'interaction");
         if (col.gameObject.tag == "Player");
         {
             dialogueLaunchButton.SetActive(false);
@@ -52,16 +55,20 @@ public class Interactable : MonoBehaviour {
         /*
          * On lance un bouton, style bulle de texte avec "parlez-moi"
          */
-        Debug.Log("Triggering dialogue...");
-        //animator.SetBool("IsOpen", true);
+        //Debug.Log("Triggering dialogue...");
+        animator.SetBool("IsOpen", true);
         //NameText.text = dialogue.characterName;
-        sentences.Clear();
+        // on créé la queue à chaque fois, elle est dépilée par la suite
+        // donc il est nécessaire de la recréer à chaque lancement du dialogue
+        sentences = new Queue<string>(dialogue.sentences);
         DisplayNextSentence(sentences);
     }
 
     public void DisplayNextSentence (Queue<string> sentences)
+    // fonction récursive
     {
-        Debug.Log("Displaying next sentence :");
+        //Debug.Log("Displaying next sentence :");
+        //Debug.Log(sentences.Count);
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -71,6 +78,7 @@ public class Interactable : MonoBehaviour {
         Debug.Log(sentence);
         StopAllCoroutines();            // Pour arrêter la diffusion des lettres si le joueur appuye sur continue pendant que le texte s'affiche
         StartCoroutine(TypeSentence(sentence));
+        DisplayNextSentence(sentences);
     }
 
     IEnumerator TypeSentence (string sentence)
@@ -85,7 +93,7 @@ public class Interactable : MonoBehaviour {
 
     public void EndDialogue ()
     {
-        Debug.Log("ENding dialogue");
-        //animator.SetBool("IsOpen", false);
+        Debug.Log("Ending dialogue");
+        animator.SetBool("IsOpen", false);
     }
 }

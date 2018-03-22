@@ -7916,11 +7916,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4097255686123844, guid: dcaaccf9242c246bcb672d5d9226472d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 61.2
+      value: 74.64
       objectReference: {fileID: 0}
     - target: {fileID: 4097255686123844, guid: dcaaccf9242c246bcb672d5d9226472d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.6
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 4097255686123844, guid: dcaaccf9242c246bcb672d5d9226472d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7951,6 +7951,11 @@ Prefab:
       propertyPath: dialogueLaunchButton
       value: 
       objectReference: {fileID: 577677281}
+    - target: {fileID: 114672970647560764, guid: dcaaccf9242c246bcb672d5d9226472d,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 862489149}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcaaccf9242c246bcb672d5d9226472d, type: 2}
   m_IsPrefabParent: 0
@@ -8026,7 +8031,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347686142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73.82, y: 1.42, z: 0}
+  m_LocalPosition: {x: 71.55, y: -1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

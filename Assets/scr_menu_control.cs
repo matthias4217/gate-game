@@ -10,6 +10,7 @@ public class scr_menu_control : MonoBehaviour
 	public GameObject texteMenu1;
 	public GameObject logo;
 	public GameObject panneauPause;
+	public GameObject DropEcole;
 
 	// Update is called once per frame
 	void Update () 
@@ -23,6 +24,7 @@ public class scr_menu_control : MonoBehaviour
 			{
 				texteMenu1.SetActive (false);
 				logo.SetActive (true);
+				DropEcole.SetActive (true);
 				compteur += 1;
 			}
 		}

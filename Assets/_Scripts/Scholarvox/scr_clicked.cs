@@ -39,15 +39,13 @@ public class scr_clicked : MonoBehaviour
 
 	public void whenClicked4()
 	{
-		Debug.Log ("hadouken4");
 		panelInfos.SetActive (true);
-		livre3.SetActive (true);
+		livre4.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().carresActives = false;
 	}
 
 	public void whenClickedClose()
 	{
-		Debug.Log ("hadoukenClose");
 		livre1.SetActive (false);
 		livre2.SetActive (false);
 		livre3.SetActive (false);

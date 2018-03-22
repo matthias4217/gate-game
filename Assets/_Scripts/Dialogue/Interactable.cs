@@ -14,7 +14,13 @@ public class Interactable : MonoBehaviour {
         private Queue<string> sentences;
     [Tooltip("Bouton lançant le dialogue")]
         public GameObject dialogueLaunchButton;
-    public Animator animator;
+    [Tooltip("Boite de dialogue")]
+    public GameObject dialogueBox;
+    [Tooltip("Endroit où s'affiche le texte du NPC")]
+    public Text NPCName;
+    [Tooltip("Endroit où s'affiche le texte du dialogue")]
+    public Text dialogueCanvas;
+
     private Text DialogueText;
     private Dialogue dialogue;
 
@@ -24,7 +30,6 @@ public class Interactable : MonoBehaviour {
      */
     {
         dialogue = JsonUtility.FromJson<Dialogue>(fichier_dialogue.text);
-        string DialogueText = "";
     }
 
     void OnTriggerEnter2D (Collider2D col)
@@ -52,12 +57,8 @@ public class Interactable : MonoBehaviour {
 
     public void TriggerDialogue ()
     {
-        /*
-         * On lance un bouton, style bulle de texte avec "parlez-moi"
-         */
         //Debug.Log("Triggering dialogue...");
-        animator.SetBool("IsOpen", true);
-        //NameText.text = dialogue.characterName;
+        NPCName.text = dialogue.characterName;
         // on créé la queue à chaque fois, elle est dépilée par la suite
         // donc il est nécessaire de la recréer à chaque lancement du dialogue
         sentences = new Queue<string>(dialogue.sentences);
@@ -67,8 +68,6 @@ public class Interactable : MonoBehaviour {
     public void DisplayNextSentence (Queue<string> sentences)
     // fonction récursive
     {
-        //Debug.Log("Displaying next sentence :");
-        //Debug.Log(sentences.Count);
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -76,8 +75,10 @@ public class Interactable : MonoBehaviour {
         }
         string sentence = sentences.Dequeue();
         Debug.Log(sentence);
-        StopAllCoroutines();            // Pour arrêter la diffusion des lettres si le joueur appuye sur continue pendant que le texte s'affiche
-        StartCoroutine(TypeSentence(sentence));
+        //StopAllCoroutines();            // Pour arrêter la diffusion des lettres si le joueur appuye sur continue pendant que le texte s'affiche
+        //on essaie d'abord d'afficher toute la phrase d'un coup
+        dialogueCanvas.text = sentence;
+        //StartCoroutine(TypeSentence(sentence));
         DisplayNextSentence(sentences);
     }
 
@@ -86,6 +87,8 @@ public class Interactable : MonoBehaviour {
         DialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())         // Pour afficher les lettres des textes une par une
         {
+            // @matthias :
+            // où bien un dialogueCanvas.text += letter; ?
             DialogueText.text += letter;
             yield return null;          // pour attendre un peu entre chaque lettre affichée
         }
@@ -94,6 +97,6 @@ public class Interactable : MonoBehaviour {
     public void EndDialogue ()
     {
         Debug.Log("Ending dialogue");
-        animator.SetBool("IsOpen", false);
+        //animator.SetBool("IsOpen", false);
     }
 }

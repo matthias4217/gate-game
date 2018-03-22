@@ -953,7 +953,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start conversation
+  m_Text: Parler
 --- !u!222 &291435285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1596,8 +1596,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 92, y: -27}
-  m_SizeDelta: {x: 162, y: 30}
+  m_AnchoredPosition: {x: 271.21698, y: -303.4353}
+  m_SizeDelta: {x: 80, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &577677283
 MonoBehaviour:
@@ -7084,7 +7084,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &862489148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7956,6 +7956,21 @@ Prefab:
       propertyPath: animator
       value: 
       objectReference: {fileID: 862489149}
+    - target: {fileID: 114672970647560764, guid: dcaaccf9242c246bcb672d5d9226472d,
+        type: 2}
+      propertyPath: NPCName
+      value: 
+      objectReference: {fileID: 1439184373}
+    - target: {fileID: 114672970647560764, guid: dcaaccf9242c246bcb672d5d9226472d,
+        type: 2}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 1452940461}
+    - target: {fileID: 114672970647560764, guid: dcaaccf9242c246bcb672d5d9226472d,
+        type: 2}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 862489147}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcaaccf9242c246bcb672d5d9226472d, type: 2}
   m_IsPrefabParent: 0
@@ -8566,7 +8581,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -8576,7 +8591,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: NPC Name
 --- !u!222 &1439184374
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8596,7 +8611,7 @@ GameObject:
   - component: {fileID: 1452940462}
   - component: {fileID: 1452940461}
   m_Layer: 5
-  m_Name: Dialogue
+  m_Name: Dialogue Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8654,7 +8669,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Dialogue sentences
 --- !u!222 &1452940462
 CanvasRenderer:
   m_ObjectHideFlags: 0

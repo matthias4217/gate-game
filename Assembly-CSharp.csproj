@@ -76,6 +76,7 @@
      <Compile Include="Assets\_Scripts\Europresse\RaycastController.cs" />
      <Compile Include="Assets\_Scripts\Hub\Controller_Hub.cs" />
      <Compile Include="Assets\_Scripts\Introduction\Game_Controller.cs" />
+     <Compile Include="Assets\_Scripts\menu\scr_clicked_menu.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\PlayerInput.cs" />
      <Compile Include="Assets\_Scripts\ResearchController.cs" />
@@ -86,6 +87,8 @@
      <Compile Include="Assets\_Scripts\Scholarvox\scr_movement_player.cs" />
      <Compile Include="Assets\_Scripts\Scholarvox\scr_OnMouseOverNonClicable.cs" />
      <Compile Include="Assets\_Scripts\Scholarvox\scr_sourisdessus.cs" />
+     <Compile Include="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" />
+     <Compile Include="Assets\scr_menu_control.cs" />
      <Compile Include="Assets\zOther\GameAnalytics\Plugins\Playmaker\SendBusinessEvent.cs" />
      <Compile Include="Assets\zOther\GameAnalytics\Plugins\Playmaker\SendDesignEvent.cs" />
      <Compile Include="Assets\zOther\GameAnalytics\Plugins\Playmaker\SendErrorEvent.cs" />

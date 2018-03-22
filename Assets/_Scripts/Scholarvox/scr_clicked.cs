@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class scr_clicked : MonoBehaviour 
 {
+	public int numeroChoix;
+
 	public GameObject panelInfos;
 	public GameObject livre1;
 	public GameObject livre2;
@@ -11,10 +14,10 @@ public class scr_clicked : MonoBehaviour
 	public GameObject livre4;
 	public GameObject recherche;
 	public GameObject joueur;
+	public Dropdown GUIBouton;
 	// Use this for initialization
 	public void whenClicked1()
 	{
-		Debug.Log ("hadouken1");
 		panelInfos.SetActive (true);
 		livre1.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().carresActives = false;
@@ -22,7 +25,6 @@ public class scr_clicked : MonoBehaviour
 
 	public void whenClicked2()
 	{
-		Debug.Log ("hadouken2");
 		panelInfos.SetActive (true);
 		livre2.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().carresActives = false;
@@ -30,7 +32,6 @@ public class scr_clicked : MonoBehaviour
 
 	public void whenClicked3()
 	{
-		Debug.Log ("hadouken3");
 		panelInfos.SetActive (true);
 		livre3.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().carresActives = false;
@@ -56,8 +57,11 @@ public class scr_clicked : MonoBehaviour
 		joueur.GetComponent<scr_movement_player> ().carresActives = true;
 	}
 
-	public void whenClickedValidate()
+	public void whenClickedChoix()
 	{
-		Debug.Log ("hadoukenValidate");
+		if (GUIBouton.value == 0) numeroChoix = 1;
+		if (GUIBouton.value == 1) numeroChoix = 2;
+		if (GUIBouton.value == 2) numeroChoix = 3;
+		if (GUIBouton.value == 3) numeroChoix = 4;
 	}
 }

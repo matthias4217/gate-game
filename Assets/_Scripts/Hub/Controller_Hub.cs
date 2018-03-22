@@ -37,7 +37,7 @@ public class Controller_Hub : MonoBehaviour
         switch (tag)
             {
             case "Scholarvox":
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("Scholarvox");
                 break;
             case "ENI":
                 SceneManager.LoadScene("ENI");

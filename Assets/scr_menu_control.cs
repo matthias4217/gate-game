@@ -17,7 +17,7 @@ public class scr_menu_control : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
 			if (compteur == 1)
-				SceneManager.LoadScene ("Hub");
+				SceneManager.LoadScene ("Introduction_Combat");
 			
 			if (compteur == 0) 
 			{

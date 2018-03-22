@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Hub.unity
-    guid: e8c57e0ca33cbed49bcc326554710cfe
+    path: Assets/_Scenes/Demarrage.unity
+    guid: 1564f641caa9ec54d81846d9819d0cd0
+  - enabled: 1
+    path: Assets/_Scenes/Introduction_Combat.unity
+    guid: 679668a4941c9c543969de3ef8c83981
+  - enabled: 1
+    path: Assets/_Scenes/ENI.unity
+    guid: d217c847b9f9d52459258cf3f5ccae1b
   - enabled: 1
     path: Assets/_Scenes/Europresse.unity
     guid: b1b178916762d7544b01cc02f9d84254
@@ -15,5 +21,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/Scholarvox.unity
     guid: f39acbe055d95644c83d3bf8356d568c
   - enabled: 1
-    path: Assets/_Scenes/ENI.unity
-    guid: d217c847b9f9d52459258cf3f5ccae1b
+    path: Assets/_Scenes/Hub.unity
+    guid: e8c57e0ca33cbed49bcc326554710cfe

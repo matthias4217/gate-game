@@ -31,9 +31,7 @@ public class Controller_Hub : MonoBehaviour
     }
 
 	void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("prout");
         string tag = other.gameObject.tag;
-        Debug.Log(tag);
         switch (tag)
             {
             case "Scholarvox":

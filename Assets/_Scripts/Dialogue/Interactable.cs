@@ -32,22 +32,17 @@ public class Interactable : MonoBehaviour {
     }
 
     void OnTriggerExit2D (Collider2D col)
+    /* Sous Linux, avant la compilation, le bouton ne disparaît pas
+     * C'est un bug de Unity 2017.3.0f1, qui n'impacte pas le jeu final.
+     */
     {
-        // On a bien les Debug.Log qui s'affichent,
-        // Mais le bouton ne disparaît pas
-        // Et le trigger ne se remet pas ?!?!
         Debug.Log("Hop, on quitte la zone d'interaction");
         if (col.gameObject.tag == "Player");
         {
-            Debug.Log("On est dans le if !!!");
             dialogueLaunchButton.SetActive(false);
         }
     }
 
-
-    /*
-     * Appelle la fonction StartDialogue du DialogueManager avec l'attribut sentences
-     */
 
     public void TriggerDialogue ()
     {

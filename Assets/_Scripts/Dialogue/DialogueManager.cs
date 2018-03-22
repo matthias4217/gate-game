@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// THIS CLASS IS NOW OBSOLETE, YOU SHOULD REFER TO INTERACTABLE INSTEAD
 public class DialogueManager : MonoBehaviour {
 
     public Text NameText;
     public Text DialogueText;
     public Animator animator;	
 
-    public void Truc () {
-        Debug.Log("çamarche");
-    }
     public void StartDialogue () //Queue<string> sentences)
     {
         //TODO

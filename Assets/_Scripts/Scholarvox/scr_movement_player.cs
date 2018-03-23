@@ -22,39 +22,45 @@ public class scr_movement_player : MonoBehaviour
     public GameObject bouton;
     public GameObject collectible;
     public bool collisionEnemy = false;
+	public bool tutoActive = true;
+
 
 
     void Update ()
     {
-        
-        if (!is_moving)
-        {
-            x0 = this.transform.position.x;
-            y0 = this.transform.position.y;
-            /*if (Input.GetMouseButtonDown(1) || collisionEnemy)		// If clic droit ou boule de feu hit
-            {
-                if (visited.Count != 0)
-                {
-                    destination = visited.Last.Value;
-                    deltaX = destination.x - this.transform.position.x;
-                    visited.RemoveLast();
-                    carresActives = false;
-                    is_moving = true;
+		if (!tutoActive) 
+		{
+			if (!is_moving) 
+			{
+				x0 = this.transform.position.x;
+				y0 = this.transform.position.y;
+				/*if (Input.GetMouseButtonDown(1) || collisionEnemy)		// If clic droit ou boule de feu hit
+	            {
+	                if (visited.Count != 0)
+	                {
+	                    destination = visited.Last.Value;
+	                    deltaX = destination.x - this.transform.position.x;
+	                    visited.RemoveLast();
+	                    carresActives = false;
+	                    is_moving = true;
 
-                    panneauRewind.SetActive(true);
-                    if (bouton.GetComponent<scr_collision_with_player>().compteurActive >= 0) bouton.GetComponent<scr_collision_with_player>().compteurActive -= 1;
-                    if (collectible.GetComponent<scr_collision_with_player>().compteurActive >= 0) collectible.GetComponent<scr_collision_with_player>().compteurActive -= 1;
-                    collisionEnemy = false;
-                }
-            }
-            */
-        }
-        if (is_moving)
-        {
-            if (collisionsActives) collisionsActives = false;
-            seDeplacer(destination);
-        }
-        if(GetComponent<CharacterController>().enabled != collisionsActives) GetComponent<CharacterController>().enabled = collisionsActives;
+	                    panneauRewind.SetActive(true);
+	                    if (bouton.GetComponent<scr_collision_with_player>().compteurActive >= 0) bouton.GetComponent<scr_collision_with_player>().compteurActive -= 1;
+	                    if (collectible.GetComponent<scr_collision_with_player>().compteurActive >= 0) collectible.GetComponent<scr_collision_with_player>().compteurActive -= 1;
+	                    collisionEnemy = false;
+	                }
+	            }
+	            */
+			}
+			if (is_moving) 
+			{
+				if (collisionsActives)
+					collisionsActives = false;
+				seDeplacer (destination);
+			}
+			if (GetComponent<CharacterController> ().enabled != collisionsActives)
+				GetComponent<CharacterController> ().enabled = collisionsActives;
+		}
     }
 
     public void seDeplacer(Vector3 destination)
@@ -86,11 +92,10 @@ public class scr_movement_player : MonoBehaviour
             x0 = this.transform.position.x;
             y0 = this.transform.position.y;
             carresActives = true;
-			if (panneauRewind.active) {
+			/*if (panneauRewind.active) 
+			{
 				panneauRewind.SetActive (false);
-			}
-
-
+			}*/
         }
     }
 }

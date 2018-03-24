@@ -13,49 +13,59 @@ using UnityEngine.UI;
 
 
 public class DialogueManagerTest : MonoBehaviour {
-	public DialogueTextTest dialogue; 
-	public Text NameText;              // Champ de texte pour afficher le nom du NPC
-	public Text DialogueText;          // Champ de texte pour afficher les répliques
-	public Queue<string> sentences;
-	public Animator animator;          // Objet pour gérer les animations 
 
-	void Start () {
-		sentences = new Queue<string> ();
-	}
+    /*
+     * Ce fichier est ensuite converti en un objet de type Dialogue
+     */
+    public TextAsset fichierDialogue; // Fichier Json dans lequel est enregistré le dialogue
 
-	public void TriggerDialogue() {
-		StartDialogue (dialogue);
-	}
+    private Dialogue dialogue;
+    private Queue<string> sentences;
 
-	public void StartDialogue (DialogueTextTest dialogue) {
-		NameText.text = dialogue.NPCName;
-		sentences.Clear ();
-		foreach (string sentence in dialogue.sentences) {
-			sentences.Enqueue (sentence);
-		}
-		DisplayNextSentence ();
-	}
+    public Text NameText;              // Champ de texte pour afficher le nom du NPC
+    public Text DialogueText;          // Champ de texte pour afficher les répliques
+    public Animator animator;          // Objet pour gérer les animations 
 
-	public void DisplayNextSentence() {
-		if (sentences.Count == 0) {
-			EndDialogue ();
-			return;
-		}
-		string sentence = sentences.Dequeue ();
-		StopAllCoroutines ();
-		StartCoroutine (TypeSentence (sentence));
-	}
 
-	IEnumerator TypeSentence (string sentence) {
-		DialogueText.text = "";
-		foreach (char letter in sentence.ToCharArray()) 
-		{
-			DialogueText.text += letter;
-			yield return null;
-		}
-	}
+    void Start () {
+        dialogue = JsonUtility.FromJson<Dialogue>(fichierDialogue.text);
+        NameText.text = dialogue.NPCName;
+        sentences = new Queue<string> (dialogue.sentences);
+    }
 
-	void EndDialogue() {
-		animator.SetBool ("IsOpen", false);
-	}
+    public void TriggerDialogue() {
+        StartDialogue (dialogue);
+    }
+
+    public void StartDialogue (Dialogue dialogue) {
+        NameText.text = dialogue.NPCName;
+        sentences.Clear ();
+        foreach (string sentence in dialogue.sentences) {
+            sentences.Enqueue (sentence);
+        }
+        DisplayNextSentence ();
+    }
+
+    public void DisplayNextSentence() {
+        if (sentences.Count == 0) {
+            EndDialogue ();
+            return;
+        }
+        string sentence = sentences.Dequeue ();
+        StopAllCoroutines ();
+        StartCoroutine (TypeSentence (sentence));
+    }
+
+    IEnumerator TypeSentence (string sentence) {
+        DialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray()) 
+        {
+            DialogueText.text += letter;
+            yield return null;
+        }
+    }
+
+    void EndDialogue() {
+        animator.SetBool ("IsOpen", false);
+    }
 }

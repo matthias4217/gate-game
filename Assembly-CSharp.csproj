@@ -54,6 +54,7 @@
      <Compile Include="Assets\_Scripts\Annex.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\DialogueManagerTest.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\DialogueTextTest.cs" />
+     <Compile Include="Assets\_Scripts\Dialogue\TriggerDialogue.cs" />
      <Compile Include="Assets\_Scripts\ENI\Controller.cs" />
      <Compile Include="Assets\_Scripts\ENI\DecoyController.cs" />
      <Compile Include="Assets\_Scripts\ENI\DummyController.cs" />

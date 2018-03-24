@@ -16,32 +16,41 @@ public class scr_clicked : MonoBehaviour
 	public GameObject joueur;
 	public Dropdown GUIBouton;
 	// Use this for initialization
+
+	public void whenClicked0()
+	{
+		panelInfos.SetActive (true);
+		livre0.SetActive (true);
+		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
+	}
+
+
 	public void whenClicked1()
 	{
 		panelInfos.SetActive (true);
 		livre1.SetActive (true);
-		joueur.GetComponent<scr_movement_player> ().carresActives = false;
+		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
 	}
 
 	public void whenClicked2()
 	{
 		panelInfos.SetActive (true);
 		livre2.SetActive (true);
-		joueur.GetComponent<scr_movement_player> ().carresActives = false;
+		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
 	}
 
 	public void whenClicked3()
 	{
 		panelInfos.SetActive (true);
 		livre3.SetActive (true);
-		joueur.GetComponent<scr_movement_player> ().carresActives = false;
+		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
 	}
 
 	public void whenClicked4()
 	{
 		panelInfos.SetActive (true);
 		livre4.SetActive (true);
-		joueur.GetComponent<scr_movement_player> ().carresActives = false;
+		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
 	}
 
 	public void whenClickedClose()
@@ -53,6 +62,6 @@ public class scr_clicked : MonoBehaviour
 		livre4.SetActive (false);
 		recherche.SetActive (false);
 		panelInfos.SetActive (false);
-		joueur.GetComponent<scr_movement_player> ().carresActives = true;
+		joueur.GetComponent<scr_movement_player> ().tutoActive = false;
 	}
 }

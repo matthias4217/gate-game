@@ -1,6 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Hub\Controller_Hub.cs">
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_OnMouseOverNonClicable.cs">
+>>>>>>> 4cada8a6656735a98e1063984249d61b9054187e
     <Files>
       <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="26" Column="81" />
       <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />

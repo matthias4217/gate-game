@@ -23,6 +23,7 @@ TagManager:
   - ENI
   - Scholarvox
   - Europresse
+  - Pet
   layers:
   - Default
   - TransparentFX
@@ -74,4 +75,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1325933443
+    locked: 0
+  - name: Dialogue
+    uniqueID: 1605603649
     locked: 0

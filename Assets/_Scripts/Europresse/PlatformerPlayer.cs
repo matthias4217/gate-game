@@ -37,11 +37,13 @@ public class PlatformerPlayer : MonoBehaviour {
 	Vector2 directionalInput;
 
 	PlatformerController controller;
+	GameObject healthBar;
 
 
 
 	void Start() {
 		controller = GetComponent<PlatformerController> ();
+		healthBar = GameObject.FindWithTag ("Health Bar");
 
 		currentHealth = maxHealth;
 
@@ -66,6 +68,7 @@ public class PlatformerPlayer : MonoBehaviour {
 			Explode ();
 			gameObject.transform.position = lastCheckpoint;
 			currentHealth = maxHealth;
+			UpdateHealthBar ();
 			velocity = Vector3.zero;
 		}
 
@@ -122,11 +125,23 @@ public class PlatformerPlayer : MonoBehaviour {
 			invicible = true;
 			StartCoroutine (InvicibilityAfterHit (invicibilityTimeAfterHit));
 			StartCoroutine (PlayerFlash(flashFrequency));
+			UpdateHealthBar ();
 		}
 	}
 
 	public void Explode() {
 
+	}
+
+	public void UpdateHealthBar () {
+		for (int i = 1; i <= Mathf.Min(3, currentHealth); i++) {
+			SpriteRenderer heartI = healthBar.transform.Find ("Heart " + i).GetComponent<SpriteRenderer> ();
+			heartI.color = Color.red;
+		}
+		for (int i = currentHealth + 1; i <= Mathf.Min(3, maxHealth); i++) {
+			SpriteRenderer heartI = healthBar.transform.Find ("Heart " + i).GetComponent<SpriteRenderer> ();
+			heartI.color = Color.white;
+		}
 	}
 
 

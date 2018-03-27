@@ -23,7 +23,7 @@ public class TriggerDialogue : MonoBehaviour {
 	public Animator animator;
 	
 	void OnTriggerEnter2D (Collider2D col)
-	// Il faut que l'objet interactable (le NPC qui parle) ait un rigidbody et un Collision2D
+	// Il faut que l'objet interactable (le NPC qui parle) ait un Rigidbody et un Collider2D
 	{
 		if(col.gameObject.tag == "Player")
 		{

@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 
-/*
- * This class represent a dialogue which a NPC can have.
- * Not used for the moment.
+/*Cette classe permet de préciser le contenu textuel du dialogue d'un NPC et n'est à attacher à rien.
+ * On définit juste une classe ici.
+ * Cette classe est utilisée par le script DialogueManagerTest
  */
-public class Dialogue {
 
-    public string characterName;	// The name of the character saying this dialogue	
-    [TextArea(3, 100)]
-    //public Queue<string> sentences;		// 
-    public string[] sentences;
-	
+
+[System.Serializable]
+public class Dialogue {
+    public string NPCName;	// Le nom du NPC qui parle
+    [TextArea(0, 100)]      // Permet de dire que l'on peut créer jusqu'à 100 répliques pour le NPC
+    public string[] sentences;  // Champ de répliques pour le NPC
 }

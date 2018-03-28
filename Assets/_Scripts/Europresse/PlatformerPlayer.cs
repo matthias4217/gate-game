@@ -6,7 +6,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	[Tooltip("The amount of hearts the player starts with")]
 	public int maxHealth = 3;
-
+	[Space(10)]
 	public float moveSpeed = 10;
 	public float maxJumpHeight = 6;
 	public float minJumpHeight = 1;
@@ -15,11 +15,18 @@ public class PlatformerPlayer : MonoBehaviour {
 	public float accelerationTimeAirborne = 0f;
 	[Tooltip("Amount of inertia while grounded (set to 0 for no inertia)")]
 	public float accelerationTimeGrounded = 0f;
-
-	public float knockbackX;
-	public float knockbackY;
+	[Space(10)]
+	[Tooltip("The force applied to the player when they hit an enemy")]
+	public Vector2 knockback;
+	[Tooltip("The amount of time the player is invincible after taking a hit")]
+	public float invicibilityTimeAfterHit;
+	[Tooltip("The frequency at which the player flashes when they are invicible")]
+	public float flashFrequency;
 
 	int currentHealth;
+	bool hitThisFrame;
+	bool isHit;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
+	bool invicible;			// Indicates if the player can take damage
 	Vector3 lastCheckpoint;
 
 	float gravity;
@@ -27,15 +34,16 @@ public class PlatformerPlayer : MonoBehaviour {
 	float minJumpVelocity;
 	Vector3 velocity;
 	float velocityXSmoothing;
-	bool hitThisFrame;
-	bool isHit;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
+	Vector2 directionalInput;
 
 	PlatformerController controller;
+	GameObject healthBar;
 
-	Vector2 directionalInput;
+
 
 	void Start() {
 		controller = GetComponent<PlatformerController> ();
+		healthBar = GameObject.FindWithTag ("Health Bar");
 
 		currentHealth = maxHealth;
 
@@ -47,19 +55,14 @@ public class PlatformerPlayer : MonoBehaviour {
 	void Update() {
 		
 		if (hitThisFrame) {
-			velocity.x = -controller.collisions.faceDir * knockbackX;
-			velocity.y = knockbackY;
+			velocity.x = -controller.collisions.faceDir * knockback.x;
+			velocity.y = knockback.y;
 			hitThisFrame = false;
 		}
 
 		if (currentHealth <= 0) {		// If the player is dead
 
-			// @@@ Que se passe-t-il quand le joueur meurt
-
-			Explode ();
-			gameObject.transform.position = lastCheckpoint;
-			currentHealth = maxHealth;
-			velocity = Vector3.zero;
+			PlayerDeath ();
 		}
 
 		CalculateVelocity ();
@@ -101,25 +104,72 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	public void SetCheckpoint (Vector3 checkpointPosition) {
 		lastCheckpoint = checkpointPosition;
-
-
 	}
-
-
 
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag("Enemy")) {
+		if (other.CompareTag("Enemy") && !invicible) {
+			Debug.Log ("Hit");
 			currentHealth--;
 			hitThisFrame = true;
 			isHit = true;
+			invicible = true;
+			StartCoroutine (InvicibilityAfterHit (invicibilityTimeAfterHit));
+			StartCoroutine (PlayerFlash(flashFrequency));
+			UpdateHealthBar ();
+		} else if (other.CompareTag("Fall Trigger")) {
+			PlayerDeath ();
 		}
 	}
+
+
+	public void PlayerDeath() {
+		Explode ();
+		gameObject.transform.position = lastCheckpoint;
+		currentHealth = maxHealth;
+		UpdateHealthBar ();
+		velocity = Vector3.zero;
+	}
+
+
+
+
 
 	public void Explode() {
 
 	}
 
+	public void UpdateHealthBar () {
+		for (int i = 1; i <= Mathf.Min(3, currentHealth); i++) {
+			SpriteRenderer heartI = healthBar.transform.Find ("Heart " + i).GetComponent<SpriteRenderer> ();
+			heartI.color = Color.red;
+		}
+		for (int i = currentHealth + 1; i <= Mathf.Min(3, maxHealth); i++) {
+			SpriteRenderer heartI = healthBar.transform.Find ("Heart " + i).GetComponent<SpriteRenderer> ();
+			heartI.color = Color.white;
+		}
+	}
 
+
+
+	private IEnumerator InvicibilityAfterHit(float invicibilityTime) {
+		yield return new WaitForSeconds (invicibilityTime);
+		Debug.Log ("Invincibility finished");
+		invicible = false;
+	}
+
+	private IEnumerator PlayerFlash (float flashFrequency) {
+		float delta = 1 / (2 * flashFrequency);
+		Color playerColor = GetComponent<SpriteRenderer> ().color;
+		while (invicible) {
+			yield return new WaitForSeconds (delta);
+			playerColor.a = 1 - playerColor.a;		// Switching the visibility of the sprite
+			GetComponent<SpriteRenderer> ().color = playerColor;
+		}
+		// Resetting the sprite visible
+		playerColor.a = 1;
+		GetComponent<SpriteRenderer> ().color = playerColor;
+
+	}
 
 }

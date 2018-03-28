@@ -9,6 +9,7 @@ public class Controller_Hub : MonoBehaviour
     public float moveSpeed;
     
 	private int count;
+	private Vector2 directionalInput;
 
 	private Rigidbody2D rb;
 
@@ -21,12 +22,14 @@ public class Controller_Hub : MonoBehaviour
 
     void FixedUpdate()
     {
-		float moveHorizontal = Input.GetAxisRaw("Horizontal");
-		float moveVertical = Input.GetAxisRaw("Vertical");
+		if (Input.GetMouseButton (0)) {
+			directionalInput = Input.mousePosition - Camera.main.WorldToScreenPoint (this.transform.position);
+		} else {
+			directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+		}
+		directionalInput.Normalize ();
 
-		Vector3 moveAmount = new Vector3(moveHorizontal, moveVertical, 0);
-		moveAmount.Normalize ();
-		rb.velocity = moveAmount * moveSpeed;
+		rb.velocity = directionalInput * moveSpeed;
 
     }
 

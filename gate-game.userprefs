@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs">
     <Files>
       <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="96" Column="65" />
@@ -7,6 +8,11 @@
       <File FileName="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs" Line="79" Column="36" />
       <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="36" Column="40" />
       <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="11" Column="45" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
+    <Files>
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="121" Column="19" />
+>>>>>>> 04dea165f43b1e68a265727dc80f887458aa22a4
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -23,9 +23,13 @@ TagManager:
   - ENI
   - Scholarvox
   - Europresse
-  - Pet
-  - Health Bar
-  - Fall Trigger
+  - collectible
+  - porte_1
+  - enemy
+  - trigger
+  - carre
+  - triggerFin
+  - porte_2
   layers:
   - Default
   - TransparentFX
@@ -38,10 +42,10 @@ TagManager:
   - 
   - Player
   - Obstacle
-  - Scene Element
   - 
   - 
-  - Background
+  - 
+  - 
   - 
   - 
   - 
@@ -77,7 +81,4 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1325933443
-    locked: 0
-  - name: Dialogue
-    uniqueID: 1605603649
     locked: 0

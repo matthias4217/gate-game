@@ -26,10 +26,10 @@ public class scr_menu_control : MonoBehaviour
 				logo.SetActive (true);
 				DropEcole.SetActive (true);
 				compteur += 1;
-			}
+			} 
 		}
 
-		if (Input.GetKeyDown (KeyCode.Escape)) 
+		else if (Input.GetKeyDown (KeyCode.Escape)) 
 		{
 			if (!menuOuvert) 
 			{

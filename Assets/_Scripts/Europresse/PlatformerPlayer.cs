@@ -24,8 +24,9 @@ public class PlatformerPlayer : MonoBehaviour {
 	public float flashFrequency;
 
 	int currentHealth;
+	bool canMove;
 	bool hitThisFrame;
-	bool canMove;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
+	bool hit;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
 	bool invicible;			// Indicates if the player can take damage
 	Vector3 lastCheckpoint;
 
@@ -55,7 +56,7 @@ public class PlatformerPlayer : MonoBehaviour {
 	void Update() {
 		
 		if (currentHealth <= 0) {		// If the player is dead
-			StartCoroutine(PlayerDeath ());
+			PlayerDeath ();
 		}
 
 		CalculateVelocity ();
@@ -63,7 +64,7 @@ public class PlatformerPlayer : MonoBehaviour {
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.below) {
-			canMove = true;
+			hit = true;
 		}
 		if (controller.collisions.above || controller.collisions.below) {
 			velocity.y = 0;		// To avoid "accumulating" gravity
@@ -77,10 +78,11 @@ public class PlatformerPlayer : MonoBehaviour {
 			velocity.y = knockback.y;
 			hitThisFrame = false;
 		}
-		if (canMove) {
-			float targetVelocityX = directionalInput.x * moveSpeed;
+		if (hit) {
+			float targetVelocityX = canMove ? directionalInput.x * moveSpeed : 0f;
 			velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
 		}
+
 		velocity.y += gravity * Time.deltaTime;
 	}
 
@@ -110,7 +112,7 @@ public class PlatformerPlayer : MonoBehaviour {
 			Debug.Log ("Hit");
 			currentHealth--;
 			hitThisFrame = true;
-			canMove = false;
+			hit = false;
 			invicible = true;
 			StartCoroutine (InvicibilityAfterHit (invicibilityTimeAfterHit));
 			StartCoroutine (PlayerFlash(flashFrequency));
@@ -121,17 +123,15 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 
-	public IEnumerator PlayerDeath() {
-		canMove = false;
+	public void PlayerDeath() {
+		hit = false;
 		Explode ();
 
 		// Fade out
 
 
 
-
-		yield return Annex.FadeScreen(Color.black, 1f		/* FIXME*/);
-
+		//yield return Annex.FadeScreen(Color.black, 1f		/* FIXME*/);
 
 
 		// Respawn
@@ -139,7 +139,7 @@ public class PlatformerPlayer : MonoBehaviour {
 		currentHealth = maxHealth;
 		UpdateHealthBar ();
 		velocity = Vector3.zero;
-		canMove = true;
+		hit = true;
 	}
 
 	public void Explode() {

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class scr_validerChoix : MonoBehaviour 
 {
-	[SerializeField] int val1 = 2;
-	[SerializeField] int val2 = 1;
-	[SerializeField] int val3 = 4;
+	public int val1 = 1;
+	public int val2 = 2;
+	public int val3 = 3;
 	[SerializeField] float tempsAttente = 0.7f;
 
 	Color couleurInitiale;
@@ -15,6 +15,12 @@ public class scr_validerChoix : MonoBehaviour
 	private void Start()
 	{
 		couleurInitiale = this.GetComponent<Image>().color;
+		if (tag == "porte_2") 
+		{
+			val1 = 3;
+			val2 = 0;
+			val3 = 1;
+		}
 	}
 	public Dropdown choix1;
 	public Dropdown choix2;
@@ -22,6 +28,8 @@ public class scr_validerChoix : MonoBehaviour
 	public GameObject panneauRecherche;
 	public GameObject livre0;
 	public GameObject GUI_livre0;
+	public GameObject joueur;
+	public bool pointGiven = false;
 
 	public void whenClickedValidate()
 	{
@@ -30,6 +38,11 @@ public class scr_validerChoix : MonoBehaviour
 			panneauRecherche.SetActive (false);
 			livre0.SetActive (true);
 			GUI_livre0.SetActive (true);
+			if (!pointGiven) 
+			{
+				joueur.GetComponent<scr_movement_player> ().nbreRecherches += 1;
+				pointGiven = true;
+			}
 		} 
 		else 
 		{

@@ -15,8 +15,11 @@ public class scr_clicked : MonoBehaviour
 	public GameObject recherche;
 	public GameObject joueur;
 	public Dropdown GUIBouton;
+	public GameObject paquetRecherche2;
+	public bool pointGiven = false;
 	// Use this for initialization
 
+	//nbreCollectibles ne s'active que si l'ouvrage est consulté
 	public void whenClicked0()
 	{
 		panelInfos.SetActive (true);
@@ -30,6 +33,11 @@ public class scr_clicked : MonoBehaviour
 		panelInfos.SetActive (true);
 		livre1.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
+		if (!pointGiven) 
+		{
+			joueur.GetComponent<scr_movement_player> ().nbreCollectibles += 1;
+			pointGiven = true;
+		}
 	}
 
 	public void whenClicked2()
@@ -37,6 +45,11 @@ public class scr_clicked : MonoBehaviour
 		panelInfos.SetActive (true);
 		livre2.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
+		if (!pointGiven) 
+		{
+			joueur.GetComponent<scr_movement_player> ().nbreCollectibles += 1;
+			pointGiven = true;
+		}
 	}
 
 	public void whenClicked3()
@@ -44,6 +57,11 @@ public class scr_clicked : MonoBehaviour
 		panelInfos.SetActive (true);
 		livre3.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
+		if (!pointGiven) 
+		{
+			joueur.GetComponent<scr_movement_player> ().nbreCollectibles += 1;
+			pointGiven = true;
+		}
 	}
 
 	public void whenClicked4()
@@ -51,6 +69,11 @@ public class scr_clicked : MonoBehaviour
 		panelInfos.SetActive (true);
 		livre4.SetActive (true);
 		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
+		if (!pointGiven) 
+		{
+			joueur.GetComponent<scr_movement_player> ().nbreCollectibles += 1;
+			pointGiven = true;
+		}
 	}
 
 	public void whenClickedClose()
@@ -62,6 +85,14 @@ public class scr_clicked : MonoBehaviour
 		livre4.SetActive (false);
 		recherche.SetActive (false);
 		panelInfos.SetActive (false);
+		paquetRecherche2.SetActive (false);
 		joueur.GetComponent<scr_movement_player> ().tutoActive = false;
+	}
+
+	public void whenClickedRechercheFinale()
+	{
+		panelInfos.SetActive (true);
+		paquetRecherche2.SetActive (true);
+		joueur.GetComponent<scr_movement_player> ().tutoActive = true;
 	}
 }

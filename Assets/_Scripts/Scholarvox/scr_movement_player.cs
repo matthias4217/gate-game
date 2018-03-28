@@ -6,7 +6,13 @@ public class scr_movement_player : MonoBehaviour
 {
     // SECTION DEPLACEMENT
 
-    public bool on_mouse_over = false;
+	//Variables pour le score
+	public int nbreDeplacements = 0;
+	public int nbreCollectibles = 0;
+	public int nbreRecherches = 0;
+
+	public Vector3 initialPosition;
+	public bool on_mouse_over = false;
     public bool is_moving = false;
     public float deltaX;
 	[SerializeField] public float JUMP_DURATION = 0.4f;
@@ -21,10 +27,14 @@ public class scr_movement_player : MonoBehaviour
     public GameObject panneauRewind;
     public GameObject bouton;
     public GameObject collectible;
-    public bool collisionEnemy = false;
+    //public bool collisionEnemy = false;
 	public bool tutoActive = true;
+	//public Vector3 lastCheckpoint = this.transform.position;
 
-
+	void Start()
+	{
+		initialPosition = transform.position;
+	}
 
     void Update ()
     {
@@ -92,6 +102,7 @@ public class scr_movement_player : MonoBehaviour
             x0 = this.transform.position.x;
             y0 = this.transform.position.y;
             carresActives = true;
+			nbreDeplacements += 1;
 			/*if (panneauRewind.active) 
 			{
 				panneauRewind.SetActive (false);

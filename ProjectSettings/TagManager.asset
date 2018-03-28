@@ -23,6 +23,13 @@ TagManager:
   - ENI
   - Scholarvox
   - Europresse
+  - collectible
+  - porte_1
+  - enemy
+  - trigger
+  - carre
+  - triggerFin
+  - porte_2
   layers:
   - Default
   - TransparentFX

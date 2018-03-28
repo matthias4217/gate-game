@@ -5,8 +5,23 @@
       <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="7" Column="2" />
       <File FileName="Assets\scr_menu_control.cs" Line="45" Column="5" />
       <File FileName="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs" Line="79" Column="36" />
+<<<<<<< HEAD
       <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="8" Column="20" />
+=======
+      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="36" Column="40" />
+      <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="11" Column="45" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
+    <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="92" Column="2" />
+      <File FileName="Assets\_Scripts\Annex.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="121" Column="19" />
+>>>>>>> 04dea165f43b1e68a265727dc80f887458aa22a4
+>>>>>>> 9f708a4ecfeebe1d2aaf1696b4c84b1eb5dc70a1
+>>>>>>> d08cef334d3cc2d2abaf188f578a0b07e9b0e9a3
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

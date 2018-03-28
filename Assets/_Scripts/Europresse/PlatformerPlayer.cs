@@ -62,14 +62,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 		if (currentHealth <= 0) {		// If the player is dead
 
-			// @@@ Que se passe-t-il quand le joueur meurt
-			// TODO Transition, écran noir, etc
-
-			Explode ();
-			gameObject.transform.position = lastCheckpoint;
-			currentHealth = maxHealth;
-			UpdateHealthBar ();
-			velocity = Vector3.zero;
+			PlayerDeath ();
 		}
 
 		CalculateVelocity ();
@@ -111,8 +104,6 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	public void SetCheckpoint (Vector3 checkpointPosition) {
 		lastCheckpoint = checkpointPosition;
-
-
 	}
 
 
@@ -126,8 +117,23 @@ public class PlatformerPlayer : MonoBehaviour {
 			StartCoroutine (InvicibilityAfterHit (invicibilityTimeAfterHit));
 			StartCoroutine (PlayerFlash(flashFrequency));
 			UpdateHealthBar ();
+		} else if (other.CompareTag("Fall Trigger")) {
+			PlayerDeath ();
 		}
 	}
+
+
+	public void PlayerDeath() {
+		Explode ();
+		gameObject.transform.position = lastCheckpoint;
+		currentHealth = maxHealth;
+		UpdateHealthBar ();
+		velocity = Vector3.zero;
+	}
+
+
+
+
 
 	public void Explode() {
 

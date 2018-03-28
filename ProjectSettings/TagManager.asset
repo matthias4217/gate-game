@@ -25,6 +25,7 @@ TagManager:
   - Europresse
   - Pet
   - Health Bar
+  - Fall Trigger
   layers:
   - Default
   - TransparentFX

@@ -25,7 +25,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	int currentHealth;
 	bool hitThisFrame;
-	bool isHit;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
+	bool canMove;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
 	bool invicible;			// Indicates if the player can take damage
 	Vector3 lastCheckpoint;
 
@@ -54,15 +54,8 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	void Update() {
 		
-		if (hitThisFrame) {
-			velocity.x = -controller.collisions.faceDir * knockback.x;
-			velocity.y = knockback.y;
-			hitThisFrame = false;
-		}
-
 		if (currentHealth <= 0) {		// If the player is dead
-
-			PlayerDeath ();
+			StartCoroutine(PlayerDeath ());
 		}
 
 		CalculateVelocity ();
@@ -70,7 +63,7 @@ public class PlatformerPlayer : MonoBehaviour {
 		controller.Move (velocity * Time.deltaTime, directionalInput);
 
 		if (controller.collisions.below) {
-			isHit = false;
+			canMove = true;
 		}
 		if (controller.collisions.above || controller.collisions.below) {
 			velocity.y = 0;		// To avoid "accumulating" gravity
@@ -79,15 +72,16 @@ public class PlatformerPlayer : MonoBehaviour {
 
 
 	void CalculateVelocity() {
-		if (!isHit) {
+		if (hitThisFrame) {
+			velocity.x = -controller.collisions.faceDir * knockback.x;
+			velocity.y = knockback.y;
+			hitThisFrame = false;
+		}
+		if (canMove) {
 			float targetVelocityX = directionalInput.x * moveSpeed;
 			velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below) ? accelerationTimeGrounded : accelerationTimeAirborne);
 		}
 		velocity.y += gravity * Time.deltaTime;
-	}
-		
-	public void SetDirectionalInput (Vector2 input) {
-		directionalInput = input;
 	}
 
 	public void OnJumpInputDown() {
@@ -102,6 +96,10 @@ public class PlatformerPlayer : MonoBehaviour {
 		}
 	}
 
+	public void SetDirectionalInput (Vector2 input) {
+		directionalInput = input;
+	}
+
 	public void SetCheckpoint (Vector3 checkpointPosition) {
 		lastCheckpoint = checkpointPosition;
 	}
@@ -112,7 +110,7 @@ public class PlatformerPlayer : MonoBehaviour {
 			Debug.Log ("Hit");
 			currentHealth--;
 			hitThisFrame = true;
-			isHit = true;
+			canMove = false;
 			invicible = true;
 			StartCoroutine (InvicibilityAfterHit (invicibilityTimeAfterHit));
 			StartCoroutine (PlayerFlash(flashFrequency));
@@ -123,20 +121,29 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 
-	public void PlayerDeath() {
+	public IEnumerator PlayerDeath() {
+		canMove = false;
 		Explode ();
+
+		// Fade out
+
+
+
+
+		yield return Annex.FadeScreen(Color.black, 1f		/* FIXME*/);
+
+
+
+		// Respawn
 		gameObject.transform.position = lastCheckpoint;
 		currentHealth = maxHealth;
 		UpdateHealthBar ();
 		velocity = Vector3.zero;
+		canMove = true;
 	}
 
-
-
-
-
 	public void Explode() {
-
+		print ("Boom");
 	}
 
 	public void UpdateHealthBar () {
@@ -169,7 +176,6 @@ public class PlatformerPlayer : MonoBehaviour {
 		// Resetting the sprite visible
 		playerColor.a = 1;
 		GetComponent<SpriteRenderer> ().color = playerColor;
-
 	}
-
+		
 }

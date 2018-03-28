@@ -28,4 +28,16 @@ public class Annex {
 	}
 
 
+	public static IEnumerator FadeScreen(Color targetColor, float transitionTime) {
+		Debug.Log ("bite");
+		for (int i = 0; i < 5; i++) {
+			yield return new WaitForSeconds (1);
+			Debug.Log ("Hdo" + i);
+		}
+
+	}
+
+
+
+
 }

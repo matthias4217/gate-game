@@ -1,40 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
-    <Files>
-      <File FileName="Assets\scr_menu_control.cs" Line="37" Column="39" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="26" Column="20" />
-=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_clicked.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="86" Column="31" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="23" Column="12" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs" Line="75" Column="2" />
-=======
-      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="7" Column="2" />
-      <File FileName="Assets\scr_menu_control.cs" Line="45" Column="5" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_collision_with_player.cs" Line="79" Column="36" />
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="8" Column="20" />
-=======
-      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="36" Column="40" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="11" Column="45" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
-    <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="92" Column="2" />
-      <File FileName="Assets\_Scripts\Annex.cs" Line="1" Column="1" />
-=======
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="121" Column="19" />
->>>>>>> 04dea165f43b1e68a265727dc80f887458aa22a4
->>>>>>> 9f708a4ecfeebe1d2aaf1696b4c84b1eb5dc70a1
->>>>>>> d08cef334d3cc2d2abaf188f578a0b07e9b0e9a3
->>>>>>> fc7032447bbd45f1ca830fc97adb735fa2d69dc2
->>>>>>> 9638144ed45c9923e7744f563128b9e783d250ad
+      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="94" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

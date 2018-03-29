@@ -47,6 +47,7 @@ public class PlatformerPlayer : MonoBehaviour {
 		healthBar = GameObject.FindWithTag ("Health Bar");
 
 		currentHealth = maxHealth;
+		canMove = true;
 
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex,2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -87,7 +88,7 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 	public void OnJumpInputDown() {
-		if (controller.collisions.below) {
+		if (controller.collisions.below && canMove) {
 			velocity.y = maxJumpVelocity;
 		}
 	}
@@ -107,7 +108,7 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerStay2D(Collider2D other) {
 		if (other.CompareTag("Enemy") && !invicible) {
 			Debug.Log ("Hit");
 			currentHealth--;

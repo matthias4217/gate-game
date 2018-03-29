@@ -5,44 +5,36 @@ using UnityEngine.SceneManagement;
 
 public class scr_menu_control : MonoBehaviour 
 {
-	bool menuOuvert = false;
-	int compteur = 0;
 	public GameObject texteMenu1;
 	public GameObject logo;
 	public GameObject panneauPause;
 	public GameObject DropEcole;
 
-	// Update is called once per frame
+	bool menuOuvert = false;
+	int compteur = 0;
+
+
+
 	void Update () 
 	{
-		if (Input.GetKeyDown (KeyCode.Space)) 
-		{
-			if (compteur == 1)
-				SceneManager.LoadScene ("Introduction_Combat");
-			
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			if (compteur == 1) {
+			SceneManager.LoadScene ("Introduction_Combat");
+		}
 			if (compteur == 0) 
 			{
 				texteMenu1.SetActive (false);
 				logo.SetActive (true);
 				DropEcole.SetActive (true);
-				compteur += 1;
+				compteur++;
 			} 
 		}
 
 		else if (Input.GetKeyDown (KeyCode.Escape)) 
 		{
-			if (!menuOuvert) 
-			{
-				panneauPause.SetActive(true);
-				Time.timeScale = 0.0f;
-				menuOuvert = true;
-			} 
-			else 
-			{
-				panneauPause.SetActive(false);
-				Time.timeScale = 1.0f;
-				menuOuvert = false;
-			}
+			Time.timeScale = menuOuvert ? 1f : 0f;
+			menuOuvert = !menuOuvert;
+			panneauPause.SetActive(menuOuvert);
 		}
 	}
 }

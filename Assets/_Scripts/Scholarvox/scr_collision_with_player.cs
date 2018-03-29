@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class scr_collision_with_player : MonoBehaviour
 {
-    public GameObject triggeredObject;
+	public GameObject joueur;
+	public GameObject triggeredObject;
     public GameObject triggeredColor;
     public GameObject triggeredUi;
 	public GameObject boutonCaseDeFin;
@@ -65,18 +66,10 @@ public class scr_collision_with_player : MonoBehaviour
 				AlreadyTriggered = true;
 				triggeredUi.SetActive (true);
 			}
-		} 
-		else if (tag == "triggerFin") 
+		}
+		else if (tag == "triggerFin" && !joueur.GetComponent<scr_movement_player> ().tutoActive)
 		{
 			boutonCaseDeFin.SetActive (true);
-		}
+		} 
     }
-
-	private void OnTriggerExit(Collider collision)
-	{
-		if (tag == "triggerFin") 
-		{
-			boutonCaseDeFin.SetActive (false);
-		}
-	}
 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class scr_validerChoix : MonoBehaviour 
 {
+	public GameObject boutonFermer;
+	public GameObject boutonFin;
 	public int val1 = 1;
 	public int val2 = 2;
 	public int val3 = 3;
@@ -18,7 +20,7 @@ public class scr_validerChoix : MonoBehaviour
 		if (tag == "porte_2") 
 		{
 			val1 = 3;
-			val2 = 0;
+			val2 = 2;
 			val3 = 1;
 		}
 	}
@@ -33,11 +35,16 @@ public class scr_validerChoix : MonoBehaviour
 
 	public void whenClickedValidate()
 	{
-		if (choix1.value == val1 && choix2.value == val2 && choix3.value == val3) {
-			Debug.Log ("shoryuken");
+		if (choix1.value == val1 && choix2.value == val2 && choix3.value == val3) 
+		{
 			panneauRecherche.SetActive (false);
 			livre0.SetActive (true);
 			GUI_livre0.SetActive (true);
+			if (tag == "porte_2") 
+			{
+				boutonFermer.SetActive (false);
+				boutonFin.SetActive (true);
+			}
 			if (!pointGiven) 
 			{
 				joueur.GetComponent<scr_movement_player> ().nbreRecherches += 1;

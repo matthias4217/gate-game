@@ -27,17 +27,4 @@ public class Annex {
 		return new Color (vector3.x, vector3.y, vector3.z);
 	}
 
-
-	public static IEnumerator FadeScreen(Color targetColor, float transitionTime) {
-		Debug.Log ("bite");
-		for (int i = 0; i < 5; i++) {
-			yield return new WaitForSeconds (1);
-			Debug.Log ("Hdo" + i);
-		}
-
-	}
-
-
-
-
 }

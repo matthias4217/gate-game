@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent (typeof (PlatformerController))]
 public class PlatformerPlayer : MonoBehaviour {
@@ -28,6 +29,7 @@ public class PlatformerPlayer : MonoBehaviour {
 	bool hitThisFrame;
 	bool hit;
 	bool invicible;
+	bool diedThisFrame;
 	Vector3 lastCheckpoint;
 
 	float gravity;
@@ -56,8 +58,9 @@ public class PlatformerPlayer : MonoBehaviour {
 
 	void Update() {
 		
-		if (currentHealth <= 0) {		// If the player is dead
-			PlayerDeath ();
+		if (diedThisFrame) {
+			StartCoroutine(PlayerDeath ());
+			diedThisFrame = false;
 		}
 
 		CalculateVelocity ();
@@ -113,6 +116,9 @@ public class PlatformerPlayer : MonoBehaviour {
 		if (other.CompareTag("Enemy") && !invicible) {
 			Debug.Log ("Hit");
 			currentHealth--;
+			if (currentHealth <= 0) {
+				diedThisFrame = true;
+			}
 			hitThisFrame = true;
 			hit = false;
 			invicible = true;
@@ -121,31 +127,49 @@ public class PlatformerPlayer : MonoBehaviour {
 			UpdateHealthBar ();
 
 		} else if (other.CompareTag("Fall Trigger")) {
-			PlayerDeath ();
+			StartCoroutine(PlayerDeath ());
 		}
 	}
 
 
-	public void PlayerDeath() {
+	public IEnumerator PlayerDeath() {
 		hit = false;
+		velocity = Vector3.zero;
 		Explode ();
 
 		// Fade out
+		float transitionTime = 1f;		// The amount of time required to reach full opacity
 
-
-
-		//yield return Annex.FadeScreen(Color.black, 1f		/* FIXME*/);
-
+		RawImage screenFilter = FindObjectOfType<RawImage>();
+		while (screenFilter.color.a < 1f) {		// while the image is not opaque
+			Color tmpColor = screenFilter.color;
+			tmpColor.a += Time.deltaTime / transitionTime;
+			screenFilter.color = tmpColor;
+			yield return null;
+		}
 
 		// Respawn
 		gameObject.transform.position = lastCheckpoint;
 		currentHealth = maxHealth;
+		GetComponent<SpriteRenderer> ().enabled = true;		// Reenabling the rendering of the sprite
 		UpdateHealthBar ();
 		velocity = Vector3.zero;
-		hit = true;
+		hit = false;
+		yield return new WaitForSeconds (3f);
+
+		while (screenFilter.color.a > 0f) {		// while the image is there
+			Color tmpColor = screenFilter.color;
+			tmpColor.a -= Time.deltaTime / transitionTime;
+			screenFilter.color = tmpColor;
+			yield return null;
+		}
+
+
 	}
 
 	public void Explode() {
+		GetComponent<SpriteRenderer> ().enabled = false;		// Disabling the rendering of the player
+		//
 		print ("Boom");
 	}
 
@@ -184,7 +208,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 
 
-	/*
+	/* // not enough time to use this elegent implementation
 	public struct HitInfo {
 		public bool hitThisFrame;
 		public bool hit;				// true while the player is in a knockback state: the player is unable to move until the ground is reached

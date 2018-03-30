@@ -30,6 +30,8 @@ TagManager:
   - carre
   - triggerFin
   - porte_2
+  - Fall Trigger
+  - Health Bar
   layers:
   - Default
   - TransparentFX

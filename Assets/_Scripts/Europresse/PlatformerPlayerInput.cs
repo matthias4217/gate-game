@@ -16,11 +16,11 @@ public class PlatformerPlayerInput : MonoBehaviour {
 		Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		playerController.SetDirectionalInput (directionalInput);
 
-		if (Input.GetButtonDown ("Jump") || Input.GetButtonDown ("Vertical"))
+		if (Input.GetButtonDown ("Jump")/* || Input.GetButtonDown ("Vertical")*/)
 		{
 			playerController.OnJumpInputDown ();
 		}
-		if (Input.GetButtonUp ("Jump") || Input.GetButtonUp ("Vertical")) 
+		if (Input.GetButtonUp ("Jump") /*|| Input.GetButtonUp ("Vertical")*/)
 		{
 			playerController.OnJumpInputUp ();
 		}

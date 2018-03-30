@@ -78,7 +78,7 @@
      <Compile Include="Assets\_Scripts\Hub\Controller_Hub.cs" />
      <Compile Include="Assets\_Scripts\Introduction\cinematicController.cs" />
      <Compile Include="Assets\_Scripts\Introduction\Game_Controller.cs" />
-     <Compile Include="Assets\_Scripts\menu\scr_clicked_menu.cs" />
+     <Compile Include="Assets\_Scripts\Menu\scr_clicked_menu.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\PlayerInput.cs" />
      <Compile Include="Assets\_Scripts\ProgressionStatus.cs" />

@@ -26,8 +26,8 @@ public class PlatformerPlayer : MonoBehaviour {
 	int currentHealth;
 	bool canMove;
 	bool hitThisFrame;
-	bool hit;			// true while the player is in a knockback state: the player is unable to move until the ground is reached
-	bool invicible;			// Indicates if the player can take damage
+	bool hit;
+	bool invicible;
 	Vector3 lastCheckpoint;
 
 	float gravity;
@@ -109,6 +109,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 
 	void OnTriggerStay2D(Collider2D other) {
+
 		if (other.CompareTag("Enemy") && !invicible) {
 			Debug.Log ("Hit");
 			currentHealth--;
@@ -118,6 +119,7 @@ public class PlatformerPlayer : MonoBehaviour {
 			StartCoroutine (InvicibilityAfterHit (invicibilityTimeAfterHit));
 			StartCoroutine (PlayerFlash(flashFrequency));
 			UpdateHealthBar ();
+
 		} else if (other.CompareTag("Fall Trigger")) {
 			PlayerDeath ();
 		}
@@ -179,4 +181,21 @@ public class PlatformerPlayer : MonoBehaviour {
 		GetComponent<SpriteRenderer> ().color = playerColor;
 	}
 		
+
+
+
+	/*
+	public struct HitInfo {
+		public bool hitThisFrame;
+		public bool hit;				// true while the player is in a knockback state: the player is unable to move until the ground is reached
+		public Vector2 knockback;		// The knockback applied to the player when they hit an enemy
+		public bool invincible;			// The player can't get hit while invicible
+
+		public void Reset() {
+			hitThisFrame = false;
+			hit = false;
+			invincible = false;
+		}
+	}
+	*/
 }

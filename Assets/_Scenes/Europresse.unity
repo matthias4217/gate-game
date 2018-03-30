@@ -1151,7 +1151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &394792542
 Transform:
   m_ObjectHideFlags: 0
@@ -11543,7 +11543,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 3ea0d55b191e86b4abc858cc53c45628, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
@@ -11612,9 +11612,9 @@ MonoBehaviour:
   maxJumpHeight: 5
   minJumpHeight: 1.5
   timeToJumpApex: 0.39
-  accelerationTimeAirborne: 0
-  accelerationTimeGrounded: 0
-  knockback: {x: 15, y: 10}
+  accelerationTimeAirborne: 0.08
+  accelerationTimeGrounded: 0.06
+  knockback: {x: 12, y: 10}
   invicibilityTimeAfterHit: 1
   flashFrequency: 7
 --- !u!61 &1347686148

@@ -77,7 +77,7 @@ public class PlatformerPlayer : MonoBehaviour {
 
 
 	void CalculateVelocity() {
-		if (hitThisFrame) {
+		if (hitThisFrame && !diedThisFrame) {
 			velocity.x = -controller.collisions.faceDir * knockback.x;
 			velocity.y = knockback.y;
 			hitThisFrame = false;
@@ -133,7 +133,6 @@ public class PlatformerPlayer : MonoBehaviour {
 
 
 	public IEnumerator PlayerDeath() {
-		hit = false;
 		velocity = Vector3.zero;
 		Explode ();
 

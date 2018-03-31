@@ -19,7 +19,14 @@ public class ProgressionStatus : MonoBehaviour {
     }
 
     
-    void onTriggerEnter2D (Collision2D other) {
+    void OnTriggerEnter2D (Collider2D other) {
+        Debug.Log("Envoi de données à GameAnalytics...");
+        GameAnalytics.NewProgressionEvent(progressionStatus, progression01, progression02);
+    }
+
+    void OnTriggerEnter (Collider other) {
+        // Pour Scholarvox
+        Debug.Log("Envoi de données à GameAnalytics via Collider (pas 2D)...");
         GameAnalytics.NewProgressionEvent(progressionStatus, progression01, progression02);
     }
 

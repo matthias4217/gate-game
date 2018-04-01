@@ -1,8 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="121" Column="5" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="87" Column="33" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -38,7 +38,7 @@ public class TriggerDialogue : MonoBehaviour {
          */
 	{
 		//Debug.Log("Hop, on quitte la zone d'interaction");
-		if (col.gameObject.tag == "Player");
+		if (col.gameObject.tag == "Player")
 		{
 			animator.SetBool ("IsOpen", false);
 			DialogueBox.SetActive(false);

@@ -17,7 +17,7 @@ public class DialogueManagerTest : MonoBehaviour {
     /*
      * Ce fichier est ensuite converti en un objet de type Dialogue
      */
-    public TextAsset fichierDialogue; // Fichier Json dans lequel est enregistré le dialogue
+    public TextAsset fichierDialogue; // Fichier Json dans lequel est enregistré le dialogue 
 
     private Dialogue dialogue;
     private Queue<string> sentences;

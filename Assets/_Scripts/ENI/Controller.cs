@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
     public float moveSpeed;
     private int count;
-
+	public GameObject tuto;
 	[SerializeField] private int decoylvl = 1;
 
 	[SerializeField] private GameObject decoylvl1;
@@ -67,6 +68,7 @@ public class Controller : MonoBehaviour
 		if (other.gameObject.CompareTag ("Dummy End")) {
 			if (enemy.gameObject.CompareTag ("Dummy")) {
 				enemy.GetComponent<DummyController> ().ChaseActive (false);
+				tuto.SetActive (false);
 				}
 
 		}
@@ -89,7 +91,7 @@ public class Controller : MonoBehaviour
 	{
 		health -= damage;
 		if (health <= 0) {
-			this.gameObject.SetActive (false);
+			SceneManager.LoadScene ("ENI");
 		}
 	}
 

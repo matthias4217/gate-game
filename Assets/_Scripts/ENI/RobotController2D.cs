@@ -59,8 +59,10 @@ public class RobotController2D : MonoBehaviour {
 			
 		GameObject decoy = GameObject.FindGameObjectWithTag ("Decoy");
 		if (decoy != null) {
-			target = decoy;
-			speed = decoySpeed;
+			//if (decoy.GetComponent<DummyController> ().speed == 0) {
+				target = decoy;
+				speed = decoySpeed;
+			//}
 		} 
 		else {
 			target = player;

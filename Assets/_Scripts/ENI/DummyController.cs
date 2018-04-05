@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class DummyController : MonoBehaviour {
 
+	public GameObject texteTuto;
 	private Rigidbody2D rb;
 	[SerializeField] private float chaseSpeed = 1f;
 	[SerializeField] private float decoySpeed = 1f;
-	private float speed;
+	public float speed;
 
 	private GameObject target;
 	private GameObject player;
 	private Vector2 direction = Vector2.zero;
-	private Vector2 move;
+	public Vector2 move;
 	private bool isActive;
 
 	[SerializeField] private float stopTime;
@@ -74,7 +75,8 @@ public class DummyController : MonoBehaviour {
 		}
 	}
 
-	public void ChaseActive(bool boo) {
+	public void ChaseActive(bool boo) 
+	{
 		isActive = boo;
 	}
 

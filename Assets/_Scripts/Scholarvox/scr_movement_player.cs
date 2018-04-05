@@ -7,6 +7,7 @@ public class scr_movement_player : MonoBehaviour
     // SECTION DEPLACEMENT
 
 	//Variables pour le score
+	public GameObject tuto;
 	public int nbreDeplacements = 0;
 	public int nbreCollectibles = 0;
 	public int nbreRecherches = 0;
@@ -65,6 +66,7 @@ public class scr_movement_player : MonoBehaviour
 			if (is_moving) 
 			{
 				if (collisionsActives)
+					tuto.SetActive (false);
 					collisionsActives = false;
 				seDeplacer (destination);
 			}

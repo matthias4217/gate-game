@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 37976cfe0530549b39d0f7e0271a4255
 folderAsset: yes
+<<<<<<< HEAD:Assets/zOther/GameAnalytics/Plugins/Playmaker/Examples.meta
 timeCreated: 1522766358
+=======
+timeCreated: 1522879676
+>>>>>>> 1257832b3fd48e4f8ff7e5054a47f542ef2318f7:Assets/zOther/GameAnalytics/Plugins/Playmaker/Examples.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

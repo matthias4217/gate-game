@@ -1,10 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
+=======
+  <MonoDevelop.Ide.Workbench>
+>>>>>>> parent of 567e7c1e... unity
     <Files>
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="66" Column="24" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="87" Column="33" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets\_Scripts\Dialogue\DialogueManagerTest.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Dialogue\Dialogue.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Strings\europresse-pnj-1.json" Line="1" Column="1" />
@@ -28,6 +33,8 @@
       <File FileName="Assets\_Scripts\menu\scr_clicked_menu.cs" Line="15" Column="34" />
       <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="69" Column="29" />
 >>>>>>> 1257832b3fd48e4f8ff7e5054a47f542ef2318f7
+=======
+>>>>>>> parent of 567e7c1e... unity
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

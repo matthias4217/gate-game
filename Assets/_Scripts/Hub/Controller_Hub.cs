@@ -7,34 +7,69 @@ using UnityEngine.SceneManagement;
 public class Controller_Hub : MonoBehaviour
 {
     public float moveSpeed;
-    
-	public GameObject Scholwarning;
+
+    public GameObject Scholwarning;
 	public GameObject Eurowarning;
 	public GameObject ENIwarning;
 	public GameObject spawn;
 
+    public GameObject Camera;
+    private Camera cam;
+
 	private int count;
 	private Vector2 directionalInput;
+    private Vector2 mousePos;
+    private Vector2 camPos;
+    private Rigidbody2D rb;
 
-	private Rigidbody2D rb;
-
-
+    private bool mouseactive;
+    private Vector2 lm ;
 
     void Start()
     {
+        mousePos = new Vector2(0, 0);
+        mouseactive = false;
         rb = GetComponent<Rigidbody2D>();
+        cam = Camera.GetComponent<Camera>();
+        Vector2 camPos = this.transform.position;
+        Debug.Log(camPos);
     }
 
     void FixedUpdate()
     {
-		if (Input.GetMouseButton (0)) {
-			directionalInput = Input.mousePosition - Camera.main.WorldToScreenPoint (this.transform.position);
-		} else {
-			directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-		}
-		directionalInput.Normalize ();
+        Vector2 camPos = this.transform.position;
+        float a1 = Input.GetAxisRaw("Horizontal");
+        float a2 = Input.GetAxisRaw("Vertical");
 
-		rb.velocity = directionalInput * moveSpeed;
+        if (Input.GetMouseButton(0)) {
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+            //mousePos = Input.mousePosition;
+            directionalInput = mousePos - camPos;
+            Debug.Log(mousePos);
+            mouseactive = true;
+
+        }
+        else if (Mathf.Abs(a1) + Mathf.Abs(a2) != 0)
+        {
+            Debug.Log("Keyboard");
+			directionalInput = new Vector2 (a1, a2);
+            directionalInput.Normalize();
+            Debug.Log(directionalInput);
+            rb.velocity = directionalInput * moveSpeed;
+        }
+        else if(!mouseactive)
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
+
+         
+
+        /*directionalInput = mousePos - camPos;
+        if (directionalInput.magnitude < 0.01)
+            {
+            rb.velocity = new Vector2(0, 0);
+            }
+            */
 
     }
 	void OnTriggerExit2D(Collider2D other)

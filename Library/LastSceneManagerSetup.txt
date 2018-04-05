@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/_Scenes/Hub.unity
+=======
+- path: Assets/_Scenes/Introduction_Combat.unity
+>>>>>>> a5a6443a1b07a3687a5133fa330dba7c01333c3f
   isLoaded: 1
   isActive: 1

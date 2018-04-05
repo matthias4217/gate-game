@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/Scholarvox.unity
+- path: Assets/_Scenes/Hub.unity
   isLoaded: 1
   isActive: 1

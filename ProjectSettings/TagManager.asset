@@ -32,6 +32,9 @@ TagManager:
   - porte_2
   - Fall Trigger
   - Health Bar
+  - ENIwarning
+  - Eurowarning
+  - Scholwarning
   layers:
   - Default
   - TransparentFX

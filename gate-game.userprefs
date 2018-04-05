@@ -2,6 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
 =======
   <MonoDevelop.Ide.Workbench>
@@ -17,9 +18,13 @@
       <File FileName="Assets\_Scripts\Europresse\PlatformerPlayerInput.cs" Line="19" Column="32" />
 =======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_movement_player.cs">
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Strings\europresse-pnj-1.json">
+>>>>>>> parent of 1257832b... Merge branch 'master' of m-github:raphaeltran/gate-game
     <Files>
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="87" Column="33" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets\Resources\Strings\europresse-pnj-1.json" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\GameController.cs" Line="1" Column="1" />
       <File FileName="Assets\scr_triggerHistoire.cs" Line="1" Column="1" />
@@ -35,6 +40,9 @@
 >>>>>>> 1257832b3fd48e4f8ff7e5054a47f542ef2318f7
 =======
 >>>>>>> parent of 567e7c1e... unity
+=======
+      <File FileName="Assets\Resources\Strings\europresse-pnj-1.json" Line="5" Column="17" />
+>>>>>>> parent of 1257832b... Merge branch 'master' of m-github:raphaeltran/gate-game
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

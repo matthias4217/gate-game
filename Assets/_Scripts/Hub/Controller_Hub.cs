@@ -8,6 +8,11 @@ public class Controller_Hub : MonoBehaviour
 {
     public float moveSpeed;
     
+	public GameObject Scholwarning;
+	public GameObject Eurowarning;
+	public GameObject ENIwarning;
+	public GameObject spawn;
+
 	private int count;
 	private Vector2 directionalInput;
 
@@ -32,11 +37,39 @@ public class Controller_Hub : MonoBehaviour
 		rb.velocity = directionalInput * moveSpeed;
 
     }
-
+	void OnTriggerExit2D(Collider2D other)
+	{
+		string tag = other.gameObject.tag;
+		switch (tag) {
+		case "Respawn":
+			spawn.SetActive (false);
+			break;
+		case "Scholwarning":
+			Scholwarning.SetActive (false);
+			break;
+		case "Eurowarning":
+			Eurowarning.SetActive (false);
+			break;
+		case "ENIwarning":
+			ENIwarning.SetActive (false);
+			break;
+		}
+	}
 	void OnTriggerEnter2D(Collider2D other) {
         string tag = other.gameObject.tag;
         switch (tag)
             {
+		case "Scholwarning":
+			Scholwarning.SetActive (true);
+			break;
+		case "Eurowarning":
+			Eurowarning.SetActive (true);
+			break;
+		case "ENIwarning":
+			ENIwarning.SetActive (true);
+			break;
+			
+			
             case "Scholarvox":
                 SceneManager.LoadScene("Scholarvox");
                 break;

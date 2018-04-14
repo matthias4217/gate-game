@@ -12,29 +12,42 @@ public class Controller_Hub : MonoBehaviour
 	public GameObject Eurowarning;
 	public GameObject ENIwarning;
 	public GameObject spawn;
+    public GameObject player_Camera;
 
 	private int count;
 	private Vector2 directionalInput;
+    private bool mouseMoving;
 
 	private Rigidbody2D rb;
+    private Camera cm;
+    
 
 
 
     void Start()
     {
+        mouseMoving = false;
         rb = GetComponent<Rigidbody2D>();
+        cm = player_Camera.GetComponent<Camera>();
     }
 
     void FixedUpdate()
     {
-		if (Input.GetMouseButton (0)) {
-			directionalInput = Input.mousePosition - Camera.main.WorldToScreenPoint (this.transform.position);
-		} else {
-			directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
-		}
-		directionalInput.Normalize ();
-
-		rb.velocity = directionalInput * moveSpeed;
+		if (Input.GetMouseButton (0)) { 
+            mouseMoving = true;
+			directionalInput = Input.mousePosition - cm.WorldToScreenPoint (this.transform.position);
+            directionalInput.Normalize();
+            rb.velocity = directionalInput * moveSpeed;
+        } else {
+            float test = Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical"));
+            if (test != 0 || mouseMoving == false)
+            {
+                mouseMoving = false;
+                directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                directionalInput.Normalize();
+                rb.velocity = directionalInput * moveSpeed;
+            }
+        }
 
     }
 	void OnTriggerExit2D(Collider2D other)

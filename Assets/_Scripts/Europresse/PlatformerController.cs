@@ -119,20 +119,20 @@ public class PlatformerController : RaycastController {
 					if (collisions.fallingThroughPlatform) {
 						continue;
 					}
-					/*
+					/*	To fall through platforms when pressing down (usused)
 					if (playerInput.y == -1) {
 						collisions.fallingThroughPlatform = true;
 						Invoke("ResetFallingThroughPlatform", .1f);		// Set here the amount of time we go through platforms
 						continue;
 					}
 					*/
-				} else if (hit.collider.tag == "Friable") {
+				} else if ((hit.collider.tag == "Friable") && (directionY == -1)) {
 					print (hit.point);
-					StartCoroutine (hit.collider.gameObject.GetComponent<FriableTile> ().effrite ((int)hit.point.x, (int) (hit.point.y - 0.5)));
+					StartCoroutine (hit.collider.gameObject.GetComponent<FriableTile> ().effrite ((int) hit.point.x, (int) (hit.point.y - 0.5)));
 				}
 
 				moveAmount.y = (hit.distance - skinWidth) * directionY;
-				rayLength = hit.distance;	// Reducing the lenght of the next rays casted to avoid collisions further than this one
+				rayLength = hit.distance;		// Reducing the lenght of the next rays casted to avoid collisions further than this one
 
 				if (collisions.climbingSlope) {
 					moveAmount.x = moveAmount.y / Mathf.Tan(collisions.slopeAngle * Mathf.Deg2Rad) * Mathf.Sign(moveAmount.x);

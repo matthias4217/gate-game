@@ -16,6 +16,12 @@ public class Annex {
 		return slope * (x - A) + f_A;
 	}
 
+	public static bool isInRange(float value, float min, float max) {
+		/* Indicates if value belongs to [min, max] */
+		return ((min <= value) && (value <= max));
+	}
+
+
 
 	public static Vector3 toVector3(Color color) {
 		/* Convert a Color into a Vector3 (alpha is lost) */

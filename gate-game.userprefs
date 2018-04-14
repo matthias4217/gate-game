@@ -1,61 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Hub\Controller_Hub.cs">
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerPlayer.cs">
-=======
-  <MonoDevelop.Ide.Workbench>
->>>>>>> parent of 567e7c1e... unity
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerController.cs">
     <Files>
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="87" Column="33" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\Dialogue\DialogueManagerTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Dialogue\Dialogue.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Strings\europresse-pnj-1.json" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Europresse\RaycastController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayerInput.cs" Line="19" Column="32" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_movement_player.cs">
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Strings\europresse-pnj-1.json">
->>>>>>> parent of 1257832b... Merge branch 'master' of m-github:raphaeltran/gate-game
->>>>>>> a5a6443a1b07a3687a5133fa330dba7c01333c3f
-    <Files>
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="87" Column="33" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\Resources\Strings\europresse-pnj-1.json" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_triggerHistoire.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\DummyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\SafeZoneSprite.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\RobotMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\TriggerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\RobotController2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\DecoyController.cs" Line="1" Column="1" />
-<<<<<<< HEAD
-      <File FileName="Assets\_Scripts\ENI\Controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\menu\scr_clicked_menu.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_menu_control.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="45" Column="9" />
-=======
-      <File FileName="Assets\_Scripts\ENI\Controller.cs" Line="94" Column="35" />
-      <File FileName="Assets\_Scripts\menu\scr_clicked_menu.cs" Line="15" Column="34" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="69" Column="29" />
->>>>>>> 1257832b3fd48e4f8ff7e5054a47f542ef2318f7
-=======
->>>>>>> parent of 567e7c1e... unity
-=======
-      <File FileName="Assets\Resources\Strings\europresse-pnj-1.json" Line="5" Column="17" />
->>>>>>> parent of 1257832b... Merge branch 'master' of m-github:raphaeltran/gate-game
->>>>>>> a5a6443a1b07a3687a5133fa330dba7c01333c3f
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="166" Column="3" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="121" Column="7" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlatformController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Europresse\FriableTile.cs" Line="33" Column="33" />
+      <File FileName="Assets\TileController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

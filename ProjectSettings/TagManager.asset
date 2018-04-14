@@ -35,6 +35,7 @@ TagManager:
   - ENIwarning
   - Eurowarning
   - Scholwarning
+  - Friable
   layers:
   - Default
   - TransparentFX

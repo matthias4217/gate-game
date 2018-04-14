@@ -20,6 +20,7 @@ public class Controller_Hub : MonoBehaviour
 
 	private Rigidbody2D rb;
     private Camera cm;
+    private Vector2 mousePos;
     
 
 
@@ -33,22 +34,23 @@ public class Controller_Hub : MonoBehaviour
 
     void FixedUpdate()
     {
-		if (Input.GetMouseButton (0)) { 
+        Vector2 pos = this.transform.position;
+        if (Input.GetMouseButton (0)) {
+            mousePos = cm.ScreenToWorldPoint(Input.mousePosition);
             mouseMoving = true;
-			directionalInput = Input.mousePosition - cm.WorldToScreenPoint (this.transform.position);
+			directionalInput = cm.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
             directionalInput.Normalize();
             rb.velocity = directionalInput * moveSpeed;
         } else {
             float test = Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical"));
-            if (test != 0 || mouseMoving == false)
+            if (test != 0 || mouseMoving == false || ((Mathf.Abs(mousePos.x - pos.x) < 0.05 & Mathf.Abs(mousePos.y - pos.y) < 0.05)))
             {
                 mouseMoving = false;
                 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 directionalInput.Normalize();
-                rb.velocity = directionalInput * moveSpeed;
+                rb.velocity = directionalInput * moveSpeed; 
             }
         }
-
     }
 	void OnTriggerExit2D(Collider2D other)
 	{

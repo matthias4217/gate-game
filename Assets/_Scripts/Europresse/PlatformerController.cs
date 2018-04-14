@@ -119,11 +119,13 @@ public class PlatformerController : RaycastController {
 					if (collisions.fallingThroughPlatform) {
 						continue;
 					}
+					/*
 					if (playerInput.y == -1) {
 						collisions.fallingThroughPlatform = true;
 						Invoke("ResetFallingThroughPlatform", .1f);		// Set here the amount of time we go through platforms
 						continue;
 					}
+					*/
 				} else if (hit.collider.tag == "Friable") {
 					print (hit.point);
 					StartCoroutine (hit.collider.gameObject.GetComponent<FriableTile> ().effrite ((int)hit.point.x, (int) (hit.point.y - 0.5)));

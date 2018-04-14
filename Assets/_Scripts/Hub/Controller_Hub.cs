@@ -20,13 +20,13 @@ public class Controller_Hub : MonoBehaviour
 	private Rigidbody2D rb;
     private Camera cm;
     private Vector2 mousePos;
-    private int timer;
+    private float timer;
 
 
 
     void Start()
     {
-        timer = 61;
+        timer = 1f;
         mouseMoving = false;
         rb = GetComponent<Rigidbody2D>();
         cm = player_Camera.GetComponent<Camera>();
@@ -35,29 +35,29 @@ public class Controller_Hub : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 pos = this.transform.position;
-        if (Input.GetMouseButton (0) & timer > 30) {
+        if (Input.GetMouseButton (0) && timer > 0.5f) {
             mousePos = cm.ScreenToWorldPoint(Input.mousePosition);
             if ((Mathf.Abs(mousePos.x - pos.x) > 0.1 & Mathf.Abs(mousePos.y - pos.y) > 0.1))
             {
                 mouseMoving = true;
-                timer = 0;
+                timer = 0f;
                 directionalInput = cm.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
                 directionalInput.Normalize();
                 rb.velocity = directionalInput * moveSpeed;
             }
         } else {
             float test = Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical"));
-            if (test != 0 || mouseMoving == false || ((Mathf.Abs(mousePos.x - pos.x) < 0.05 & Mathf.Abs(mousePos.y - pos.y) < 0.05)))
+            if (test != 0 || mouseMoving == false || ((Mathf.Abs(mousePos.x - pos.x) < 0.05 && Mathf.Abs(mousePos.y - pos.y) < 0.05)))
             {
                 mouseMoving = false;
-                timer = 31;
+                timer = 1f;
                 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 directionalInput.Normalize();
                 rb.velocity = directionalInput * moveSpeed; 
             }
         }
         if (mouseMoving)
-            timer += 1;
+			timer += Time.deltaTime;
         
 
     }

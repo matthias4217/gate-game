@@ -11,7 +11,6 @@ public class Controller_Hub : MonoBehaviour
 	public GameObject Scholwarning;
 	public GameObject Eurowarning;
 	public GameObject ENIwarning;
-	public GameObject spawn;
     public GameObject player_Camera;    
 
 	private int count;
@@ -53,10 +52,44 @@ public class Controller_Hub : MonoBehaviour
         }
     }
 
-	
-	void OnTriggerStay2D(Collider2D other) {
+    void OnTriggerExit2D(Collider2D other)
+    {
         string tag = other.gameObject.tag;
-    if (Input.GetKeyDown("space")) {
+        switch (tag)
+        {
+            case "Scholarvox":
+                Scholwarning.SetActive(false);
+                break;
+            case "ENI":
+                ENIwarning.SetActive(false);
+                break;
+            case "Europresse":
+                Eurowarning.SetActive(false);
+                break;
+
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other) {
+        string tag = other.gameObject.tag;
+        switch (tag)
+        {
+            case "Scholarvox":
+                Scholwarning.SetActive(true);
+                break;
+            case "ENI":
+                ENIwarning.SetActive(true);
+                break;
+            case "Europresse":
+                Eurowarning.SetActive(true);
+                break;
+
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D other) {
+        string tag = other.gameObject.tag;
+        if (Input.GetKeyDown("space")) {
             SceneManager.LoadScene(tag);
         }        
     }

@@ -126,7 +126,7 @@ public class PlatformerController : RaycastController {
 					}
 				} else if (hit.collider.tag == "Friable") {
 					print (hit.point);
-					StartCoroutine (hit.collider.gameObject.GetComponent<FriableTile> ().effrite ((int)hit.point.x, (int) hit.point.y - 1));
+					StartCoroutine (hit.collider.gameObject.GetComponent<FriableTile> ().effrite ((int)hit.point.x, (int) (hit.point.y - 0.5)));
 				}
 
 				moveAmount.y = (hit.distance - skinWidth) * directionY;

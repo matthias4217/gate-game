@@ -127,7 +127,7 @@ public class PlatformerController : RaycastController {
 					}
 					*/
 				} else if ((hit.collider.tag == "Friable") && (directionY == -1)) {
-					print (hit.point);
+
 					StartCoroutine (hit.collider.gameObject.GetComponent<FriableTile> ().effrite ((int) hit.point.x, (int) (hit.point.y - 0.5)));
 				}
 

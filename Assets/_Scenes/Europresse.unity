@@ -796,7 +796,7 @@ Tilemap:
     e33: 1
   m_TileRefreshArray:
   - serializedVersion: 1
-    m_DirtyIndex: 0
+    m_DirtyIndex: 100
   - serializedVersion: 1
     m_DirtyIndex: 0
 --- !u!19719996 &65906350
@@ -843,9 +843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75533c488d625e741a3c9bea1eab5367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDisappearing: 2
-  tileRespawnTime: 4
-  tile: {fileID: 11400000, guid: e4ad5bce76799af4aa91b7aaa786c42b, type: 2}
+  timeDisappearing: 1
+  tileRespawnTime: 3
+  timeReappearing: 0.3
+  friableTile: {fileID: 11400000, guid: 583c90a4b2bbf65408bb36a3b1499274, type: 2}
 --- !u!66 &65906353
 CompositeCollider2D:
   m_ObjectHideFlags: 0

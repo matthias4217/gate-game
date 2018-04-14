@@ -7,11 +7,12 @@ using UnityEngine.SceneManagement;
 public class Controller_Hub : MonoBehaviour
 {
     public float moveSpeed;
-    
+    public float timeBeforeMove;
 	public GameObject Scholwarning;
 	public GameObject Eurowarning;
 	public GameObject ENIwarning;
-    public GameObject player_Camera;    
+    public GameObject player_Camera;
+    public bool allTheWay;
 
 	private int count;
 	private Vector2 directionalInput;
@@ -26,7 +27,7 @@ public class Controller_Hub : MonoBehaviour
 
     void Start()
     {
-        timer = 1f;
+        timer = timeBeforeMove*2;
         mouseMoving = false;
         rb = GetComponent<Rigidbody2D>();
         cm = player_Camera.GetComponent<Camera>();
@@ -35,9 +36,12 @@ public class Controller_Hub : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 pos = this.transform.position;
-        if (Input.GetMouseButton (0) && timer > 0.5f) {
+
+        if (Input.GetMouseButton (0) && timer > timeBeforeMove) {
+
             mousePos = cm.ScreenToWorldPoint(Input.mousePosition);
-            if ((Mathf.Abs(mousePos.x - pos.x) > 0.1 & Mathf.Abs(mousePos.y - pos.y) > 0.1))
+
+            if (Mathf.Abs(mousePos.x - pos.x) > 0.1 && Mathf.Abs(mousePos.y - pos.y) > 0.1 && (!allTheWay || !mouseMoving))
             {
                 mouseMoving = true;
                 timer = 0f;
@@ -50,7 +54,7 @@ public class Controller_Hub : MonoBehaviour
             if (test != 0 || mouseMoving == false || ((Mathf.Abs(mousePos.x - pos.x) < 0.05 && Mathf.Abs(mousePos.y - pos.y) < 0.05)))
             {
                 mouseMoving = false;
-                timer = 1f;
+                timer = timeBeforeMove*2;
                 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 directionalInput.Normalize();
                 rb.velocity = directionalInput * moveSpeed; 

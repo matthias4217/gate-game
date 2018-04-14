@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &299445393
 Transform:
   m_ObjectHideFlags: 0
@@ -3209,10 +3209,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  timeBeforeMove: 0.5
   Scholwarning: {fileID: 1954792834}
   Eurowarning: {fileID: 719248923}
   ENIwarning: {fileID: 2007238002}
   player_Camera: {fileID: 1301847240}
+  allTheWay: 1
 --- !u!212 &1597643366
 SpriteRenderer:
   m_ObjectHideFlags: 0

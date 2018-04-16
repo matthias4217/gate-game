@@ -65,6 +65,7 @@ public class scr_collision_with_player : MonoBehaviour
 				//afficher un trivia sur le livre 1
 				AlreadyTriggered = true;
 				triggeredUi.SetActive (true);
+                                // send here to GA
 			}
 		}
 		else if (tag == "triggerFin" && !joueur.GetComponent<scr_movement_player> ().tutoActive)

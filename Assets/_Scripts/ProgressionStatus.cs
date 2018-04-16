@@ -11,6 +11,8 @@ public class ProgressionStatus : MonoBehaviour {
         public string progression01;
     [Tooltip("Le checkpoint dans le niveau")]
         public string progression02;
+    [Tooltip("Le checkpoint dans le niveau")]
+        public string progression02;
     //public string progression03;
 
     // Use this for initialization

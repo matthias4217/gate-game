@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\Analytics\collectableAnalytics.cs" />
+     <Compile Include="Assets\_Scripts\Analytics\ProgressionStatus.cs" />
+     <Compile Include="Assets\_Scripts\Analytics\setEcole.cs" />
      <Compile Include="Assets\_Scripts\Annex.cs" />
-     <Compile Include="Assets\_Scripts\collectableAnalytics.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\DialogueManagerTest.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\TriggerDialogue.cs" />
@@ -83,7 +85,6 @@
      <Compile Include="Assets\_Scripts\menu\scr_clicked_menu.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\PlayerInput.cs" />
-     <Compile Include="Assets\_Scripts\ProgressionStatus.cs" />
      <Compile Include="Assets\_Scripts\Research\Input\ResearchController.cs" />
      <Compile Include="Assets\_Scripts\Research\Input\ResearchTrigger.cs" />
      <Compile Include="Assets\_Scripts\Scholarvox\scr_changercoleurOnMouseOver.cs" />

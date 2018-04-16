@@ -11,13 +11,11 @@ public class ProgressionStatus : MonoBehaviour {
         public string progression01;
     [Tooltip("Le checkpoint dans le niveau")]
         public string progression02;
-    [Tooltip("Le checkpoint dans le niveau")]
-        public string progression02;
-    //public string progression03;
+    private string school;
 
     // Use this for initialization
     void Start () {
-
+        school = PlayerPrefs.GetString("School");
     }
 
     

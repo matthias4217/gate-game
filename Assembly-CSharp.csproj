@@ -54,6 +54,7 @@
      <Compile Include="Assets\_Scripts\Analytics\collectableAnalytics.cs" />
      <Compile Include="Assets\_Scripts\Analytics\ProgressionStatus.cs" />
      <Compile Include="Assets\_Scripts\Analytics\setEcole.cs" />
+     <Compile Include="Assets\_Scripts\Analytics\setTime.cs" />
      <Compile Include="Assets\_Scripts\Annex.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\Dialogue.cs" />
      <Compile Include="Assets\_Scripts\Dialogue\DialogueManagerTest.cs" />

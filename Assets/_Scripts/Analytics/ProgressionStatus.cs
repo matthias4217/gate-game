@@ -16,12 +16,14 @@ public class ProgressionStatus : MonoBehaviour {
     // Use this for initialization
     void Start () {
         school = PlayerPrefs.GetString("School");
+        // get the time at the beginning of the level
     }
 
     void sendProgression() {
+        float deltaTime = Time.time; // minus time at the beginning of the level...
         Debug.Log("Envoi de données à GameAnalytics...");
         GameAnalytics.NewProgressionEvent(progressionStatus, niveau, checkpoint);
-        GameAnalytics.NewDesignEvent(school + ":progression:" + niveau + ":" + checkpoint);
+        GameAnalytics.NewDesignEvent(school + ":progression:" + niveau + ":" + checkpoint, deltaTime);
     }
     
     void OnTriggerEnter2D (Collider2D other) {

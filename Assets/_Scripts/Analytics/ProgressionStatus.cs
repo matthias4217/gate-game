@@ -8,9 +8,9 @@ public class ProgressionStatus : MonoBehaviour {
     [Tooltip("start, complete ou fail")]
         public GAProgressionStatus progressionStatus;
     [Tooltip("Le niveau")]
-        public string progression01;
+        public string niveau;
     [Tooltip("Le checkpoint dans le niveau")]
-        public string progression02;
+        public string checkpoint;
     private string school;
 
     // Use this for initialization
@@ -18,18 +18,19 @@ public class ProgressionStatus : MonoBehaviour {
         school = PlayerPrefs.GetString("School");
     }
 
+    void sendProgression() {
+        Debug.Log("Envoi de données à GameAnalytics...");
+        GameAnalytics.NewProgressionEvent(progressionStatus, niveau, checkpoint);
+        GameAnalytics.NewDesignEvent(school + ":progression:" + niveau + ":" + checkpoint);
+    }
     
     void OnTriggerEnter2D (Collider2D other) {
-        Debug.Log("Envoi de données à GameAnalytics...");
-        GameAnalytics.NewProgressionEvent(progressionStatus, progression01, progression02);
-        GameAnalytics.NewDesignEvent("customProgression:" + progression01 + ":" + progression02);
+        sendProgression();
     }
 
     void OnTriggerEnter (Collider other) {
         // Pour Scholarvox
-        Debug.Log("Envoi de données à GameAnalytics via Collider (pas 2D)...");
-        GameAnalytics.NewProgressionEvent(progressionStatus, progression01, progression02);
-        GameAnalytics.NewDesignEvent("customProgression:" + progression01 + ":" + progression02);
+        sendProgression();
     }
 
     // Update is called once per frame

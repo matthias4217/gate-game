@@ -11523,6 +11523,47 @@ Tilemap:
     m_DirtyIndex: 0
   - serializedVersion: 1
     m_DirtyIndex: 0
+--- !u!1 &605589321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 605589322}
+  - component: {fileID: 605589323}
+  m_Layer: 0
+  m_Name: init
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &605589322
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605589321}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.5, y: 12.5, z: 1.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &605589323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 605589321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb5c36295cd14b41b1fc94c0a209256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niveau: Scholarvox
 --- !u!1 &617054315
 GameObject:
   m_ObjectHideFlags: 0
@@ -18626,9 +18667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressionStatus: 1
-  niveau: 
-  checkpoint: 
+  niveau: Scholarvox
+  checkpoint: Bouton1
 --- !u!1 &1761630212
 GameObject:
   m_ObjectHideFlags: 0
@@ -20213,6 +20253,24 @@ MonoBehaviour:
   GUIBouton: {fileID: 0}
   paquetRecherche2: {fileID: 1476386099}
   pointGiven: 0
+--- !u!1 &1992778132 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1546559198269178, guid: b34d1903520067e4abcb45935b94b0c5,
+    type: 2}
+  m_PrefabInternal: {fileID: 2068530266}
+--- !u!114 &1992778136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1992778132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niveau: Scholarvox
+  checkpoint: Bouton2
 --- !u!1 &1996559014
 GameObject:
   m_ObjectHideFlags: 0

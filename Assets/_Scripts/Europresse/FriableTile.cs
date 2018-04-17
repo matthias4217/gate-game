@@ -16,7 +16,7 @@ public class FriableTile : MonoBehaviour {
 
 	Tilemap grid;
 
-	private List<int[]> tilesCurrentlyAltered = new List<int[]>();
+	private TileList tilesCurrentlyAltered = new TileList();
 	private bool activated;
 
 
@@ -85,3 +85,23 @@ public class FriableTile : MonoBehaviour {
 	}
 
 }
+
+
+
+struct TileList {
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+

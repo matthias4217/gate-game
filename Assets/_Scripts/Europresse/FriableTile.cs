@@ -31,7 +31,7 @@ public class FriableTile : MonoBehaviour {
 
 
 	/*
-	 * Make the tile at (x, y) in the grid disappear (this method is called when the player step on this tile) 
+	 * Make the tile at (x, y) in the grid disappear (this method is called when the player step on this tile)
 	 */
 	public IEnumerator effrite(int x, int y) {
 		int[] w = {x, y};

@@ -38,7 +38,7 @@ public class FriableTile : MonoBehaviour {
 		if (!activated) {
 			print ("starting the coroutine");
 			activated = true;
-			tilesCurrentlyAltered.Add (w);
+			//tilesCurrentlyAltered.Add (w);
 
 			Vector3Int tilePosition = new Vector3Int (x, y, 0);
 
@@ -77,7 +77,7 @@ public class FriableTile : MonoBehaviour {
 			}
 			*/
 
-			tilesCurrentlyAltered.Remove (w);
+			//tilesCurrentlyAltered.Remove (w);
 			activated = false;
 		}
 

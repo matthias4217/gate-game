@@ -1432,6 +1432,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1489281202807630, guid: aef363e7e0dc4f9448f8c6d4d799d4f2, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aef363e7e0dc4f9448f8c6d4d799d4f2, type: 2}
   m_IsPrefabParent: 0
@@ -1687,8 +1691,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 279666279}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 4500, y: 2, z: 1}
+  m_LocalPosition: {x: 0.27, y: -0, z: 1}
+  m_LocalScale: {x: 4554.6123, y: 2.809052, z: 1}
   m_Children: []
   m_Father: {fileID: 836681473}
   m_RootOrder: 0
@@ -42830,7 +42834,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.21085641, g: 0.5735294, b: 0.36342916, a: 0}
+  m_BackGroundColor: {r: 0.28339094, g: 0.21085641, b: 0.5735294, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -42841,7 +42845,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -44302,7 +44306,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347686142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 160.06, y: 14.59, z: 0}
+  m_LocalPosition: {x: 136.6, y: 36.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 394792542}

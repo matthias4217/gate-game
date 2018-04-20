@@ -3373,6 +3373,7 @@ MonoBehaviour:
   ENIwarning: {fileID: 2007238002}
   player_Camera: {fileID: 1301847240}
   allTheWay: 1
+  minMove: 0.2
   maxX: 5.9
   minX: -7.4
   maxY: 4.6

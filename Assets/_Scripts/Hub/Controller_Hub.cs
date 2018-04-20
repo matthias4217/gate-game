@@ -15,7 +15,7 @@ public class Controller_Hub : MonoBehaviour
 	public GameObject ENIwarning;
     public GameObject player_Camera;
     public bool allTheWay;
-
+    public float minMove;
     public float maxX;
     public float minX;
     public float maxY;
@@ -30,12 +30,13 @@ public class Controller_Hub : MonoBehaviour
     private Vector2 mousePos;
     private float timer;
     private GameObject Obj;
+    
 
 
     void Start()
     {
         Obj = null;
-        timer = timeBeforeMove*2;
+        timer = timeBeforeMove*2 + 1;
         mouseMoving = false;
         rb = GetComponent<Rigidbody2D>();
         cm = player_Camera.GetComponent<Camera>();
@@ -44,33 +45,35 @@ public class Controller_Hub : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 pos = this.transform.position;
-
-        if (Input.GetMouseButton (0) && timer > timeBeforeMove) {
-            if (Mathf.Abs(cm.ScreenToWorldPoint(Input.mousePosition).x - pos.x) > 0.1 && Mathf.Abs(cm.ScreenToWorldPoint(Input.mousePosition).y - pos.y) > 0.1 && (!allTheWay || !mouseMoving) || (pos.x>5.9 || pos.x < -7.4 || Mathf.Abs(pos.y)>4.6) )
+        if (Input.GetMouseButtonDown(0) && timer > timeBeforeMove)
+        {
+            if ((Mathf.Abs(cm.ScreenToWorldPoint(Input.mousePosition).x - pos.x) > minMove || Mathf.Abs(cm.ScreenToWorldPoint(Input.mousePosition).y - pos.y) > minMove) && (!allTheWay || !mouseMoving) || (pos.x > 5.9 || pos.x < -7.4 || Mathf.Abs(pos.y) > 4.6))
             {
 
                 mousePos = cm.ScreenToWorldPoint(Input.mousePosition);
                 Debug.Log(mousePos);
                 Vector3 objPos = Tronquer(mousePos, maxX, minX, maxY, minY);
                 Destroy(Obj);
-                Obj = Instantiate(prefab, objPos, new Quaternion(0,0,0,0));
+                Obj = Instantiate(prefab, objPos, new Quaternion(0, 0, 0, 0));
                 mouseMoving = true;
-                timer = 0f;
+                if (allTheWay) { timer = 2*timeBeforeMove + 1 ; } else { timer = 0f; }
                 directionalInput = cm.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
                 directionalInput.Normalize();
                 rb.velocity = directionalInput * moveSpeed;
             }
-        } else {
+        }
+        else
+        {
             float test = Mathf.Abs(Input.GetAxisRaw("Horizontal")) + Mathf.Abs(Input.GetAxisRaw("Vertical"));
             if (test != 0 || mouseMoving == false || ((Mathf.Abs(mousePos.x - pos.x) < 0.05 && Mathf.Abs(mousePos.y - pos.y) < 0.05)))
             {
                 Destroy(Obj);
 
                 mouseMoving = false;
-                timer = timeBeforeMove*2;
+                timer = timeBeforeMove * 2 + 1;
                 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 directionalInput.Normalize();
-                rb.velocity = directionalInput * moveSpeed; 
+                rb.velocity = directionalInput * moveSpeed;
             }
         }
         if (mouseMoving)

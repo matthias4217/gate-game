@@ -78,15 +78,15 @@ public class scr_clicked : MonoBehaviour
 
 	public void whenClickedClose()
 	{
+		joueur.GetComponent<scr_movement_player> ().tutoActive = false;
 		livre0.SetActive (false);
 		livre1.SetActive (false);
 		livre2.SetActive (false);
 		livre3.SetActive (false);
 		livre4.SetActive (false);
 		recherche.SetActive (false);
-		panelInfos.SetActive (false);
 		paquetRecherche2.SetActive (false);
-		joueur.GetComponent<scr_movement_player> ().tutoActive = false;
+		panelInfos.SetActive (false);
 	}
 
 	public void whenClickedRechercheFinale()

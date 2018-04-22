@@ -26,3 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/_Scenes/pr\xE9-Introduction (texte).unity"
     guid: b219e063340e9f94eb25df4377121f4c
+  - enabled: 1
+    path: Assets/_Scenes/Europresse.unity
+    guid: 85a6004c82dbd47168e7218a209a01a4

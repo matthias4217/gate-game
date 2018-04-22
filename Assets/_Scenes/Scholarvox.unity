@@ -88,6 +88,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1062,6 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boutonFermer: {fileID: 0}
   boutonFin: {fileID: 0}
+  boutonEnigme: {fileID: 0}
   val1: 1
   val2: 2
   val3: 3
@@ -1559,10 +1561,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'BRAVO TEO <3
-
-
-'
+  m_Text: "En esp\xE9rant que tu aies eu un bon aper\xE7u de ce que propose cette
+    base de donn\xE9es ! \n\n"
 --- !u!222 &303372876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1595,6 +1595,7 @@ Transform:
   m_LocalScale: {x: 1.2698412, y: 1.2698412, z: 1.2698412}
   m_Children:
   - {fileID: 856041824}
+  - {fileID: 1845128971}
   m_Father: {fileID: 683022625}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2342,10 +2343,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2353,7 +2354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Retour au Hub
 --- !u!222 &460805528
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2603,9 +2604,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "La base de donn\xE9es ScholarVox regorge d'ebooks pour les enseignements
-    de TEM;\nmais pas seulement pour le droit ou l'\xE9conomie !\n\nN'h\xE9sitez pas
-    \xE0 fouiller la base de donn\xE9es :)\n\n"
+  m_Text: "Les ebooks que tu trouveras ici ne traitent pas seulement de management
+    ou d'\xE9conomie, mais aussi de science ou de culture.\n"
 --- !u!222 &469699991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3061,8 +3061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a655699f5e12142a8979ad0a984071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boutonFermer: {fileID: 1845128970}
-  boutonFin: {fileID: 1991332948}
+  boutonFermer: {fileID: 1991332948}
+  boutonFin: {fileID: 1845128970}
+  boutonEnigme: {fileID: 856041823}
   val1: 1
   val2: 2
   val3: 3
@@ -13044,8 +13045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 178.9, y: 130.2}
-  m_SizeDelta: {x: 297.8, y: 25.7}
+  m_AnchoredPosition: {x: 178.9, y: 117.5}
+  m_SizeDelta: {x: 297.8, y: 51.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802332698
 MonoBehaviour:
@@ -13079,7 +13080,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HADOUKEN
+  m_Text: "Tu ma\xEEtrises d\xE9sormais la recherche avanc\xE9e !"
 --- !u!222 &802332699
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13526,7 +13527,7 @@ GameObject:
   - component: {fileID: 856041825}
   - component: {fileID: 856041828}
   m_Layer: 5
-  m_Name: Button
+  m_Name: boutonEnigme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16950,7 +16951,6 @@ Transform:
   - {fileID: 1945733692}
   - {fileID: 530377850}
   - {fileID: 1983655328}
-  - {fileID: 1845128971}
   m_Father: {fileID: 213512679}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19208,8 +19208,9 @@ GameObject:
   - component: {fileID: 1845128974}
   - component: {fileID: 1845128973}
   - component: {fileID: 1845128972}
+  - component: {fileID: 1845128975}
   m_Layer: 0
-  m_Name: Button
+  m_Name: boutonRetourAuHub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19221,18 +19222,18 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845128970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.055202767}
+  m_LocalScale: {x: 0.7874999, y: 0.7874999, z: 0.7874999}
   m_Children:
   - {fileID: 460805526}
-  m_Father: {fileID: 1476386100}
-  m_RootOrder: 5
+  m_Father: {fileID: 305938038}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 319, y: -15}
+  m_SizeDelta: {x: 192.3, y: 78.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1845128972
 MonoBehaviour:
@@ -19272,7 +19273,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1845128973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1845128975}
+        m_MethodName: whenClickedBoutonHub
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1845128973
@@ -19308,6 +19320,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845128970}
+--- !u!114 &1845128975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845128970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41c98effa7b69f48a2a7c94793008f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1874775689
 GameObject:
   m_ObjectHideFlags: 0
@@ -20099,8 +20122,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Utilise les INDICES JAUNES que tu as pu r\xE9colter pour lib\xE9rer ScholarVox
-    en trouvant l'auteur du livre !"
+  m_Text: "Utilise les INDICES JAUNES, se trouvant dans les livres que tu as r\xE9cup\xE9r\xE9s
+    jusque l\xE0, pour trouver l'auteur du livre !"
 --- !u!222 &1983655330
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20142,7 +20165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 1, y: 50}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991332950
@@ -20600,8 +20623,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "L'art d'\xEAtre un communicant: que tu sois ing\xE9nieur ou manager, il
-    va falloir savoir te vendre, et convaincre ton auditoire.\n\n"
+  m_Text: "Que tu sois ing\xE9nieur ou manager, il va falloir savoir te vendre, et
+    convaincre ton auditoire.\n\n"
 --- !u!222 &2068742215
 CanvasRenderer:
   m_ObjectHideFlags: 0

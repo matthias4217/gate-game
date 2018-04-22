@@ -7,6 +7,7 @@ public class scr_validerChoix : MonoBehaviour
 {
 	public GameObject boutonFermer;
 	public GameObject boutonFin;
+	public GameObject boutonEnigme;
 	public int val1 = 1;
 	public int val2 = 2;
 	public int val3 = 3;
@@ -43,6 +44,7 @@ public class scr_validerChoix : MonoBehaviour
 			if (tag == "porte_2") 
 			{
 				boutonFermer.SetActive (false);
+				boutonEnigme.SetActive (false);
 				boutonFin.SetActive (true);
 			}
 			if (!pointGiven) 

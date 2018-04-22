@@ -21,17 +21,20 @@ public class Game_Controller : MonoBehaviour {
 
     public void Start()
     {
-        Debug.Log(button_0);
+        buttons = new List<Button>();
         buttons.Add(button_0);
         buttons.Add(button_1);
         buttons.Add(button_2);
 
     }
+
+    /*
     public void ImBeingPressed(int button_number)
     {
         list_of_execution[button_number] = 1;
         if (SumArray(list_of_execution) == 3) button_capture.interactable = true;
     }
+    */
 
     public int SumArray(int[] toBeSummed)
     {
@@ -47,11 +50,16 @@ public class Game_Controller : MonoBehaviour {
         SceneManager.LoadScene("Hub");
     }
 
-    public void Animation(int button_number)
+    public void StartAnimation(int button_number)
+    {
+        StartCoroutine(Animation(button_number));
+    }
+
+    private IEnumerator Animation(int button_number)
     {
 
         list_of_execution[button_number] = 1;
-        if (SumArray(list_of_execution) == 3) button_capture.interactable = true;
+        if (SumArray(list_of_execution) == 3) { button_capture.interactable = true; }
 
         bool[] list_state = new bool[4];
         int i = 0;
@@ -65,9 +73,11 @@ public class Game_Controller : MonoBehaviour {
         {
             case 0:
                 //animation 0
-                for (int y = 0; i > 56; i++)
+                for (int y = 0; y < 6; y++)
                 {
-                    sprite.flipX = !sprite.flipX;
+                    sprite.flipY = !sprite.flipY;
+                    yield return new WaitForSeconds(0.2f);
+                    
 
                 }
                 break;

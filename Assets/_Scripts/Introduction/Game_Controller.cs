@@ -3,24 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
-
-
-
+using System;
 
 public class Game_Controller : MonoBehaviour {
 
-    public SpriteRenderer sprite;
+    public SpriteRenderer player;
+    public SpriteRenderer ennemy;
     int[] list_of_execution = { 0, 0, 0 };
     public Button button_0;
     public Button button_1;
     public Button button_2;
     public Button button_capture;
     private List<Button> buttons;
-
+    public List<SpriteRenderer> coeurs;
+    private int nb_coeurs;
+    public Text text;
+    public string hit_efficient;
+    public string hit_inefficient;
+    public String victory_text;
+    public System.Random rnd;
 
     public void Start()
     {
+        rnd = new System.Random();
+        nb_coeurs = coeurs.Count;
         buttons = new List<Button>();
         buttons.Add(button_0);
         buttons.Add(button_1);
@@ -57,9 +63,8 @@ public class Game_Controller : MonoBehaviour {
 
     private IEnumerator Animation(int button_number)
     {
-
-        list_of_execution[button_number] = 1;
-        if (SumArray(list_of_execution) == 3) { button_capture.interactable = true; }
+        bool test = (list_of_execution[button_number] != 1);
+        if (button_number == 3) { text.text = victory_text; } else if (test) { text.text = hit_efficient; } else { text.text = hit_inefficient; }// C'est très éfficace / Cela ne marche plus, il a évolué!
 
         bool[] list_state = new bool[4];
         int i = 0;
@@ -69,25 +74,42 @@ public class Game_Controller : MonoBehaviour {
             but.interactable = false;
         }
 
+        int rd = rnd.Next(2, 6);
+
         switch (button_number)
         {
             case 0:
                 //animation 0
-                for (int y = 0; y < 6; y++)
+                
+                for (int y = 0; y < 2*rd; y++)
                 {
-                    sprite.flipY = !sprite.flipY;
+                    player.flipY = !player.flipY;
                     yield return new WaitForSeconds(0.2f);
-                    
-
                 }
                 break;
             case 1:
+                for (int y = 0; y < 2 * rd; y++)
+                {
+                    ennemy.flipX = !ennemy.flipX;
+                    yield return new WaitForSeconds(0.2f);
+                }
                 //animation 1
                 break;
             case 2:
+                for (int y = 0; y < 2 * rd; y++)
+                {
+                    ennemy.flipY = !ennemy.flipY;
+                    yield return new WaitForSeconds(0.2f);
+                }
                 //animation 2
                 break;
             case 3:
+                for (int y = 0; y < 2 * rd; y++)
+                {
+                    player.flipY = !player.flipY;
+                    yield return new WaitForSeconds(0.2f);
+                }
+                ChangeLevel();
                 //animation 3
                 break;
         }
@@ -96,5 +118,17 @@ public class Game_Controller : MonoBehaviour {
         {
             button.interactable = list_state[i];
         }
+
+        if (test) { Damaged(); }
+        list_of_execution[button_number] = 1;
+        if (SumArray(list_of_execution) == 3) { button_capture.interactable = true; }
+        text.text = null;
+    }
+
+    private void Damaged()
+    {
+        coeurs[nb_coeurs - 1].color = Color.white;
+        coeurs.RemoveAt(nb_coeurs - 1);
+        nb_coeurs -= 1;
     }
 }

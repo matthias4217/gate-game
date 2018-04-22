@@ -63,8 +63,7 @@ public class Game_Controller : MonoBehaviour {
 
     private IEnumerator Animation(int button_number)
     {
-        bool test = (list_of_execution[button_number] != 1);
-        if (button_number == 3) { text.text = victory_text; } else if (test) { text.text = hit_efficient; } else { text.text = hit_inefficient; }// C'est très éfficace / Cela ne marche plus, il a évolué!
+        if (button_number == 3) { text.text = victory_text; } else if (list_of_execution[button_number] != 1) { text.text = hit_efficient; } else { text.text = hit_inefficient; }// C'est très éfficace / Cela ne marche plus, il a évolué!
 
         bool[] list_state = new bool[4];
         int i = 0;
@@ -119,7 +118,7 @@ public class Game_Controller : MonoBehaviour {
             button.interactable = list_state[i];
         }
 
-        if (test) { Damaged(); }
+        if (list_of_execution[button_number] != 1) { Damaged(); }
         list_of_execution[button_number] = 1;
         if (SumArray(list_of_execution) == 3) { button_capture.interactable = true; }
         text.text = null;

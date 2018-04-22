@@ -16,13 +16,13 @@ public class FriableTile : MonoBehaviour {
 
 	Tilemap grid;
 
-	private TileList tilesCurrentlyAltered = new TileList();
-	private bool activated;
+	private TileList tilesCurrentlyAltered;
 
 
 
 	void Start () {
 		grid = GetComponent<Tilemap> ();
+		tilesCurrentlyAltered.list = new List<int[]> ();
 	}
 
 	void Update () {
@@ -33,17 +33,15 @@ public class FriableTile : MonoBehaviour {
 	/*
 	 * Make the tile at (x, y) in the grid disappear (this method is called when the player step on this tile)
 	 */
-	public IEnumerator effrite(int x, int y) {
+	public IEnumerator effrite(int x, int y) {		// DEGUEULASSE
 		int[] w = {x, y};
-		if (!activated) {
-			print ("starting the coroutine");
-			activated = true;
-			//tilesCurrentlyAltered.Add (w);
+		if (!tilesCurrentlyAltered.Contains(w)) {
+			print ("Starting the coroutine");
+			tilesCurrentlyAltered.Add(w);
 
 			Vector3Int tilePosition = new Vector3Int (x, y, 0);
 
 			// Making the tile disappear
-
 			/*
 			while (grid.GetColor(tilePosition).a > 0f) {		// while the tile is not transparent
 				Color tmpColor = grid.GetColor(tilePosition);
@@ -77,8 +75,7 @@ public class FriableTile : MonoBehaviour {
 			}
 			*/
 
-			//tilesCurrentlyAltered.Remove (w);
-			activated = false;
+			tilesCurrentlyAltered.Remove(w);
 		}
 
 
@@ -90,18 +87,29 @@ public class FriableTile : MonoBehaviour {
 
 struct TileList {
 
+	public List<int[]> list;
 
+	public void Add(int[] tile) {
+		/* Add the tile to the list and return its index */
+		list.Add (tile);
+	}
 
+	public bool Contains(int[] tile) {
+		foreach (int[] curr in list) {
+			if ((curr[0] == tile[0]) && (curr[1] == tile[1])) {
+				return true;
+			}
+		}
+		return false;
+	}
 
-
+	public void Remove(int[] tile) {
+		for (int i = 0; i < list.Count; i++) {
+			int[] curr = list [i];
+			if ((curr[0] == tile[0] && curr[1] == tile[1])) {
+				list.RemoveAt (i);
+			}
+		}
+	}
 
 }
-
-
-
-
-
-
-
-
-

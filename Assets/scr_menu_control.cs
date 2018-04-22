@@ -19,7 +19,7 @@ public class scr_menu_control : MonoBehaviour
 	{
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (compteur == 1) {
-			SceneManager.LoadScene ("Introduction_Combat");
+				SceneManager.LoadScene ("pré-Introduction (texte)");
 		}
 			if (compteur == 0) 
 			{

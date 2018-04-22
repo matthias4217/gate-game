@@ -122,9 +122,10 @@ public class Controller_Hub : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D other) {
-        string tag = other.gameObject.tag;
-        if (Input.GetKeyDown("space")) {
-            SceneManager.LoadScene(tag);
+		Debug.Log ("Hadouken");
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			Debug.Log ("Loading scene: " + other.gameObject.tag);
+			SceneManager.LoadScene(other.gameObject.tag);
         }        
     }
 

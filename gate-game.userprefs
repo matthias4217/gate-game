@@ -1,18 +1,27 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\FriableTile.cs">
+=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Scholarvox\scr_movement_player.cs">
+>>>>>>> 7fb17ce824d9dd36cb69738284d16445a1cebdb1
     <Files>
       <File FileName="Assets\_Scripts\Europresse\RaycastController.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerPlatformController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\FriableTile.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Europresse\FriableTile.cs" Line="44" Column="32" />
       <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Research\Input\ResearchController.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Annex.cs" Line="1" Column="1" />
+<<<<<<< HEAD
+      <File FileName="Assets\scr_menu_control.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_avancerDansLeTexte.cs" Line="44" Column="1" />
+=======
       <File FileName="Assets\scr_menu_control.cs" Line="4" Column="1" />
       <File FileName="Assets\scr_avancerDansLeTexte.cs" Line="21" Column="1" />
       <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="1" Column="1" />
+>>>>>>> 7fb17ce824d9dd36cb69738284d16445a1cebdb1
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

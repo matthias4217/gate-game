@@ -9,7 +9,7 @@ public class Game_Controller : MonoBehaviour {
 
     public SpriteRenderer player;
     public SpriteRenderer ennemy;
-	int[] list_of_execution = { 0, 0, 0, 0 };
+	int[] list_of_execution = { 0, 0, 0};
     public Button button_0;
     public Button button_1;
     public Button button_2;

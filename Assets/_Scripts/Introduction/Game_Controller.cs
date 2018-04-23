@@ -13,7 +13,7 @@ public class Game_Controller : MonoBehaviour {
     public Button button_0;
     public Button button_1;
     public Button button_2;
-    public Button button_capture;
+    public GameObject button_capture;
     private List<Button> buttons;
     public List<SpriteRenderer> coeurs;
     private int nb_coeurs;
@@ -119,8 +119,14 @@ public class Game_Controller : MonoBehaviour {
         }
 
         if (list_of_execution[button_number] != 1) { Damaged(); }
+
         list_of_execution[button_number] = 1;
-        if (SumArray(list_of_execution) == 3) { button_capture.interactable = true; }
+
+        if (SumArray(list_of_execution) == 3)
+        {
+            button_capture.SetActive(true);
+        }
+
         text.text = null;
     }
 

@@ -328,12 +328,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!114 &366912121 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114344438217625490, guid: 8d02f043c6424694891c4c9878f6bd24,
-    type: 2}
-  m_PrefabInternal: {fileID: 1031520654}
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &388722431
 Prefab:
   m_ObjectHideFlags: 0
@@ -780,7 +774,7 @@ Prefab:
     - target: {fileID: 224987069280930198, guid: 8d02f043c6424694891c4c9878f6bd24,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224329049817791626, guid: 8d02f043c6424694891c4c9878f6bd24,
         type: 2}
@@ -810,7 +804,7 @@ Prefab:
     - target: {fileID: 224987069280930198, guid: 8d02f043c6424694891c4c9878f6bd24,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -323.18
+      value: -324
       objectReference: {fileID: 0}
     - target: {fileID: 224987069280930198, guid: 8d02f043c6424694891c4c9878f6bd24,
         type: 2}
@@ -820,7 +814,7 @@ Prefab:
     - target: {fileID: 224438777427457198, guid: 8d02f043c6424694891c4c9878f6bd24,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -231.975
+      value: -234
       objectReference: {fileID: 0}
     - target: {fileID: 224438777427457198, guid: 8d02f043c6424694891c4c9878f6bd24,
         type: 2}
@@ -1017,9 +1011,23 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1424093985316862, guid: 8d02f043c6424694891c4c9878f6bd24, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114344438217625490, guid: 8d02f043c6424694891c4c9878f6bd24,
+        type: 2}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d02f043c6424694891c4c9878f6bd24, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1031520655 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1424093985316862, guid: 8d02f043c6424694891c4c9878f6bd24,
+    type: 2}
+  m_PrefabInternal: {fileID: 1031520654}
 --- !u!1 &1083240815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,13 +1666,13 @@ MonoBehaviour:
   button_0: {fileID: 576554835}
   button_1: {fileID: 453865775}
   button_2: {fileID: 829987215}
-  button_capture: {fileID: 366912121}
+  button_capture: {fileID: 1031520655}
   coeurs:
   - {fileID: 361141035}
   - {fileID: 1083240817}
   - {fileID: 1812671138}
   text: {fileID: 1956233409}
-  hit_efficient: "C'est tr\xE8s \xE9fficace!"
+  hit_efficient: "C'est tr\xE8s efficace!"
   hit_inefficient: "Cela ne marche plus, il a \xE9volu\xE9!"
   victory_text: "Tu as captur\xE9 un pok... emprunt\xE9 le livre!"
 --- !u!4 &2137094697

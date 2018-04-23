@@ -12,6 +12,12 @@ public class scr_menu_control : MonoBehaviour
 
 	bool menuOuvert = false;
 	int compteur = 0;
+	private string sceneName;		// La scène dans laquelle on est
+
+
+	void Start() {
+		sceneName = SceneManager.GetActiveScene ().name;
+	}
 
 
 
@@ -21,7 +27,7 @@ public class scr_menu_control : MonoBehaviour
 			if (compteur == 1) {
 				SceneManager.LoadScene ("pré-Introduction (texte)");
 		}
-			if (compteur == 0) 
+			if (sceneName == "Demarrage" &&  compteur == 0)
 			{
 				texteMenu1.SetActive (false);
 				logo.SetActive (true);

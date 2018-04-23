@@ -111,6 +111,21 @@ public class PlatformerPlayer : MonoBehaviour {
 	}
 
 
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.CompareTag("QuestionTrigger")) {
+			Debug.Log ("Hadoken");
+		}
+	}
+
+	void OnTriggerExit2D(Collider2D other) {
+		if (other.CompareTag("QuestionTrigger")) {
+			Debug.Log ("goudbye");
+		}
+	}
+
+
+
+
 	void OnTriggerStay2D(Collider2D other) {
 
 		if (other.CompareTag("Enemy") && !invicible) {

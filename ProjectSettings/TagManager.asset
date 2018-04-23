@@ -36,6 +36,7 @@ TagManager:
   - Eurowarning
   - Scholwarning
   - Friable
+  - QuestionTrigger
   layers:
   - Default
   - TransparentFX

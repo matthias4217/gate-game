@@ -7,7 +7,11 @@ using System.Collections.Generic;
 
 public class Controller_Hub : MonoBehaviour
 {
-    public GameObject prefab;
+	public GameObject texteENI;
+	public GameObject texteSCHOL;
+	public GameObject texteEURO;
+	public GameObject prefab;
+	public GameObject texteSpawn;
     public float moveSpeed;
     public float timeBeforeMove;
 	public GameObject Scholwarning;
@@ -89,13 +93,19 @@ public class Controller_Hub : MonoBehaviour
         {
             case "Scholarvox":
                 Scholwarning.SetActive(false);
+				texteSCHOL.SetActive (false);
                 break;
             case "ENI":
                 ENIwarning.SetActive(false);
+				texteENI.SetActive (false);
                 break;
-            case "Europresse":
-                Eurowarning.SetActive(false);
+			case "Europresse":
+				Eurowarning.SetActive (false);
+				texteEURO.SetActive (false);
                 break;
+			case "Respawn":
+				texteSpawn.SetActive (false);
+				break;
 
         }
     }
@@ -108,14 +118,17 @@ public class Controller_Hub : MonoBehaviour
             case "Target":
                 Destroy(other.gameObject);
                 break;
-            case "Scholarvox":
-                Scholwarning.SetActive(true);
+			case "Scholarvox":
+				Scholwarning.SetActive (true);
+				texteSCHOL.SetActive (true);
                 break;
-            case "ENI":
-                ENIwarning.SetActive(true);
+			case "ENI":
+				ENIwarning.SetActive (true);
+				texteENI.SetActive (true);
                 break;
-            case "Europresse":
-                Eurowarning.SetActive(true);
+			case "Europresse":
+				Eurowarning.SetActive (true);
+				texteEURO.SetActive (true);
                 break;
 
         }

@@ -29,7 +29,7 @@ MonoBehaviour:
   secretKey:
   - e4d40b53de7d73e7dfef964970133b0eed307bcc
   Build:
-  - 0.3.0
+  - 0.4.0
   SelectedPlatformStudio:
   - GATE Mdiathque
   SelectedPlatformGame:

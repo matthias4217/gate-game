@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Europresse.unity
     guid: 85a6004c82dbd47168e7218a209a01a4
+  - enabled: 1
+    path: Assets/_Scenes/transitionVersHub.unity
+    guid: cba43f32f7e2b6644aea0e8bea9c86b9

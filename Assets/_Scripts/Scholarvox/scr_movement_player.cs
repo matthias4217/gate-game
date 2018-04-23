@@ -38,7 +38,7 @@ public class scr_movement_player : MonoBehaviour
 		initialPosition = transform.position;
 	}
 
-    void Update ()
+    void LateUpdate ()
     {
 		if (!tutoActive) 
 		{

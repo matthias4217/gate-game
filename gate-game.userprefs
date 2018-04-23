@@ -1,22 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_menu_control.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\ENI\Controller.cs">
     <Files>
-      <File FileName="Assets\_Scripts\Europresse\RaycastController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlatformController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\FriableTile.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Research\Input\ResearchController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Annex.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_avancerDansLeTexte.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_WhenClickedStart.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Analytics\setEcole.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_menu_control.cs" Line="46" Column="1" />
+      <File FileName="Assets\scr_tuto_ScolarVox.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Introduction\cinematicController.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_lancerOnClick.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\menu\scr_clicked_menu.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\ENI\Controller.cs" Line="27" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

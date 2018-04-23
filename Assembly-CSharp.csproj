@@ -97,7 +97,9 @@
      <Compile Include="Assets\_Scripts\Scholarvox\scr_sourisdessus.cs" />
      <Compile Include="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" />
      <Compile Include="Assets\scr_avancerDansLeTexte.cs" />
+     <Compile Include="Assets\scr_lancerOnClick.cs" />
      <Compile Include="Assets\scr_menu_control.cs" />
+     <Compile Include="Assets\scr_tuto_ScolarVox.cs" />
      <Compile Include="Assets\scr_WhenClickedStart.cs" />
      <Compile Include="Assets\zOther\GameAnalytics\Plugins\Playmaker\SendBusinessEvent.cs" />
      <Compile Include="Assets\zOther\GameAnalytics\Plugins\Playmaker\SendDesignEvent.cs" />

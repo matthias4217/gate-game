@@ -53,7 +53,7 @@ public class Game_Controller : MonoBehaviour {
     }
     public void ChangeLevel()
     {
-        SceneManager.LoadScene("Hub");
+        SceneManager.LoadScene("transitionVersHub");
     }
 
     public void StartAnimation(int button_number)

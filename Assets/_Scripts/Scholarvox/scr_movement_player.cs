@@ -30,6 +30,8 @@ public class scr_movement_player : MonoBehaviour
     //public bool collisionEnemy = false;
 	public bool tutoActive = true;
 	//public Vector3 lastCheckpoint = this.transform.position;
+	public GameObject textetuto;
+	public int compteurAffichageTuto = 0;
 
 	void Start()
 	{
@@ -103,6 +105,10 @@ public class scr_movement_player : MonoBehaviour
             y0 = this.transform.position.y;
             carresActives = true;
 			nbreDeplacements += 1;
+			if (compteurAffichageTuto > 2)
+				textetuto.SetActive (false);
+			else
+				compteurAffichageTuto++;
 			/*if (panneauRewind.active) 
 			{
 				panneauRewind.SetActive (false);

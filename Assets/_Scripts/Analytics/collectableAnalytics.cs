@@ -25,6 +25,13 @@ public class collectableAnalytics : MonoBehaviour {
 
     }
 
+    void OnTriggerEnter2D (Collider2D other) {
+        // Pour Scholarvox
+        if (this.tag == "Collectable") {
+            sendCollectableAnalytics();
+        }
+    }
+
     void OnTriggerEnter (Collider other) {
         // Pour Scholarvox
         if (this.tag == "collectible") {

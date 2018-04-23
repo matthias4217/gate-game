@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -3075,8 +3074,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  niveau: 
-  checkpoint: 
+  niveau: Hub
+  checkpoint: ENI
 --- !u!1 &1301847240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,8 +3289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  niveau: 
-  checkpoint: 
+  niveau: Hub
+  checkpoint: Europresse
 --- !u!1 &1376299711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,8 +3984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  niveau: 
-  checkpoint: 
+  niveau: Hub
+  checkpoint: Scholarvox
 --- !u!1 &1725119710
 GameObject:
   m_ObjectHideFlags: 0
@@ -4294,8 +4293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  niveau: 
-  checkpoint: 
+  niveau: Hub
+  checkpoint: Statista
 --- !u!1 &2007238002 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1546838579438994, guid: fa1d6afcddd01154a8e4548bfa30811a,

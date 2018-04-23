@@ -9,7 +9,7 @@ public class Game_Controller : MonoBehaviour {
 
     public SpriteRenderer player;
     public SpriteRenderer ennemy;
-	int[] list_of_execution = { 0, 0, 0};
+	int[] list_of_execution = { 0, 0, 0, 1};
     public Button button_0;
     public Button button_1;
     public Button button_2;
@@ -118,11 +118,11 @@ public class Game_Controller : MonoBehaviour {
             button.interactable = list_state[i];
         }
 
-        if (list_of_execution[button_number] != 1) { Damaged(); }
+        if (list_of_execution[button_number] != 1 ) { Damaged(); }
 
         list_of_execution[button_number] = 1;
 
-        if (SumArray(list_of_execution) == 3)
+        if (SumArray(list_of_execution) == 4)
         {
             button_capture.SetActive(true);
         }

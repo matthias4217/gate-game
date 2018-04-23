@@ -1,17 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_menu_control.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scr_WhenClickedStart.cs">
     <Files>
-      <File FileName="Assets\_Scripts\Research\Input\ResearchController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Introduction\Game_Controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayerInput.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerEnemyController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Europresse\RaycastController.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_menu_control.cs" Line="15" Column="26" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="1" Column="1" />
       <File FileName="Assets\_Scripts\Europresse\PlatformerPlatformController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\menu\scr_clicked_menu.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Europresse\FriableTile.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Hub\Controller_Hub.cs" Line="122" Column="19" />
+      <File FileName="Assets\_Scripts\Research\Input\ResearchController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Annex.cs" Line="1" Column="1" />
+      <File FileName="Assets\scr_avancerDansLeTexte.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Scholarvox\scr_movement_player.cs" Line="36" Column="40" />
+      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="81" Column="66" />
+      <File FileName="Assets\_Scripts\Scholarvox\scr_validerChoix.cs" Line="10" Column="32" />
+      <File FileName="Assets\scr_WhenClickedStart.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

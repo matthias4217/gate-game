@@ -106,7 +106,7 @@ public class Game_Controller : MonoBehaviour {
                 for (int y = 0; y < 2 * rd; y++)
                 {
                     player.flipY = !player.flipY;
-                    yield return new WaitForSeconds(0.2f);
+                    yield return new WaitForSeconds(1.0f);
                 }
                 ChangeLevel();
                 //animation 3

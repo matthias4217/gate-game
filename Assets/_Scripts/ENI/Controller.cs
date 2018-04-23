@@ -24,6 +24,7 @@ public class Controller : MonoBehaviour
         // Settings up references
 		rb = GetComponent<Rigidbody2D>();
 		enemy = GameObject.FindGameObjectWithTag ("Dummy");
+		Time.timeScale = 0.0f;
     }
 
     void FixedUpdate()

@@ -16,6 +16,33 @@ public class scr_avancerDansLeTexte : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate ()
 	{
+		if (tag == "Safe") 
+		{
+			if (Input.GetMouseButtonDown (0)) 
+			{
+				if (compteur < 0) 
+				{
+					SceneManager.LoadScene ("Hub");
+				}
+
+				else if (compteur == 0) 
+				{
+					texte2.SetActive (true);
+					texte1.SetActive (false);
+					compteur++;
+				} 
+
+				else if (compteur == 1) 
+				{
+					texte3.SetActive (true);
+					texte2.SetActive (false);
+					compteur++;
+					compteur *= -1;
+				}
+			}
+		}
+
+
 		if (tag == "porte_1") 
 		{
 			if (Input.GetMouseButtonDown (0)) 

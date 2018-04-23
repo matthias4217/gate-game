@@ -21,14 +21,13 @@ public class scr_menu_control : MonoBehaviour
 
 
 
-	void Update () 
-	{
+	void Update () {
+
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			if (compteur == 1) {
 				SceneManager.LoadScene ("pré-Introduction (texte)");
 		}
-			if (sceneName == "Demarrage" &&  compteur == 0)
-			{
+			if (sceneName == "Demarrage" &&  compteur == 0) {
 				texteMenu1.SetActive (false);
 				logo.SetActive (true);
 				DropEcole.SetActive (true);
@@ -36,11 +35,13 @@ public class scr_menu_control : MonoBehaviour
 			} 
 		}
 
-		else if (Input.GetKeyDown (KeyCode.Escape)) 
-		{
+		else if (Input.GetKeyDown (KeyCode.Escape)) {
 			Time.timeScale = menuOuvert ? 1f : 0f;
 			menuOuvert = !menuOuvert;
 			panneauPause.SetActive(menuOuvert);
 		}
 	}
+
+
+
 }

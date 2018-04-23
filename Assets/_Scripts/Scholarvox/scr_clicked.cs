@@ -86,7 +86,6 @@ public class scr_clicked : MonoBehaviour
 		recherche.SetActive (false);
 		paquetRecherche2.SetActive (false);
 		joueur.GetComponent<scr_movement_player> ().tutoActive = false;
-		joueur.GetComponent<scr_movement_player> ().is_moving = false;
 		panelInfos.SetActive (false);
 	}
 

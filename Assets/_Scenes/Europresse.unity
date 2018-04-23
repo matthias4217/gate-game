@@ -41333,6 +41333,7 @@ RectTransform:
   - {fileID: 2104218857}
   - {fileID: 1946236163}
   - {fileID: 844974444}
+  - {fileID: 1017133608}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41449,6 +41450,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1017133607
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 968737352}
+    m_Modifications:
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -493.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -394.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.016082536
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114079151577817550, guid: 488b95d6cba82d047ae3a983556fba19,
+        type: 2}
+      propertyPath: m_Text
+      value: "Tu vas devoir r\xE9soudre des \xE9nigmes \xE0 travers les plateformes
+        de cette base de donn\xE9es.\nD\xE9place-toi avec les fl\xE8ches. Saute avec
+        la barre 'espace'."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1017133608 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19,
+    type: 2}
+  m_PrefabInternal: {fileID: 1017133607}
 --- !u!4 &1051040249 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4105042146553132, guid: 7d21789decb86fb4f959d1bcbb4df274,
@@ -42339,7 +42402,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347686142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.86, y: 13.27, z: 0}
+  m_LocalPosition: {x: -36.8, y: -2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 394792542}

@@ -12019,8 +12019,13 @@ Prefab:
     - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
         type: 2}
       propertyPath: health
-      value: 30
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114594173979058492, guid: 9401812a61e593640956de627381fcbf,
+        type: 2}
+      propertyPath: textetuto
+      value: 
+      objectReference: {fileID: 749517726}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9401812a61e593640956de627381fcbf, type: 2}
   m_IsPrefabParent: 0
@@ -20972,6 +20977,11 @@ Transform:
   m_PrefabParentObject: {fileID: 4535189880497614, guid: c04c8ecde62e8de4898fe6cbfdc6df28,
     type: 2}
   m_PrefabInternal: {fileID: 2109094021}
+--- !u!1 &749517726 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1187488047410334, guid: 488b95d6cba82d047ae3a983556fba19,
+    type: 2}
+  m_PrefabInternal: {fileID: 1026692787}
 --- !u!4 &752629080 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4535189880497614, guid: c04c8ecde62e8de4898fe6cbfdc6df28,
@@ -29119,6 +29129,60 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c04c8ecde62e8de4898fe6cbfdc6df28, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1026692787
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1989133651}
+    m_Modifications:
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -400.0772
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -299.18283
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.016082536
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114079151577817550, guid: 488b95d6cba82d047ae3a983556fba19,
+        type: 2}
+      propertyPath: m_Text
+      value: "D\xE9place-toi avec les fl\xE8ches. Un petit robot de ENI te suit en
+        permanence. Qu'est ce qu'il est mignooon ! ...hum..\nClique avec ta souris
+        pour lancer un leurre."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 488b95d6cba82d047ae3a983556fba19, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1026692788 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4920330556165804, guid: 488b95d6cba82d047ae3a983556fba19,
+    type: 2}
+  m_PrefabInternal: {fileID: 1026692787}
 --- !u!4 &1027413034 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4535189880497614, guid: c04c8ecde62e8de4898fe6cbfdc6df28,
@@ -39281,12 +39345,12 @@ Prefab:
     - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
         type: 2}
       propertyPath: damageContact
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114980050268135094, guid: 1ea172eed412e664a8f841df26471907,
         type: 2}
       propertyPath: chaseSpeed
-      value: 1.85
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ea172eed412e664a8f841df26471907, type: 2}
@@ -55713,6 +55777,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 2055615291}
+  - {fileID: 1026692788}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

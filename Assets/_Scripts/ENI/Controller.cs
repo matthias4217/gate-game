@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Controller : MonoBehaviour
 {
-    public float moveSpeed;
+	public GameObject textetuto;
+	public float moveSpeed;
     private int count;
 
 	[SerializeField] private int decoylvl = 1;
@@ -67,6 +68,7 @@ public class Controller : MonoBehaviour
 		if (other.gameObject.CompareTag ("Dummy End")) {
 			if (enemy.gameObject.CompareTag ("Dummy")) {
 				enemy.GetComponent<DummyController> ().ChaseActive (false);
+				textetuto.SetActive (false);
 				}
 
 		}

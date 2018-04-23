@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1449,6 +1448,24 @@ Transform:
   m_PrefabParentObject: {fileID: 4714458300571930, guid: aef363e7e0dc4f9448f8c6d4d799d4f2,
     type: 2}
   m_PrefabInternal: {fileID: 165756118}
+--- !u!1 &169851822 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1688370835249724, guid: 7e843b1262913a3419b3f8cb9e05b676,
+    type: 2}
+  m_PrefabInternal: {fileID: 318371569}
+--- !u!114 &169851823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 169851822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niveau: Europresse
+  checkpoint: Checkpoint1
 --- !u!1 &170234711
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,11 +2075,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805592852054184, guid: 7e843b1262913a3419b3f8cb9e05b676, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1688370835249724, guid: 7e843b1262913a3419b3f8cb9e05b676, type: 2}
       propertyPath: m_Name
-      value: Checkpoint (1)
+      value: Checkpoint1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e843b1262913a3419b3f8cb9e05b676, type: 2}
@@ -2114,7 +2131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4105042146553132, guid: 7d21789decb86fb4f959d1bcbb4df274, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114083265773484970, guid: 7d21789decb86fb4f959d1bcbb4df274,
         type: 2}
@@ -3186,22 +3203,6 @@ CompositeCollider2D:
         Y: 550000000
       - X: 1550000000
         Y: 540000000
-    - - X: 1630000000
-        Y: 440000000
-      - X: 1630000000
-        Y: 450000000
-      - X: 1640000000
-        Y: 450000000
-      - X: 1640000000
-        Y: 440000000
-    - - X: 1540000000
-        Y: 440000000
-      - X: 1540000000
-        Y: 450000000
-      - X: 1550000000
-        Y: 450000000
-      - X: 1550000000
-        Y: 440000000
     - - X: 2300000000
         Y: 110000000
       - X: 2270000128
@@ -3242,6 +3243,22 @@ CompositeCollider2D:
         Y: -110000000
       - X: 2300000000
         Y: -110000000
+    - - X: 1630000000
+        Y: 440000000
+      - X: 1630000000
+        Y: 450000000
+      - X: 1640000000
+        Y: 450000000
+      - X: 1640000000
+        Y: 440000000
+    - - X: 1540000000
+        Y: 440000000
+      - X: 1540000000
+        Y: 450000000
+      - X: 1550000000
+        Y: 450000000
+      - X: 1550000000
+        Y: 440000000
     - - X: 870000000
         Y: 370000000
       - X: 850000000
@@ -3394,14 +3411,6 @@ CompositeCollider2D:
         Y: 170000000
       - X: 600000000
         Y: 170000000
-    - - X: 1750000000
-        Y: 190000000
-      - X: 1720000000
-        Y: 190000000
-      - X: 1720000000
-        Y: 170000000
-      - X: 1750000000
-        Y: 170000000
     - - X: 650000000
         Y: 190000000
       - X: 620000000
@@ -3409,6 +3418,14 @@ CompositeCollider2D:
       - X: 620000000
         Y: 170000000
       - X: 650000000
+        Y: 170000000
+    - - X: 1750000000
+        Y: 190000000
+      - X: 1720000000
+        Y: 190000000
+      - X: 1720000000
+        Y: 170000000
+      - X: 1750000000
         Y: 170000000
     - - X: 550000000
         Y: 160000000
@@ -3784,14 +3801,14 @@ CompositeCollider2D:
       - {x: 57, y: 19}
       - {x: 57, y: 17}
       - {x: 60, y: 17}
-    - - {x: 175, y: 19}
-      - {x: 172, y: 19}
-      - {x: 172, y: 17}
-      - {x: 175, y: 17}
     - - {x: 65, y: 19}
       - {x: 62, y: 19}
       - {x: 62, y: 17}
       - {x: 65, y: 17}
+    - - {x: 175, y: 19}
+      - {x: 172, y: 19}
+      - {x: 172, y: 17}
+      - {x: 175, y: 17}
     - - {x: 55, y: 16}
       - {x: 52, y: 16}
       - {x: 52, y: 14}
@@ -43927,6 +43944,24 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1725226287 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1688370835249724, guid: 7e843b1262913a3419b3f8cb9e05b676,
+    type: 2}
+  m_PrefabInternal: {fileID: 1735367451}
+--- !u!114 &1725226288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1725226287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fddf8fbe3e954ca19bffdcc42a90df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niveau: Europresse
+  checkpoint: Checkpoint0
 --- !u!1001 &1735367451
 Prefab:
   m_ObjectHideFlags: 0
@@ -43964,7 +43999,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805592852054184, guid: 7e843b1262913a3419b3f8cb9e05b676, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e843b1262913a3419b3f8cb9e05b676, type: 2}

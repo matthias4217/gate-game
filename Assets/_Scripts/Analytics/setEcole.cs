@@ -15,6 +15,7 @@ public class setEcole : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         string school = dropdown.captionText.text;
-        PlayerPrefs.SetString("Ecole", school);
+        //Debug.Log("getschool : " + school);
+        PlayerPrefs.SetString("School", school);
     }
 }

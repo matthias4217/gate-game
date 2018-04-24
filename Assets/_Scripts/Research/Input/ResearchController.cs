@@ -22,6 +22,9 @@ public class ResearchController : MonoBehaviour {
 	[SerializeField]
 	private Text text;
 
+	[Tooltip("The door which will be opened")]
+	public DoorController door;
+
 	private string guess; //Le choix du joueur
 
 
@@ -34,9 +37,10 @@ public class ResearchController : MonoBehaviour {
 		CompareReponse (guess);
 	}
 
-	void CompareReponse(string guess) {
+	public void CompareReponse(string guess) {
 		if (guess.Equals(reponse)) {
 			text.text = "Vous avez répondu juste. Vous pouvez passer maintenant pauvre fou!";
+			StartCoroutine (door.Open ());
 			//inputField.SetActive(false); //Pour une raison inconnue, cette méthode ne marche pas alors qu'elle le devrait
 
 		} else {

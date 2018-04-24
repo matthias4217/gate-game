@@ -17,15 +17,15 @@ public class ProgressionStatus : MonoBehaviour {
     // Use this for initialization
     void Start () {
         school = PlayerPrefs.GetString("School");
-        Debug.Log("school : " + school);
+        //Debug.Log("school : " + school);
         // get the time at the beginning of the level
         timeStart = PlayerPrefs.GetFloat("time" + niveau);
     }
 
     void sendProgression() {
         float deltaTime = Time.time - timeStart; // minus time at the beginning of the level...
-        Debug.Log("Envoi de données à GameAnalytics...");
-        Debug.Log(deltaTime);
+        //Debug.Log("Envoi de données à GameAnalytics...");
+        //Debug.Log(deltaTime);
         //GameAnalytics.NewProgressionEvent(progressionStatus, niveau, checkpoint);
         GameAnalytics.NewDesignEvent(school + ":progression:" + niveau + ":" + checkpoint, deltaTime);
     }

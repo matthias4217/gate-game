@@ -26,20 +26,16 @@ public class collectableAnalytics : MonoBehaviour {
     }
 
     void OnTriggerEnter2D (Collider2D other) {
-        //if (this.tag == "Collectable") {
             sendCollectableAnalytics();
-        //}
     }
 
     void OnTriggerEnter (Collider other) {
         // Pour Scholarvox
-        //if (this.tag == "collectible") {
             sendCollectableAnalytics();
-        //}
     }
 
     void sendCollectableAnalytics() {
         GameAnalytics.NewDesignEvent(school + ":collectable:" + niveau + ":" + id);
-        Debug.Log(school + ":collectable:" + niveau + ":" + id);
+        //Debug.Log(school + ":collectable:" + niveau + ":" + id);
     }
 }

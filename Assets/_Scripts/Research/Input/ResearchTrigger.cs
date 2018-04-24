@@ -17,7 +17,7 @@ public class ResearchTrigger : MonoBehaviour {
 	{
 		if(col.gameObject.tag == "Player")
 		{
-			//inputField.gameObject.SetActive(true); //Pour une raison inconnue, cette méthode ne marche pas alors qu'elle le devrait 
+			inputField.gameObject.SetActive(true); //Pour une raison inconnue, cette méthode ne marche pas alors qu'elle le devrait 
 		}
 	}
 
@@ -25,7 +25,7 @@ public class ResearchTrigger : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Player")
 		{
-			//inputField.gameObject.SetActive(false); //Pour une raison inconnue, cette méthode ne marche pas alors qu'elle le devrait 
+			inputField.gameObject.SetActive(false); //Pour une raison inconnue, cette méthode ne marche pas alors qu'elle le devrait 
 		}
 	}
 }

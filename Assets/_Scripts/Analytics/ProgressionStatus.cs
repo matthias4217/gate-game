@@ -17,6 +17,7 @@ public class ProgressionStatus : MonoBehaviour {
     // Use this for initialization
     void Start () {
         school = PlayerPrefs.GetString("School");
+        Debug.Log("school : " + school);
         // get the time at the beginning of the level
         timeStart = PlayerPrefs.GetFloat("time" + niveau);
     }

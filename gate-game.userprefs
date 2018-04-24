@@ -1,18 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\PlatformerController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\Europresse\DoorController.cs">
     <Files>
-      <File FileName="Assets\scr_tuto_ScolarVox.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Introduction\cinematicController.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_lancerOnClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\menu\scr_clicked_menu.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\ENI\Controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Scholarvox\scr_clicked.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Introduction\Game_Controller.cs" Line="1" Column="1" />
-      <File FileName="Assets\scr_avancerDansLeTexte.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="17" Column="2" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\Research\Input\ResearchController.cs" Line="35" Column="36" />
+      <File FileName="Assets\_Scripts\Research\Input\ResearchTrigger.cs" Line="28" Column="4" />
+      <File FileName="Assets\_Scripts\Europresse\DoorController.cs" Line="10" Column="91" />
+      <File FileName="Assets\_Scripts\Annex.cs" Line="20" Column="28" />
+      <File FileName="Assets\_Scripts\Europresse\PlatformerController.cs" Line="42" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

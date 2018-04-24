@@ -68,6 +68,7 @@
      <Compile Include="Assets\_Scripts\ENI\TriggerController.cs" />
      <Compile Include="Assets\_Scripts\Europresse\Checkpoint.cs" />
      <Compile Include="Assets\_Scripts\Europresse\CollisionController.cs" />
+     <Compile Include="Assets\_Scripts\Europresse\DoorController.cs" />
      <Compile Include="Assets\_Scripts\Europresse\EnemyControllerOld.cs" />
      <Compile Include="Assets\_Scripts\Europresse\FriableTile.cs" />
      <Compile Include="Assets\_Scripts\Europresse\PetController.cs" />

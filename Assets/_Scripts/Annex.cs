@@ -9,12 +9,17 @@ using UnityEngine;
 public class Annex {
 
 	public static float Linear(float A, float f_A, float B, float f_B, float x) {
-		/*
-		 * Return f(x), where f is the line passing through (A, f_A) and (B, f_B)
-		 */
+		/* Return f(x), where f is the line passing through (A, f_A) and (B, f_B) */
 		float slope = (f_B - f_A) / (B - A);
 		return slope * (x - A) + f_A;
 	}
+
+	public static float SmoothStep(float x) {
+		/* https://en.wikipedia.org/wiki/Smoothstep */
+		x = Mathf.Clamp(x, 0, 1);
+		return x * x * (3 - 2*x);
+	}
+
 
 	public static bool isInRange(float value, float min, float max) {
 		/* Indicates if value belongs to [min, max] */

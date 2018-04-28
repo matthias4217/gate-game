@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1616,6 +1615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862450066}
   - component: {fileID: 1862450065}
+  - component: {fileID: 1862450067}
   m_Layer: 5
   m_Name: choixEcole
   m_TagString: Untagged
@@ -1653,6 +1653,17 @@ RectTransform:
   m_AnchoredPosition: {x: 396.99997, y: 81.99999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1862450067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862450064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce4b270bd2417453aaa3a3e4a6923592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1872460000
 GameObject:
   m_ObjectHideFlags: 0

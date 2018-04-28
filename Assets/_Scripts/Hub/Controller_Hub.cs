@@ -7,16 +7,16 @@ using System.Collections.Generic;
 
 public class Controller_Hub : MonoBehaviour
 {
-	public GameObject texteENI;
-	public GameObject texteSCHOL;
-	public GameObject texteEURO;
-	public GameObject prefab;
-	public GameObject texteSpawn;
+    public GameObject texteENI;
+    public GameObject texteSCHOL;
+    public GameObject texteEURO;
+    public GameObject prefab;
+    public GameObject texteSpawn;
     public float moveSpeed;
     public float timeBeforeMove;
-	public GameObject Scholwarning;
-	public GameObject Eurowarning;
-	public GameObject ENIwarning;
+    public GameObject Scholwarning;
+    public GameObject Eurowarning;
+    public GameObject ENIwarning;
     public GameObject player_Camera;
     public bool allTheWay;
     public float minMove;
@@ -24,30 +24,33 @@ public class Controller_Hub : MonoBehaviour
     public float minX;
     public float maxY;
     public float minY;
+    public float waitBeforeText;
 
     private int count;
-	private Vector2 directionalInput;
+    private Vector2 directionalInput;
     private bool mouseMoving;
 
-	private Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Camera cm;
     private Vector2 mousePos;
     private float timer;
     private GameObject Obj;
-    
+
 
 
     void Start()
     {
         Obj = null;
-        timer = timeBeforeMove*2 + 1;
+        timer = timeBeforeMove * 2 + 1;
         mouseMoving = false;
         rb = GetComponent<Rigidbody2D>();
         cm = player_Camera.GetComponent<Camera>();
+        StartCoroutine(StopText(waitBeforeText));
     }
 
     void FixedUpdate()
     {
+        StartCoroutine(StopText(waitBeforeText));
         Vector2 pos = this.transform.position;
         if (Input.GetMouseButtonDown(0) && timer > timeBeforeMove)
         {
@@ -60,7 +63,7 @@ public class Controller_Hub : MonoBehaviour
                 Destroy(Obj);
                 Obj = Instantiate(prefab, objPos, new Quaternion(0, 0, 0, 0));
                 mouseMoving = true;
-                if (allTheWay) { timer = 2*timeBeforeMove + 1 ; } else { timer = 0f; }
+                if (allTheWay) { timer = 2 * timeBeforeMove + 1; } else { timer = 0f; }
                 directionalInput = cm.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
                 directionalInput.Normalize();
                 rb.velocity = directionalInput * moveSpeed;
@@ -81,8 +84,8 @@ public class Controller_Hub : MonoBehaviour
             }
         }
         if (mouseMoving)
-			timer += Time.deltaTime;
-        
+            timer += Time.deltaTime;
+
 
     }
 
@@ -93,54 +96,52 @@ public class Controller_Hub : MonoBehaviour
         {
             case "Scholarvox":
                 Scholwarning.SetActive(false);
-				texteSCHOL.SetActive (false);
+                texteSCHOL.SetActive(false);
                 break;
             case "ENI":
                 ENIwarning.SetActive(false);
-				texteENI.SetActive (false);
+                texteENI.SetActive(false);
                 break;
-			case "Europresse":
-				Eurowarning.SetActive (false);
-				texteEURO.SetActive (false);
+            case "Europresse":
+                Eurowarning.SetActive(false);
+                texteEURO.SetActive(false);
                 break;
-			case "Respawn":
-				texteSpawn.SetActive (false);
-				break;
-
         }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        string tag = other.gameObject.tag;
-
+        string tag = other.gameObject.tag;;
+        Debug.Log("name : " + other.name +"  tag : "+ other.tag +"  gameObject : "+ other.gameObject);
         switch (tag)
         {
             case "Target":
                 Destroy(other.gameObject);
                 break;
-			case "Scholarvox":
-				Scholwarning.SetActive (true);
-				texteSCHOL.SetActive (true);
+            case "Scholarvox":
+                Scholwarning.SetActive(true);
+                texteSCHOL.SetActive(true);
                 break;
-			case "ENI":
-				ENIwarning.SetActive (true);
-				texteENI.SetActive (true);
+            case "ENI":
+                ENIwarning.SetActive(true);
+                texteENI.SetActive(true);
                 break;
-			case "Europresse":
-				Eurowarning.SetActive (true);
-				texteEURO.SetActive (true);
+            case "Europresse":
+                Eurowarning.SetActive(true);
+                texteEURO.SetActive(true);
                 break;
 
         }
     }
 
     void OnTriggerStay2D(Collider2D other) {
-		if (Input.GetKeyDown(KeyCode.Space)) {
-			SceneManager.LoadScene(other.gameObject.tag);
-        }        
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Debug.Log("Hadoken");
+            SceneManager.LoadScene(other.gameObject.tag);
+        }
     }
 
-    Vector3 Tronquer(Vector2 pos, float maxX,float minX,float maxY,float minY)
+    Vector3 Tronquer(Vector2 pos, float maxX, float minX, float maxY, float minY)
     {
         float tempx = pos.x;
         float tempy = pos.y;
@@ -153,6 +154,26 @@ public class Controller_Hub : MonoBehaviour
 
         return new Vector3(tempx, tempy, 0f);
     }
+
+    IEnumerator StopText(float wait) {
+        yield return new WaitForSeconds(wait);
+        texteSpawn.SetActive(false);
+    }
+
+    /*IEnumerator LoadScene(string tag) {
+        Debug.Log("hadoken");
+        while (true)
+        {
+            Debug.Log("hadoken");
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+
+                SceneManager.LoadScene(tag);
+            }
+            yield return new WaitForSeconds(0.1f);
+        }
+    }*/
 }
+
 
 

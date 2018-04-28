@@ -35,7 +35,7 @@ public class collectableAnalytics : MonoBehaviour {
     }
 
     void sendCollectableAnalytics() {
-        GameAnalytics.NewDesignEvent(school + ":collectable:" + niveau + ":" + id);
+        GameAnalytics.NewDesignEvent("collectable:" + niveau + ":" + id + ":" + school);
         //Debug.Log(school + ":collectable:" + niveau + ":" + id);
     }
 }

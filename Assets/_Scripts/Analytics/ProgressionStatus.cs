@@ -27,7 +27,7 @@ public class ProgressionStatus : MonoBehaviour {
         //Debug.Log("Envoi de données à GameAnalytics...");
         //Debug.Log(deltaTime);
         //GameAnalytics.NewProgressionEvent(progressionStatus, niveau, checkpoint);
-        GameAnalytics.NewDesignEvent(school + ":progression:" + niveau + ":" + checkpoint, deltaTime);
+        GameAnalytics.NewDesignEvent("progression:" + niveau + ":" + checkpoint + ":" + school, deltaTime);
     }
     
     void OnTriggerEnter2D (Collider2D other) {

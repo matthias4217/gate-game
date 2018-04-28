@@ -3092,7 +3092,7 @@ MonoBehaviour:
   Eurowarning: {fileID: 719248923}
   ENIwarning: {fileID: 2007238002}
   player_Camera: {fileID: 1301847240}
-  allTheWay: 1
+  allTheWay: 0
   minMove: 0.2
   maxX: 5.9
   minX: -7.4
